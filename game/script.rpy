@@ -1,54 +1,32 @@
-﻿# Coloca el código de tu juego en este archivo.
+﻿# Define personajes
 
-# Declara los personajes usados en el juego como en el ejemplo:
-
-define i = Character("Isaac")
+define i = Character("isaac")
 define j = Character("Jordan")
 
+# Define imagenes personajes
+image isaac = "images/personajes/Isaac.png"
+image jordan_alegre = "images/personajes/personaje_alegre.png"
+image jordan_triste = "images/personajes/porky_triste.png"
 
-image Isaac = "images/personajes/Isaac.png"
-image personaje_alegre = "images/personajes/personaje_alegre.png"
-
+# Define imagenes fondos
 image fondo = "images/fondos/fondo.png"
-
-
-# El juego comienza aquí.
-
-# label start:
-
-#     # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
-#     # defecto. Es posible añadir un archivo en el directorio 'images' con el
-#     # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
-
-#     scene bg room
-
-#     # Muestra un personaje: Se usa un marcador de posición. Es posible
-#     # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
-#     # 'images'.
-
-#     show eileen happy
-
-#     # Presenta las líneas del diálogo.
-
-#     e "Has creado un nuevo juego Ren'Py."
-
-#     e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
-
-#     # Finaliza el juego:
-
-#     return
+image escena_cuerno = "images/fondos/Escena_cuerno.png"
+image inicio_nubes = "images/fondos/Inicio_nubes.png"
+image toma_decision_lider = "images/fondos/Toma_de_decision_lider.png"
 
 label start:
 
     show fondo
 
-    show Isaac at left
+    show isaac at left
     i "¿Quien eres tu?"
 
-    show personaje_alegre at right
+    show jordan_alegre at right
     j "Me dicen Porky"
 
     call menu_reirse
+
+    show jordan_triste at right
 
     jump mensaje_demo
 
@@ -61,11 +39,11 @@ label menu_reirse:
             jump no_reirse
 
 label reirse:
-    i "Jajaja, Porky, Porky!."
+    i "Jajaja, ¡Porky, Porky!."
     return
 
 label no_reirse:
-    i "JAJAJAJAJAJAJAJ."
+    i "JAJAJAJAJAJAJA."
     return
 
 label mensaje_demo:
