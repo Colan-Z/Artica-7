@@ -2,11 +2,15 @@
 
 define i = Character("isaac")
 define j = Character("Jordan")
+define r = Character("Rowan") # Se agregaron 2 personajes nuevos a la historia
+define m = Character("Mathias")
 
 # Define imagenes personajes
 image isaac = "images/personajes/Isaac.png"
 image jordan_alegre = "images/personajes/personaje_alegre.png"
 image jordan_triste = "images/personajes/porky_triste.png"
+image Rowan = "images/personajes/Rowan.png" # Retrato de los nuevos personajes
+image Mathias = "images/personajes/Mathias.png"
 
 # Define imagenes fondos
 image fondo = "images/fondos/fondo.png"
