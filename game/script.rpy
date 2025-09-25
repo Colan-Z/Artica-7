@@ -72,7 +72,6 @@ label start:
     call acto1_pregunta_estado_nombre
     "El Muchacho toma sus lentes que habia dejado en la arena."
     p "Gracias por haberme salvado."
-    call preguntar_nombre
     call acto1_pregunta_reirse
     
     hide porky_triste
@@ -100,6 +99,7 @@ label vio_algo:
     i "Por que te metiste al agua?"
     p "Crei haber visto algo, y decidi verlo mas de cerca."
     i "Estas aguas parecen engañar tu vision. Antes tambien me parecio haber visto algo. Pero desaparecio de repente."
+    call preguntar_nombre
     return
 
 label preguntar_nombre:
