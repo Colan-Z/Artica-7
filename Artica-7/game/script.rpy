@@ -4,12 +4,12 @@ define david = Character("David", color="#4169E1")
 define sara = Character("Sara", color="#ffb969")
 define chris = Character("Chris", color="#14dc61")
 define tutor = Character("Tutor", color="#dc6e14")
-define estudiante_1 = Character("estudiante 1", color="#5a14dc")
-define estudiante_2 = Character("estudiante 2", color="#c8dc14")
-define estudiante_3 = Character("estudiante 3", color="#dc2114")
-define estudiante_4 = Character("estudiante 4", color="#14d5dc")
-define estudiante_5 = Character("estudiante 5", color="#dc14b1")
-define estudiante_6 = Character("estudiante 6", color="#96dc14")
+define estudiante_1 = Character("Estudiante 1", color="#5a14dc")
+define estudiante_2 = Character("Estudiante 2", color="#c8dc14")
+define estudiante_3 = Character("Estudiante 3", color="#dc2114")
+define estudiante_4 = Character("Estudiante 4", color="#14d5dc")
+define estudiante_5 = Character("Estudiante 5", color="#dc14b1")
+define estudiante_6 = Character("Estudiante 6", color="#96dc14")
 define narrador = Character(None)
 
 # Variables del sistema de moral
@@ -23,287 +23,27 @@ default invernadero_cuidado = False
 label start:
     $ moral = 0
 
-    scene fondo helicoptero
-    play music "helicoptero.mp3" fadein 2.0 volume 0.2
+    call escena2_helicoptero
+    call escena3_ventisca
+    call escena4_refugio
+    call escena5_refugio_misterioso
+    # Fin del acto 1
+    return
 
-    narrador "Un grupo de estudiantes había ganado un concurso académico."
-    narrador "Su premio: un viaje científico a una base en la Antártida."
-   
-   
-    scene fondo interior_helicoptero with fade
-   
 
-    show tutor at center
-    tutor "En veinte minutos llegaremos a Base Orcadas. "
-    tutor "Allí pasaremos tres semanas estudiando ecosistemas polares, cambio climático y adaptación de especies."
-    tutor "Debo pedirles que me entreguen sus celulares, me gustaría que se desconectaran del mundo digital y presten atención a su entorno."
-    hide tutor
-    show chris at left
-    show david at right
-    chris "Tres semanas. ¿Crees que sobrevivas sin videojuegos?"
-    
-    menu:
 
-        "Sobreviviré.":
-            $ moral -= 1
-            chris "esta bien..."
-        "Tú tampoco sobrevivirás mucho sin ellos.":
-            $ moral += 1        
-            chris "¿Tú crees? (risas)"
-        "Al menos estaremos juntos.":
-            $ moral += 2       
-            chris "Claro, héroe" 
 
 
-    scene fondo ventisca with fade
-    play sound "ventisca.mp3" volume 0.2
-    
 
-    narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
 
-    scene fondo interior_helicoptero with fade
-
-    "piloto" "¡Haremos un aterrizaje de emergencia! Sosténganse fuerte! ¡Sosténganse fuerte!"
-
-    narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
-    scene fondo aterrizaje with fade
-    narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
-    
-    jump entrada_artica7
-    
-
-label entrada_artica7:
-    
-    narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento. La ventisca es cegadora. El viento azota sus rostros."
-    scene fondo camino with fade
-    stop music
-    show tutor at left
-    tutor "2...4...6...8...9 ¡Todos bien! ¡Síganme!"
-
-    scene fondo artica7_exterior with fade
-    narrador "uno de los estudiantes señala una estructura metálica medio enterrada en la nieve, aproximadamente a cincuenta metros de distancia. Es una construcción rectangular."
-    narrador "Los estudiantes y el TUTOR corren hacia la instalación, luchando contra el viento, SARA tropieza con una piedra oculta bajo la nieve."
-
-    chris "¡DAVID!¡SARA SE CAYÓ!"
-    scene fondo sara_suelo with fade
-   
-    menu:                          
-        "Ayudas a Sara":
-            $ moral += 1
-            chris "¡Tú puedes héroe!"
-            scene fondo david_rescata_sara with fade
-            david "¿Estas bien?"
-            sara "Si, lo estoy, gracias..."
-        "Ordenas a Chris que la ayude.":
-            $ moral -= 1 
-            scene fondo chris_rescata_sara with fade       
-            chris "..."
-            sara "Gracias..."
-            
-
-    scene fondo artica7_entrada with fade
-    
-    narrador "Llegan a la entrada principal. Es una instalación militar con el nombre 'ÁRTICA-7' grabado en letras desgastadas."
-    
-    narrador "El tutor ve la puerta entreabierta y logra abrirla para que puedan pasar."
-    
-    show tutor at left
-    tutor "¡Adentro! ¡Rápido! Estaremos seguros hasta que pase la ventisca."
-
-    narrador "Los estudiantes entran apresuradamente en grupo. El tutor entra último, mirando atrás hacia el helicóptero, que apenas se ve entre la nieve."
-
-    scene fondo artica7_interior with fade
-    stop music
-    play sound "generador_enciende.mp3" volume 0.5
-
-    estudiante_1 "¿Qué es este lugar?"
-    
-    narrador "De repente se escucha el sonido de un generador funcionando, luces fluorescentes parpadean débilmente en el techo."
-    
-    narrador "Se encienden completamente, iluminando un pasillo largo con paredes metálicas oxidadas, piso de rejilla industrial y cables expuestos en el techo."
-
-    narrador "El grupo mira alrededor. El lugar parece abandonado hace años. Hay polvo sobre consolas apagadas."
-    
-    play sound "puerta_cierra.mp3" volume 2.0
-    narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
-
-    narrador "El TUTOR corre hacia la puerta , se le cae el walkie-talkie en el suelo."
-
-    menu:                          
-        "Tratar de detener al tutor":
-            david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
-            narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
-        "No hacer nada.":
-            tutor "NO, NO, NO, NO, ESPERA, ESPERA, ESPERA, ¡¿QUE ESTA PASANDO?!"
-
-    show tutor at center
-
-    "Al intentar forzar la puerta una descarga eléctrica recorre todo su cuerpo, dejándolo tirado en el suelo, convulsionando, hasta que deja de moverse."
-
-    play sound "descarga_electrica.mp3"
-    show tutor at center with hpunch
-    pause 0.5
-    hide tutor
-
-    narrador "El tutor intentó forzar las compuertas..."
-    narrador "Una descarga eléctrica lo atravesó."
-    play sound "caida_suelo.mp3"
-    scene fondo tutor_electrocutado_radio with fade
-    narrador "Cayó al suelo. Sin vida."
-
-    show sara at left
-    show david at right
-
-    sara "¡No, no, no! ¡Despertá!"
-    david "No tiene pulso... está muerto."
-
-    hide david
-    
-    sara "Encontré su radio. Voy a intentar contactar al piloto."
-    scene fondo tutor_electrocutado with fade
-
-    menu: 
-        
-        "¿Sara debería intentar contactar al piloto?"
-
-        "Sí, intentalo. Puede que nos ayude.":
-            $ moral += 1
-            jump contactar_piloto
-
-        "No, es muy arriesgado con esta ventisca.":
-            $ moral -= 1
-            jump no_contactar_piloto
-
-label contactar_piloto:
-    show sara at center
-
-    sara "¡Ayuda! ¡Ayuda! ¡El tutor está muerto!"
-
-    play sound "estatica_radio.mp3"
-
-    "Piloto" "*estática* ...los escucho... *estática* ...voy a pedir ayuda..."
-
-    scene fondo helicoptero with fade
-    play sound "helicoptero_crash.mp3"
-
-    scene fondo helicoptero_despega with fade
-    narrador "El piloto intentó despegar a pesar de la ventisca."
-    scene fondo helicoptero_volando_ventisca with fade
-    narrador "Perdió el control."
-    scene fondo helicoptero_destrozado with fade
-    narrador "Se estrelló."
-    
-
-
-    scene fondo tutor_electrocutado with fade
-    show sara at left
-    show david at right
-
-    sara "Es mi culpa... yo le pedí que volara..."
-    david "No. Él tomó la decisión. Hiciste lo que creíste correcto."
-
-    jump eleccion_lider
-
-label no_contactar_piloto:
-    show sara at center
-
-    sara "Tenés razón... con esta ventisca sería suicida."
-
-    narrador "Dejaron que el piloto esperara."
-    narrador "Horas después, el frío lo reclamó."
-    narrador "Nunca supieron si podrían haberlo salvado."
-
-    show david at right
-
-    david "Tal vez deberíamos haber intentado..."
-
-    jump eleccion_lider
-
-label eleccion_lider:
-    scene fondo tutor_electrocutado with fade
-
-    show david at center
-
-    david "(Los chicos estan empezando a entrar en panico, tengo que tomar las riendas y calmarlos a todos.)"
-
-    narrador "David se pone frente a los demas."
-
-    david "¡Nesito que me escuchen!"
-
-    narrador "Los chicos se voltean y miran a David"
-
-    david "vamos a calmarnos y tratemos de buscar algo con lo que podamos pedir ayuda"
-
-    jump explorar_instalación
-
-label explorar_instalación:
-
-    scene fondo tutor_electrocutado with fade
-
-    david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos ha pasado. Pero ahora mismo, en este momento, estamos vivos."
-
-    show estudiante_femenino at left
-    estudiante_5 "¡Estamos atrapados con un cadáver!"
-    hide estudiante_femenino
-    show chris at left
-    chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
-
-    jump organizacion_grupos
-
-label organizacion_grupos:
-    scene fondo tutor_electrocutado with fade
-
-    david "Necesitamos grupos de trabajo: exploración, agricultura, gestión de recursos."
-
-    menu:
-        "¿Cómo asignar las tareas?"
-
-        "Rotación justa. Todos hacen de todo.":
-            $ moral += 1
-            jump asignacion_justa
-
-        "Los mejores en cada tarea. Eficiencia primero.":
-            $ moral -= 1
-            jump asignacion_favorita
-
-label asignacion_justa:
-    david "Rotaremos. Así nadie se agota y todos aprenden."
-
-    show chris at right
-    show sara at left
-
-    chris "Suena justo."
-    sara "Todos participamos por igual."
-
-    narrador "El grupo aceptó la organización."
-    narrador "Se sentía como un equipo."
-
-    jump semanas_pasan
-
-label asignacion_favorita:
-    david "Chris, vos y los más fuertes exploran. Sara, vos y otros cuidan el invernadero."
-
-    show chris at right
-    show sara at left
-
-    chris "Perfecto. Nosotros encontraremos lo que necesitamos."
-    sara "¿Y los demás? ¿No es injusto?"
-
-    david "Es lo más eficiente."
-
-    narrador "Algunos chicos se sintieron excluidos."
-    narrador "Las grietas comenzaron a formarse."
-
-    jump semanas_pasan
 
 label semanas_pasan:
-    scene fondo artica7_invernadero with fade
+    scene fondo invernadero with fade
     play music "musica_tension.mp3" fadein 3.0
 
-    narrador "Pasaron las semanas."
-    narrador "Exploraron la base. Encontraron recursos limitados."
+    narrador "Pasaron las semanas. Exploraron la base. Encontraron recursos limitados."
     narrador "Pero el invernadero empezó a fallar."
-
+    scene fondo invernadero_plantas_muertas with fade
     show sara at center
 
     sara "Las plantas se están secando. No sé por qué."
@@ -350,15 +90,18 @@ label culpar_sabotaje:
     jump puertas_misteriosas
 
 label buscar_alternativas:
+    show david at left
     david "No tenemos tiempo para esto. Exploremos más a fondo."
-
+    hide david
+    hide sara
+    hide chris
     narrador "Abandonaron el invernadero."
     narrador "Pragmático, pero frío."
 
     jump puertas_misteriosas
 
 label puertas_misteriosas:
-    scene fondo artica7_pasillo_oscuro with fade
+    scene fondo pasillo_oscuro_puerta_abierta with fade
 
     show david at center
 
@@ -618,7 +361,7 @@ label radio_progreso:
     jump deterioro_mental
 
 label deterioro_mental:
-    scene fondo artica7_pasillo_sucio with fade
+    scene fondo pasillo_oscuro_puerta_abierta with fade
     play music "musica_horror.mp3" fadein 2.0
 
     narrador "Pasaron más días."
