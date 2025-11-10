@@ -11,6 +11,7 @@ define estudiante_4 = Character("Estudiante 4", color="#14d5dc")
 define estudiante_5 = Character("Estudiante 5", color="#dc14b1")
 define estudiante_6 = Character("Estudiante 6", color="#96dc14")
 define narrador = Character(None)
+image negro = "#000000"
 
 # Variables del sistema de moral
 default moral = 0
@@ -23,11 +24,12 @@ default invernadero_cuidado = False
 label start:
     $ moral = 0
 
-    call escena2_helicoptero
-    call escena3_ventisca
-    call escena4_refugio
-    call escena5_refugio_misterioso
-    # Fin del acto 1
+    call escena2_helicoptero from _call_escena2_helicoptero
+    call escena3_ventisca from _call_escena3_ventisca
+    call escena4_refugio from _call_escena4_refugio
+    call escena5_refugio_misterioso from _call_escena5_refugio_misterioso
+    scene negro with fade
+    centered  "{size= 65} FIN DEL ACTO 1 {/size}"
     return
 
 

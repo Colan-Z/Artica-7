@@ -13,9 +13,7 @@ label escena5_refugio_misterioso:
     hide estudiante_femenino
     
     narrador "De repente se escucha el sonido de un generador funcionando, luces fluorescentes parpadean débilmente en el techo."
-    
     narrador "Se encienden completamente, iluminando un pasillo largo con paredes metálicas oxidadas, piso de rejilla industrial y cables expuestos en el techo."
-
     narrador "El grupo mira alrededor. El lugar parece abandonado hace años. Hay polvo sobre consolas apagadas."
     
     play sound "puerta_cierra.mp3" volume 2.0
@@ -31,9 +29,6 @@ label escena5_refugio_misterioso:
             narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
         "No hacer nada.":
             tutor "NO, NO, NO, NO, ESPERA, ESPERA, ESPERA, ¡¿QUE ESTA PASANDO?!"
-    show tutor at center
-
-    "Al intentar forzar la puerta una descarga eléctrica recorre todo su cuerpo, dejándolo tirado en el suelo, convulsionando, hasta que deja de moverse."
 
     play sound "descarga_electrica.mp3"
     show tutor at center with hpunch
@@ -42,7 +37,7 @@ label escena5_refugio_misterioso:
 
     play sound "caida_suelo.mp3"
     scene fondo tutor_electrocutado_radio with fade
-    narrador "Cayó al suelo. Sin vida."
+    narrador "Al intentar forzar la puerta una descarga eléctrica recorre todo su cuerpo, dejándolo tirado en el suelo, convulsionando, hasta que deja de moverse."
 
     show estudiante_femenino at left
     estudiante_2 "¡SEÑOR!"
@@ -183,4 +178,3 @@ label escena5_refugio_misterioso:
         david "Es lo más eficiente."
 
         narrador "Algunos chicos se sintieron excluidos."
-        narrador "Las grietas comenzaron a formarse."
