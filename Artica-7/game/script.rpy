@@ -24,10 +24,9 @@ default invernadero_cuidado = False
 label start:
     $ moral = 0
 
-    call escena2_helicoptero from _call_escena2_helicoptero
-    call escena3_ventisca from _call_escena3_ventisca
-    call escena4_refugio from _call_escena4_refugio
-    call escena5_refugio_misterioso from _call_escena5_refugio_misterioso
+    call escena1y2 from _call_escena1y2
+    call escena3a5 from _call_escena3a5
+    call escena5a9 from _call_escena5a9
     scene negro with fade
     centered  "{size= 65} FIN DEL ACTO 1 {/size}"
     return
