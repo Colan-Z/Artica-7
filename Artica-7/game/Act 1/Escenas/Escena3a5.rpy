@@ -3,10 +3,10 @@ label escena3a5:
     scene fondo ventisca with fade
     play sound "ventisca.mp3" volume 0.2
     
-    narrador "De repente, el helicóptero se sacude violentamente. \nLos estudiantes gritan. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
+    narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
 
     scene fondo interior_helicoptero with fade
-    ## Falta sonido de alarma del helicoptero
+    ## Falta sonido de Rotor del helicóptero, ventisca
 
     "Piloto" "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
 
@@ -16,16 +16,20 @@ label escena3a5:
     narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
 
     # ESCENA 4 - EXT. ANTÁRTIDA - DÍA (VENTISCA)
-    tutor "¿¡Están todos.... bien!? ¿Qué es eso? creo que veo algo..."
+    tutor "¿¡Están todos.... bien!?"
+    tutor "(¿Qué es eso? creo que veo algo...)"
     tutor "Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
     narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento. La ventisca es cegadora. El viento azota sus rostros."
-
+    ## Falta sonido de ventisca
     scene fondo camino with fade
     stop music
     show tutor at left
-    ## En el celtex tenemos un sonido de ventisca ensordecedora
-    ## A partir de aca no escuche ningun sonido 1111111111111111
     tutor "2...4...6...8...9 ¡Estamos todos! ¡Síganme!"
+    hide tutor
+    show estudiante_femenino at right
+    estudiante_2 "¡Señor! ¡Creo que veo algo!"
+    hide estudiante_femenino
+    tutor "(Bien... parece una base abandonada, espero que podamos refugiarnos dentro.)"
 
     scene fondo artica7_exterior with fade
     ## Deberiamos buscar un imagen que se ve artica 7 mas de lejos
@@ -38,13 +42,13 @@ label escena3a5:
     scene fondo sara_suelo with fade
    
     menu:                        
-        "Ayudas a Sara":
+        "Ayudar a Sara":
             # ESCENA 4-A - EXT. ANTÁRTIDA - DÍA (VENTISCA)  
             $ moral += 1
             scene fondo david_rescata_sara with fade
-            david "¿Estas bien?"
+            david "¿Estás bien?"
             sara "Si, lo estoy, gracias..."
-        "Ordenas a Chris que la ayude.":
+        "Ordenar a Chris que la ayude.":
             # ESCENA 4-B - EXT. ANTÁRTIDA - DÍA (VENTISCA)
             $ moral -= 1 
             scene fondo chris_rescata_sara with fade       
@@ -57,7 +61,7 @@ label escena3a5:
     ### Deberiamos de borrar el "grabado en letras desgastadas"
     narrador "Llegan a la entrada principal. Es una instalación militar con el nombre 'ÁRTICA-7' grabado en letras desgastadas."
     
-    narrador "El tutor ve la puerta entreabierta y logra abrirla para que puedan pasar."
+    narrador "El tutor ve la puerta entreabierta y logra abrirla."
     
     show tutor at left
     tutor "¡Adentro! ¡Rápido! Estaremos seguros hasta que pase la ventisca."

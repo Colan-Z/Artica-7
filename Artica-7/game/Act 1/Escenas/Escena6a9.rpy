@@ -3,9 +3,7 @@ label escena6a9:
     # ESCENA 6 - INT. ÁRTICA-7 - ENTRADA - DÍA
     scene fondo artica7_interior with fade
     stop music
-    ### Aca se vuelve a escuchar algo de nuevo 1111111111111111
 
-    ### Deberia sonar cuando el estudiante habla? o despues de que habla?
     play sound "generador_enciende.mp3" volume 0.5
 
     show estudiante_femenino at left
@@ -19,10 +17,10 @@ label escena6a9:
     play sound "puerta_cierra.mp3" volume 2.0
     narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
 
-    narrador "El tutor corre hacia la puerta , se le cae el walkie-talkie en el suelo."
+    narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
 
     menu:                         
-        "Tratar de detener al tutor":
+        "Tratar de detenerlo":
             # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA
             show david at left
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
@@ -30,6 +28,7 @@ label escena6a9:
             narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
         "No hacer nada.":
             # ESCENA 6-B - INT. ÁRTICA-7 - ENTRADA - DÍA
+            show tutor at center with hpunch
             tutor "NO, NO, NO, NO, ESPERA, ESPERA, ESPERA, ¡¿QUE ESTA PASANDO?!"
 
     play sound "descarga_electrica.mp3"
@@ -38,8 +37,7 @@ label escena6a9:
     hide tutor
 
     play sound "caida_suelo.mp3"
-    scene fondo tutor_electrocutado_radio
-    pause 1.5
+    scene fondo tutor_electrocutado_radio with fade
     play movie "images/fondo-tutor_electrocutado_radio.webm"
 
     scene fondo tutor_electrocutado_radio
@@ -73,8 +71,8 @@ label escena6a9:
     label sin_humo:
 # ESCENA 7AB - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO SIN HUMO - DÍA
         play sound "radio interferencia.mp3"
-        "PILOTO" "¿Ho... hola? ¿Se escu...(ESTÁTICA)...cha?"
-        "PILOTO" "¿Es... están to...(ESTÁTICA)...dos bien?"
+        "PILOTO" "¿Ho... hola? ¿Se escu... ...cha?"
+        "PILOTO" "¿Es... están to... ...dos bien?"
         scene fondo tutor_electrocutado with fade
         show sara at left
         sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
@@ -94,7 +92,7 @@ label escena6a9:
         hide sara
         jump escena_8
 
-    # ESCENA 8 - EXT. ÁRTICA-7 - HELICOPTERO - DESPEGA - DÍA
+# ESCENA 8 - EXT. ÁRTICA-7 - HELICOPTERO - DESPEGA - DÍA
     label escena_8:
         play sound "helicoptero despega.mp3" fadein 0.5
         scene fondo helicoptero_despega with fade
@@ -107,7 +105,7 @@ label escena6a9:
         narrador "la ventisca era muy fuerte."
         scene fondo helicoptero_destrozado with fade
         play sound "helicoptero destrozado.mp3"
-        narrador "El piloto se estrella dejando a los chicos a su suerte, dejando únicamente el ruido de la estática."
+        narrador "Por lo que termina estrellándose, dejando a los chicos a su suerte, dejando únicamente el ruido de la estática."
     
     # ESCENA 9 - INT. ÁRTICA - DÍA
     play sound "Statica estrella_helicoptero.mp3"
@@ -204,7 +202,7 @@ label escena6a9:
             hide sara 
             show chris at right
             chris "Que pasa héroe? pareces un tomate? hawdasgt"
-            david "¡¿Qué?! No nada, nada, no me pasa nada... (tos nerviosa) ...Puedes ir a investigar?"
+            david "¡¿Qué?! No nada, nada, no me pasa nada... ...Puedes ir a investigar?"
             chris "¡Obvio, ya tenía pensado hacerlo!"    
             hide david
             hide chris
@@ -245,7 +243,7 @@ label escena6a9:
     show sara at left
     sara "Me gustaría dedicarle tiempo a la radio... tal vez pueda conseguir ayuda."
     show chris at right
-    chris "Ese aparato viejo?(risas)... Suerte con eso... asdasd"
+    chris "Ese aparato viejo?... Suerte con eso... jaja"
     hide chris
     hide sara 
     show david at center
