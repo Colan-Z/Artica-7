@@ -134,7 +134,7 @@ label escena5a9:
             estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
             show david at left
             david "Contemos cuántas son."
-            estudiante_6 "1... 2... 3... ¡Hay 6 literas, suficientes para todos!"
+            estudiante_6 "¡Hay 8 literas, suficientes para todos!"
             hide estudiante_masculino
             show chris at right
             chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
