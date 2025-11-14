@@ -16,7 +16,7 @@ label escena3a5:
     narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
 
     # ESCENA 4 - EXT. ANTÁRTIDA - DÍA (VENTISCA)
-    tutor "¿¡Están todos.... bien!?"
+    tutor "¿Están todos.... bien...?"
     tutor "(¿Qué es eso? creo que veo algo...)"
     tutor "Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
     narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento. La ventisca es cegadora. El viento azota sus rostros."

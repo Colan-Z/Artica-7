@@ -11,8 +11,8 @@ label escena6a9:
     hide estudiante_femenino
     
     narrador "De repente se escucha el sonido de un generador funcionando, luces fluorescentes parpadean débilmente en el techo."
-    narrador "Se encienden completamente, iluminando un pasillo largo con paredes metálicas oxidadas, piso de rejilla industrial y cables expuestos en el techo."
-    narrador "El grupo mira alrededor. El lugar parece abandonado hace años. Hay polvo sobre consolas apagadas."
+    narrador "Se encienden completamente, iluminando un pasillo largo con paredes de concreto y cables expuestos en el techo."
+    narrador "El grupo mira alrededor. El lugar parece abandonado hace años. Hay polvo sobre las consolas."
     
     play sound "puerta_cierra.mp3" volume 2.0
     narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
@@ -71,8 +71,8 @@ label escena6a9:
     label sin_humo:
 # ESCENA 7AB - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO SIN HUMO - DÍA
         play sound "radio interferencia.mp3"
-        "PILOTO" "¿Ho... hola? ¿Se escu... ...cha?"
-        "PILOTO" "¿Es... están to... ...dos bien?"
+        "PILOTO" "¿Ho... hola? ¿Se escu... cha?"
+        "PILOTO" "¿Es... están to... dos bien?"
         scene fondo tutor_electrocutado with fade
         show sara at left
         sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
@@ -83,8 +83,8 @@ label escena6a9:
 # ESCENA 7AB - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO CON HUMO - DÍA
     label con_humo:
         play sound "radio interferencia.mp3"
-        "PILOTO" "¿Ho... hola? ¿Se escu...(ESTÁTICA)...cha?"
-        "PILOTO" "¿Es... están to...(ESTÁTICA)...dos bien?"
+        "PILOTO" "¿Ho... hola? ¿Se escu... cha?"
+        "PILOTO" "¿Es... están to... dos bien?"
         scene fondo tutor_electrocutado_quemado
         show sara at left
         sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
@@ -111,7 +111,8 @@ label escena6a9:
     play sound "Statica estrella_helicoptero.mp3"
     scene fondo tutor_electrocutado with fade
     show chris at left
-    chris "¡No! ¡Esto no puede estar pasando!"
+    play music "suspenso alumnos solos.mp3" loop volume 0.1
+    chris "¡No! ¡Esto no puede estar pasando!"  
     hide chris
     show estudiante_masculino at right
     estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
@@ -186,7 +187,7 @@ label escena6a9:
             hide chris
             narrador "Los chicos siguieron avanzando hasta encontrar un comedor y una cocina, donde había un poco de suministros para mantenerse unos días."
             show chris at left
-            chris "Genial! Es hora de volver, tenemos que avisarle a los demás."
+            chris "¡Genial! Es hora de volver, tenemos que avisarle a los demás."
             hide chris
             scene fondo artica7_interior with fade
             narrador "Al llegar con los demás chicos, Chris cuenta con detalle los lugares encontrados."
@@ -202,7 +203,7 @@ label escena6a9:
             hide sara 
             show chris at right
             chris "Que pasa héroe? pareces un tomate? hawdasgt"
-            david "¡¿Qué?! No nada, nada, no me pasa nada... ...Puedes ir a investigar?"
+            david "¡¿Qué?! No nada, nada, no me pasa nada... puedes ir a investigar?"
             chris "¡Obvio, ya tenía pensado hacerlo!"    
             hide david
             hide chris
