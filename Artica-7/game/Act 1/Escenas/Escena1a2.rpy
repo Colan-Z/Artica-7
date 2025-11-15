@@ -23,6 +23,7 @@ label escena1a2:
             # ESCENA 2-A INT. HELICÓPTERO - DÍA
             david "Sobreviviré."
             $ moral -= 1
+            show chris_enojado at left
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
@@ -31,6 +32,7 @@ label escena1a2:
             chris "¿Tú crees?"
         "Responder amistosamente.":
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
+            show david_sonrisa at right
             david "Al menos estaremos juntos."
             $ moral += 2       
             chris "Claro, héroe" 
