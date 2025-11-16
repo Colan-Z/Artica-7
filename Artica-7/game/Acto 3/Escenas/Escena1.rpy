@@ -1,3 +1,8 @@
+init python:
+    from clases import GestorFinales
+    
+    gestor = GestorFinales()
+
 label act_3_escena1:
     # ESCENA 1 - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE   
     scene fondo comedor_desorden with fade
@@ -86,6 +91,14 @@ label intentar_calmar_a_chris:
     narrador "Chris, David, Sara y el resto estaban felices. Quedaron marcados, pero no perdieron a nadie. Con el pasar del tiempo, pudieron recuperarse mentalmente."
     narrador "Los chicos se volvieron a ver después de varios días, hablaron de los acontecimientos que habían vivido. Nunca supieron qué pasó ahí dentro, si realmente veían y escuchaban cosas o si todo era por su falta de cordura."
     narrador "Su amistad se volvió más fuerte."
+    python:
+        final = gestor.activar_final('bueno')  # o 'normal' o 'malo'
+        resultado = gestor.obtener_resultado()
+    
+    scene black with fade
+    centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
+    pause 3.0
+    
     return
 
 # ESCENA 1B - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
@@ -215,6 +228,15 @@ label transición_a_escena_1BA:
     narrador "Los rescatistas lo inmovilizan y lo ponen bajo custodia sin comprender del todo la magnitud de lo sucedido."
     narrador "Mientras evacuan la base, el silencio domina la escena. Los jóvenes son finalmente rescatados, pero en sus rostros queda grabado el horror de lo vivido."
     narrador "Ninguno de ellos volverá a ser el mismo: las cicatrices físicas sanarán, pero las psicológicas los acompañarán para siempre."
+    python:
+        final = gestor.activar_final('normal')
+        resultado = gestor.obtener_resultado()
+    
+    scene black with fade
+    centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
+    pause 3.0
+    
+    return
 
 label transición_a_escena_final_malo:
     narrador "David decide enfrentar a Chris, listo para acabar con todo."
@@ -260,3 +282,12 @@ label transición_a_escena_final_malo:
     narrador "La señal de la radio dejó de funcionar, el frío llegó a sus cuerpos, las luces cada vez tenían menos fuerza."
     narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una bestia."
     narrador "Todos murieron de frío, nadie supo nada de lo ocurrido, los chicos habían 'desaparecido'."
+    python:
+        final = gestor.activar_final('malo')
+        resultado = gestor.obtener_resultado()
+    
+    scene black with fade
+    centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
+    pause 3.0
+    
+    return
