@@ -119,7 +119,7 @@ label huir_con_sara:
     show sara_ropa_rota at left
     sara "Entremos, tal vez haya algo que nos sirva."
     hide sara_ropa_rota
-    scene Sala de herramientas with fade # falta imagen
+    scene fondo sala_de_herramientas with fade # falta imagen
     show david_ropa_rota at left
     david "Nunca había visto este lugar antes. ¡Está lleno de cosas que nos pueden servir!"
     hide david_ropa_rota
@@ -127,11 +127,14 @@ label huir_con_sara:
     show david_ropa_rota at left
     david "¡Encontré algo! Es una palanca... voy a quedármela por si acaso."
     hide david_ropa_rota
+    scene fondo_radio_sabana with fade
     narrador "Sara, buscando, encuentra algo tapado con una sábana encima de una mesa."
     show sara_ropa_rota at left
     sara "¡Creo que encontré algo! ¡Necesito que me des una mano!"
     hide sara_ropa_rota
-    narrador "David llega junto a Sara, ambos agarran cada punta de la sábana y la quitan de un tirón. Debajo se encontraba una radio."
+    narrador "David llega junto a Sara, ambos agarran cada punta de la sábana y la quitan de un tirón." 
+    scene fondo_radio with fade
+    narrador "Debajo se encontraba una radio."
     show sara sonrisa at left
     sara "¡No lo puedo creer! Es una radio, como la que estaba intentando reparar. ¡Todo este tiempo había otra! Espero que funcione."
     hide sara sonrisa
@@ -140,6 +143,7 @@ label huir_con_sara:
     narrador "Señales de radio, interferencia."
     narrador "Unos minutos después..."
     # Sonido puerta abriéndose
+    scene fondo sala_de_herramientas with fade
     narrador "Chris entra violentamente"
     show chris_enojado_ropa_rota at right
     chris "¡¿QUÉ ESTÁN HACIENDO ACÁ?! ¿HUÍAN DE MÍ? ESTE LUGAR ES MÍO... ¡DEJEN ESA RADIO!"
