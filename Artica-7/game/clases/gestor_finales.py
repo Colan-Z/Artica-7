@@ -1,12 +1,14 @@
 from typing import Dict, Optional
 from .mensaje_final import MensajeFinal
 from .final_bueno import FinalBueno
+from .final_normal import FinalNormal
 
 class GestorFinales:
     
     def __init__(self) -> None:
         self.__finales: Dict[str, MensajeFinal] = {
             'bueno': FinalBueno(),
+            'normal': FinalNormal(),
             
         }
         self.__final_actual: Optional[MensajeFinal] = None

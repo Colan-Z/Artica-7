@@ -232,6 +232,8 @@ label transición_a_escena_1BA:
     python:
         final = gestor.activar_final('normal')
         resultado = gestor.obtener_resultado()
+        titulo_final = resultado['titulo']
+        mensaje_final = resultado['mensaje']
     
     scene black with fade
     centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
