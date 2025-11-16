@@ -23,6 +23,7 @@ label escena1a2:
             # ESCENA 2-A INT. HELICÓPTERO - DÍA
             david "Sobreviviré."
             $ moral -= 1
+            hide chris
             show chris_enojado at left
             chris "Está bien... supongo."
         "Bromear.":

@@ -28,14 +28,15 @@ label calmar_a_chris:
     hide sara_ropa_rota
     david "(¿Qué debo hacer…?)"
     hide david_ropa_rota
+  
     menu:
-        "Intentar razonar con Chris":
+        'Intentar razonar con Chris':
             # ESCENA FINAL BUENO - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
             jump intentar_calmar_a_chris
-        "Huir con Sara":
+        'Huir con Sara':
             # ESCENA 1B - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
             jump huir_con_sara
-
+    
 # ESCENA FINAL BUENO - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
 label intentar_calmar_a_chris:
     scene fondo comedor_desorden with fade

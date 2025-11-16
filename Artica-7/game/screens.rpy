@@ -95,6 +95,17 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+
+
+
+### Muestra de moral
+init python:
+    config.overlay_screens.append("overlay")
+
+screen overlay():
+    zorder 200
+    text "Moral: [moral]" xpos 20 ypos 20 color "#fff" size 30
+
 screen say(who, what):
 
     window:
@@ -108,6 +119,9 @@ screen say(who, what):
                 text who id "who"
 
         text what id "what"
+### Fin muestra de moral
+
+
 
 
     ## Si hay una imagen lateral, la muestra encima del texto. No la muestra en
@@ -1622,3 +1636,4 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+

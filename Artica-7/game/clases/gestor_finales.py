@@ -2,6 +2,7 @@ from typing import Dict, Optional
 from .mensaje_final import MensajeFinal
 from .final_bueno import FinalBueno
 from .final_normal import FinalNormal
+from .final_malo import FinalMalo
 
 class GestorFinales:
     
@@ -9,7 +10,7 @@ class GestorFinales:
         self.__finales: Dict[str, MensajeFinal] = {
             'bueno': FinalBueno(),
             'normal': FinalNormal(),
-            
+            'malo': FinalMalo()
         }
         self.__final_actual: Optional[MensajeFinal] = None
     
@@ -23,4 +24,3 @@ class GestorFinales:
         if self.__final_actual:
             return self.__final_actual.mostrar_final()
         return None
-

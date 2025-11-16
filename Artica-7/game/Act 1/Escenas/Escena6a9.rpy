@@ -154,6 +154,7 @@ label ESCENA_9A:
     show estudiante_femenino at left
     estudiante_5 "Lo siento, no volverá a pasar..."
     hide estudiante_femenino
+    hide chris_enojado
     menu:
         'Intervenir.':
             $ moral -= 1
