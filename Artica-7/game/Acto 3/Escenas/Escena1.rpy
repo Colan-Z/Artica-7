@@ -264,25 +264,27 @@ label transición_a_escena_final_malo:
     david "Si... todo va a salir bien..."
     hide chris_ropa_rota
     hide david_ropa_rota
-    narrador "Sus ojos se cierran, su corazón se detienen."
+    narrador "Sus ojos se cierran, su corazón se detiene."
     show chris_ropa_rota at right
     chris "¿Héroe...? ¿¡David!? ¡No responde! ¡Ayúdenlo! ¡Por favor!"
     hide chris_ropa_rota
+    scene fondo sala_herramientas_rojo
     narrador "Las luces empiezan a parpadear, luego de un rato se tornan de color rojo."
     narrador "El generador hace un ruido extraño, como si no le hubiera gustado lo que acababa de pasar."
-    show sara_ropa_rota at left
+    show sara_ropa_rota_rojo at left
+    play sound "estatica estrella_helicoptero.mp3"
     sara "¿¡HOLA!? ¿¡Alguien me escucha!?"
-    hide sara_ropa_rota
-    # sfx(ruido blanco de la radio)
-    show estudiante_femenino at left
+    stop sound
+    hide sara_ropa_rota_rojo
+    show estudiante_femenino_rojo at left
     estudiante_6 "¿Qué esta pasando? Siento frio..."
-    hide estudiante_femenino
-    show estudiante_masculino at left
+    hide estudiante_femenino_rojo
+    show estudiante_masculino_rojo at left
     estudiante_3 "Yo también siento frio."
-    hide estudiante_masculino
-    show chris_ropa_rota at right
+    hide estudiante_masculino_rojo
+    show chris_ropa_rota_rojo at right
     chris "¡Por favor, no me dejes solo!"
-    hide chris_ropa_rota
+    hide chris_ropa_rota_rojo
     narrador "La señal de la radio dejó de funcionar, el frío llegó a sus cuerpos, las luces cada vez tenían menos fuerza."
     narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una bestia."
     narrador "Todos murieron de frío, nadie supo nada de lo ocurrido, los chicos habían 'desaparecido'."

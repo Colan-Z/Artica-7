@@ -93,7 +93,7 @@ label ESCENA_8:
     
 # ESCENA 9 - INt. ÁRTICA - ENTRADA
 label ESCENA_9:
-    play sound "Statica estrella_helicoptero.mp3"
+    play sound "estatica estrella_helicoptero.mp3"
     scene fondo tutor_electrocutado with fade
     play music "suspenso alumnos solos.mp3" loop volume 0.1
     show chris_enojado at left
@@ -250,6 +250,7 @@ label ESCENA_9BA:
 # ESCENA 10 - INT. ÁRTICA-7 - MÚLTIPLES LOCACIONES - DÍA
 label ESCENA_10:
     chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
+    hide chris_enojado
     hide chris
     show estudiante_masculino at right
     estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
