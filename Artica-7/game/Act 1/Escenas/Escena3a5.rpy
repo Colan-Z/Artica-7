@@ -1,13 +1,12 @@
 label escena3a5:
     # ESCENA 3 - EXT. HELICOPTERO - VENTISCA - DÍA
-    scene fondo ventisca
+    scene fondo ventisca with fade
     play sound "ventisca.mp3" loop volume 0.5
-
     narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
 
     scene fondo interior_helicoptero with fade
     ## Falta sonido de Rotor del helicóptero, ventisca
-    stop sound fadeout 1.5
+    stop sound fadeout 1.0
     play sound "ventisca.mp3" loop volume 0.2
 
     "Piloto" "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
@@ -62,7 +61,7 @@ label escena3a5:
         "Ayudar a Sara":
             # ESCENA 4-A - EXT. ANTÁRTIDA - DÍA (VENTISCA)  
             $ moral += 1
-            scene fondo david_rescata_sara with fade
+            scene pov david_ayuda_sara with fade
             david "¿Estás bien?"
             sara "Si, lo estoy, gracias..."
         "Ordenar a Chris que la ayude.":

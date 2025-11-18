@@ -89,11 +89,14 @@ label ESCENA_8:
     
 # ESCENA 9 - INt. ÁRTICA - ENTRADA
 label ESCENA_9:
-    play sound "estatica estrella_helicoptero.mp3"
-    scene fondo tutor_electrocutado with fade
+    play sound "estatica estrella_helicoptero.mp3" fadein 1.5
+    scene fondo sara_retrocede with fade
+    pause 1.5
     play music "suspenso alumnos solos.mp3" loop volume 0.1
-    show chris_enojado at left
+    scene fondo chris_golpea_pared with fade
+    play sound "golpe pared.mp3" volume 5.0
     chris "¡No! ¡Esto no puede estar pasando!"  
+    scene fondo tutor_electrocutado with fade
     hide chris_enojado
     show estudiante_masculino at right
     estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
@@ -229,6 +232,7 @@ label ESCENA_10:
     hide chris
     show estudiante_masculino at right
     estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
+    scene fondo literas with fade
     david "Contemos cuántas son."
     estudiante_6 "¡Hay 8 literas, suficientes para todos!"
     hide estudiante_masculino
@@ -236,7 +240,17 @@ label ESCENA_10:
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
     narrador "(algunos minutos después)"
-    david "Perfecto, encontramos un lugar donde dormir, baños, un invernadero y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
+    scene fondo pasillo with fade
+    david "Perfecto, encontramos un lugar donde" 
+    scene fondo literas with fade
+    david "dormir" 
+    scene fondo banos with fade
+    david "baños" 
+    scene fondo invernadero with fade
+    david "un invernadero" 
+    scene fondo pasillo_radio with fade
+    david "y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
+    scene fondo pasillo 
     show estudiante_femenino at right
     estudiante_3 "Quisiera descansar un poco..."
     show chris at left
@@ -245,6 +259,7 @@ label ESCENA_10:
     hide estudiante_femenino
     hide chris
     narrador "Los chicos siguieron avanzando hasta encontrar un comedor y una cocina, donde había un poco de suministros para mantenerse unos días."
+    scene fondo comedor
     show chris at left
     chris "¡Genial! Es hora de volver, tenemos que avisarle a los demás."
     hide chris
@@ -261,7 +276,7 @@ label ESCENA_11:
     hide chris
     show estudiante_femenino at right
     show estudiante_masculino at left
-    f"{estudiante_3} y {estudiante_4}" "Oh no..."
+    f"{estudiante_3} y {estudiante_6}" "Oh no..."
     hide estudiante_femenino
     hide estudiante_masculino
     david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
