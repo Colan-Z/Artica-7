@@ -1,19 +1,27 @@
 label escena3a5:
     # ESCENA 3 - EXT. HELICOPTERO - VENTISCA - DÍA
-    scene fondo ventisca with fade
-    play sound "ventisca.mp3" loop fadein 1.0
+    scene fondo ventisca
+    play sound "ventisca.mp3" loop volume 0.5
 
     narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
 
     scene fondo interior_helicoptero with fade
     ## Falta sonido de Rotor del helicóptero, ventisca
+    stop sound fadeout 1.5
+    play sound "ventisca.mp3" loop volume 0.2
 
     "Piloto" "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
-
+    
     narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
     scene fondo_aterrizaje with fade
+    stop sound fadeout 1.0
+    play sound "ventisca.mp3" loop volume 0.5
+
     ## Falta sonido de aterrizaje del helicoptero
     narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
+
+    stop sound fadeout 1.0
+    play sound "ventisca.mp3" loop volume 1.0
 
     # ESCENA 4 - EXT. ANTÁRTIDA - DÍA (VENTISCA)
     stop sound fadeout 1.5
@@ -26,8 +34,10 @@ label escena3a5:
     hide tutor
     narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento. La ventisca es cegadora. El viento azota sus rostros."
     ## Falta sonido de ventisca
+
     stop sound fadeout 1.0
-    play sound "ventisca.mp3" loop volume 1.0
+    play sound "ventisca.mp3" loop volume 0.5
+    
     stop music #detiene el sonido del helicoptero
     scene fondo camino with fade
     show tutor at left
@@ -74,3 +84,5 @@ label escena3a5:
     tutor "¡Adentro! ¡Rápido! Estaremos seguros hasta que pase la ventisca."
     hide tutor
     narrador "Los estudiantes entran apresuradamente en grupo. El tutor entra último, mirando atrás hacia el helicóptero, que apenas se ve entre la nieve."
+
+    stop sound fadeout 2.0

@@ -2,13 +2,16 @@ label escena1a2:
     # ESCENA 1 - EXT. HELICÓPTERO (CIELO ANTÁRTICO) - DÍA
     scene fondo helicoptero
     play music "helicoptero.mp3" fadein 2.0 volume 0.2
-
+    scene fondo ventisca with fade
+    play sound "ventisca.mp3" loop volume 0.5
     narrador "Un grupo de estudiantes había ganado un concurso académico."
     narrador "Su premio, un viaje científico a una base en la Antártida llamada Orcadas."
    
     # ESCENA 2 - INT. HELICÓPTERO - DÍA
     scene fondo interior_helicoptero with fade
-   
+
+    stop sound fadeout 1.0
+    play sound "ventisca.mp3" loop volume 0.2
     show tutor at center
     tutor "En veinte minutos llegaremos."
     tutor "Allí pasaremos tres semanas estudiando ecosistemas polares, cambio climático y adaptación de especies."
