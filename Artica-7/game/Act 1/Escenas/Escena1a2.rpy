@@ -15,7 +15,6 @@ label escena1a2:
     tutor "Debo pedirles que me entreguen sus celulares, me gustaría que se desconectaran del mundo digital y presten atención a su entorno."
     hide tutor
     show chris at left
-    show david at right
     chris "Tres semanas. ¿Crees que sobrevivas sin videojuegos?"
     
     menu:
@@ -33,7 +32,6 @@ label escena1a2:
             chris "¿Tú crees?"
         "Responder amistosamente.":
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
-            show david_sonrisa at right
             david "Al menos estaremos juntos."
             $ moral += 2       
             chris "Claro, héroe" 

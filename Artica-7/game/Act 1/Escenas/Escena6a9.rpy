@@ -22,9 +22,7 @@ label escena6a9:
     menu:                         
         "Tratar de detenerlo":
             # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA
-            show david at left
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
-            hide david
             narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
         "No hacer nada.":
             # ESCENA 6-B - INT. ÁRTICA-7 - ENTRADA - DÍA
@@ -51,9 +49,7 @@ label escena6a9:
     menu:
         "Tomar pulso del tutor.":
             # ESCENA 7-A - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO SIN HUMO - DÍA
-            show david at right
             david "No... no respira. No tiene pulso."
-            hide david
             $ humo = 0
         "No tocarlo, podría ser peligroso.":
             # ESCENA 7-B - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO CON HUMO - DÍA
@@ -67,11 +63,11 @@ label escena6a9:
     else:
         scene fondo tutor_electrocutado_quemado with fade
     play sound "radio interferencia.mp3"
-    "PILOTO" "¿Ho... hola? ¿Se escu... cha?"
-    "PILOTO" "¿Es... están to... dos bien?"
+    "Piloto" "¿Ho... hola? ¿Se escu... cha?"
+    "Piloto" "¿Es... están to... dos bien?"
     show sara at left
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
-    "PILOTO" "¡Tranquila, voy a intentar pedir ayuda!"
+    "Piloto" "¡Tranquila, voy a intentar pedir ayuda!"
     hide sara
     jump ESCENA_8
 
@@ -114,16 +110,14 @@ label ESCENA_9:
     show estudiante_masculino at right
     estudiante_3 "Quiero irme a casa."
     hide estudiante_masculino
-    show david at center
     david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos pudo haber pasado. Pero ahora mismo, en este momento, estamos vivos."
-    hide david
     show estudiante_masculino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
     hide estudiante_masculino
     show chris_enojado at right
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_enojado
-    show david at center
+    
     david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos de investigar la instalación, puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
     show sara at right
     sara "Tienes razón, tal vez logremos encontrar algo para contactarnos con los de afuera."
@@ -133,7 +127,6 @@ label ESCENA_9:
     david "Primero, necesitamos un grupo que pueda explorar la instalación."
     hide chris
     hide sara
-    hide david
     menu:
         "Ir con Chris a explorar la base.":
             # ESCENA 9A - INT - ÁRTICA-7 - PASILLOS - DíA
@@ -145,9 +138,7 @@ label ESCENA_9:
 # Escena 9A - Int - Ártica-7 - pasillos - día
 label ESCENA_9A:
     scene fondo pasillo with fade
-    show david at left
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
-    hide david
     narrador "(Un estudiante intenta tocar una puerta)"
     show chris_enojado at right
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
@@ -168,7 +159,6 @@ label ESCENA_9A:
 label ESCENA_9B:
     show sara at right
     sara "Yo... yo puedo acompañarte para cuidarlos."
-    show david at left
     david "Me vendría bien un poco de ayuda..."
     hide sara 
     show chris at right
@@ -181,7 +171,6 @@ label ESCENA_9B:
 
 # Escena 9AA - Int. Ártica-7 - Pasillos - Día
 label ESCENA_9AA:
-    show david at left
     david "No deberías de tratar así a las personas y menos en estos momentos."
     show chris_enojado at right
     chris "No te metas donde no te incumbe."
@@ -189,7 +178,6 @@ label ESCENA_9AA:
 
 # Escena 9AB - INT. ÁRTICA-7 (PASILLOS) - DÍA
 label ESCENA_9AB:
-    show david at left
     david "Chris, tranquilo hermano, vamos a tomarnos esto con mas calma, no sabemos cuanto tiempo vamos a estar acá."
     show chris at right
     chris "Lo siento, no estoy en mi mejor momento..."
@@ -198,7 +186,6 @@ label ESCENA_9AB:
 label ESCENA_9BA:
     david "¡¿Qué?! No nada, nada, no me pasa nada... puedes ir a investigar?"
     chris "¡Obvio, ya tenía pensado hacerlo!"    
-    hide david
     hide chris
     show estudiante_femenino at left
     estudiante_3 "Ya me encuentro mejor, puedo ir a investigar la zona."
@@ -208,13 +195,10 @@ label ESCENA_9BA:
     hide estudiante_masculino
     show chris at right
     chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
-    show david at left
     david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
     chris "...Está bien, vamos, no me hagan perder el tiempo."
     hide chris
-    hide david
     narrador "David ve a Sara preocupada. Se acerca a preguntarle qué le pasa."
-    show david at left
     david "¿Estás bien, Sara? Te veo preocupada."
     show sara at right
     sara "¿Eh? ¡Sí, sí, estoy bien!"
@@ -223,27 +207,18 @@ label ESCENA_9BA:
     david "¿Algo? ¿A qué te refieres con algo?"
     sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
     david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
-    hide david
     hide sara
     narrador "Algunos estudiantes escucharon esta conversación y empezaron a hablar en susurros entre ellos."
-    show david at left
     david "(Los demás lo escucharon, no sé qué hacer. ¿Trato de calmarlos o no le doy mucha importancia?)"
-    hide david
     menu:
         'Hablar con los demás.':
-            show david at left
             david "Tranquilos chicos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
             david "Si ven o escuchan cosas es por eso, no lo oculten a los demás. Estamos juntos en esto."
-            hide david
         'No darle importancia.':
-            show david at left
             david "Seguro fue tu imaginación, Sara. Estas luces y sombras engañan fácil… No vale la pena preocuparse por eso."
-            hide david
             narrador "(los estudiantes siguieron hablando en susurros, su preocupación pareció aumentar.)"
     narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
-    show david_sonrisa
     david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos." 
-    hide david_sonrisa
     jump ESCENA_11
 
 
@@ -254,18 +229,14 @@ label ESCENA_10:
     hide chris
     show estudiante_masculino at right
     estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
-    show david at left
     david "Contemos cuántas son."
     estudiante_6 "¡Hay 8 literas, suficientes para todos!"
     hide estudiante_masculino
     show chris at right
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
-    hide david
     narrador "(algunos minutos después)"
-    show david at left
     david "Perfecto, encontramos un lugar donde dormir, baños, un invernadero y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
-    hide david
     show estudiante_femenino at right
     estudiante_3 "Quisiera descansar un poco..."
     show chris at left
@@ -279,16 +250,12 @@ label ESCENA_10:
     hide chris
     scene fondo artica7_interior with fade
     narrador "Al llegar con los demás chicos, Chris cuenta con detalle los lugares encontrados."
-    show david at left
     david "Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-    hide david
 
 # ESCENA 11 - INT. ÁRTICA-7 - COMEDOR COMÚN - tarde (HORAS DESPUÉS)
 label ESCENA_11:
     scene fondo comedor with fade
-    show david at center
     david "Esto son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
-    hide david
     show chris at left
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
@@ -297,9 +264,7 @@ label ESCENA_11:
     f"{estudiante_3} y {estudiante_4}" "Oh no..."
     hide estudiante_femenino
     hide estudiante_masculino
-    show david at center
     david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
-    hide david
     show estudiante_masculino at right
     estudiante_1 "Haremos nuestro mayor esfuerzo."
     hide estudiante_masculino
@@ -312,9 +277,8 @@ label ESCENA_11:
     show chris at right
     chris "Ese aparato viejo? jaja... Suerte con eso... jaja."
     hide chris
-    show david at center
+
     david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?."
-    hide david
     show estudiante_femenino at left
     estudiante_2 "Claro, no hay problema."
     show estudiante_masculino at right

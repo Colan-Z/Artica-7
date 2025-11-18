@@ -1,8 +1,8 @@
 label escena3a5:
     # ESCENA 3 - EXT. HELICOPTERO - VENTISCA - DÍA
     scene fondo ventisca with fade
-    play sound "ventisca.mp3" volume 0.2
-    
+    play sound "ventisca.mp3" loop fadein 1.0
+
     narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
 
     scene fondo interior_helicoptero with fade
@@ -16,13 +16,20 @@ label escena3a5:
     narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
 
     # ESCENA 4 - EXT. ANTÁRTIDA - DÍA (VENTISCA)
+    stop sound fadeout 1.5
+    play sound "ventisca.mp3" loop volume 0.2
+    scene fondo interior_helicoptero with fade
+    show tutor 
     tutor "¿Están todos.... bien...?"
-    tutor "(¿Qué es eso? creo que veo algo...)"
+    tutor "¿Qué es eso? creo que veo algo..."
     tutor "Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
+    hide tutor
     narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento. La ventisca es cegadora. El viento azota sus rostros."
     ## Falta sonido de ventisca
+    stop sound fadeout 1.0
+    play sound "ventisca.mp3" loop volume 1.0
+    stop music #detiene el sonido del helicoptero
     scene fondo camino with fade
-    stop music
     show tutor at left
     tutor "2...4...6...8...9 ¡Estamos todos! ¡Síganme!"
     hide tutor
