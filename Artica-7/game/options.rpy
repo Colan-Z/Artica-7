@@ -65,7 +65,6 @@ define config.has_voice = True
 define config.main_menu_music = "menu.ogg"
 
 
-
 ## Transiciones ################################################################
 ##
 ## Estas variables ajustan transiciones usadas ante ciertos eventos. Cada

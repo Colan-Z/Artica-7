@@ -1,10 +1,16 @@
 label escena3a5:
     # ESCENA 3 - EXT. HELICOPTERO - VENTISCA - DÍA
+    transform shake:
+        zoom 1.1
+        linear 0.05 xoffset 10
+        linear 0.05 xoffset -10
+        repeat 
     scene fondo ventisca with fade
     play sound "ventisca.mp3" loop volume 0.5
     narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
 
     scene fondo interior_helicoptero with fade
+    show fondo interior_helicoptero at shake
     ## Falta sonido de Rotor del helicóptero, ventisca
     stop sound fadeout 1.0
     play sound "ventisca.mp3" loop volume 0.2
@@ -51,7 +57,7 @@ label escena3a5:
     ## Deberiamos buscar un imagen que se ve artica 7 mas de lejos
     narrador "Una estructura metálica medio enterrada en la nieve, aproximadamente a cincuenta metros de distancia."
     narrador "Los estudiantes y el tutor se dirigen hacia la instalación, luchando contra el viento, Sara tropieza con una piedra oculta bajo la nieve."
-    show chris at left
+    show chris
     chris "¡SARA SE CAYÓ!"
     hide chris
     

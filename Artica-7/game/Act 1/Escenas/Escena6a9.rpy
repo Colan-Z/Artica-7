@@ -101,10 +101,10 @@ label ESCENA_9:
     show estudiante_masculino at right
     estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
     hide estudiante_masculino
-    show estudiante_femenino at center
+    show estudiante_femenino at left
     estudiante_4 "¡Vamos a morir aquí!"
     hide estudiante_femenino
-    show chris_furioso at left
+    show chris_furioso 
     chris "¡Maldita sea! Se suponía que sería una excursión que me ayudaría con mis problemas, ¡PERO ESTO SOLO LO EMPEORA!"
     hide chris_furioso
     show estudiante_femenino at left
@@ -117,7 +117,7 @@ label ESCENA_9:
     show estudiante_masculino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
     hide estudiante_masculino
-    show chris_enojado at right
+    show chris_enojado
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_enojado
     
@@ -125,7 +125,7 @@ label ESCENA_9:
     show sara at right
     sara "Tienes razón, tal vez logremos encontrar algo para contactarnos con los de afuera."
     david "¡Exacto!"
-    show chris at left
+    show chris
     chris "Está bien. Espero que esto no sea una pérdida de tiempo... ¿Qué tienes en mente, héroe?"
     david "Primero, necesitamos un grupo que pueda explorar la instalación."
     hide chris
@@ -143,7 +143,7 @@ label ESCENA_9A:
     scene fondo pasillo with fade
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
     narrador "(Un estudiante intenta tocar una puerta)"
-    show chris_enojado at right
+    show chris_enojado
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
     show estudiante_femenino at left
     estudiante_5 "Lo siento, no volverá a pasar..."
@@ -164,7 +164,7 @@ label ESCENA_9B:
     sara "Yo... yo puedo acompañarte para cuidarlos."
     david "Me vendría bien un poco de ayuda..."
     hide sara 
-    show chris at right
+    show chris
     chris "Que pasa héroe? pareces un tomate? jajaj"
     menu:
         'Cambiar de tema':
@@ -175,14 +175,14 @@ label ESCENA_9B:
 # Escena 9AA - Int. Ártica-7 - Pasillos - Día
 label ESCENA_9AA:
     david "No deberías de tratar así a las personas y menos en estos momentos."
-    show chris_enojado at right
+    show chris_enojado
     chris "No te metas donde no te incumbe."
     jump ESCENA_10
 
 # Escena 9AB - INT. ÁRTICA-7 (PASILLOS) - DÍA
 label ESCENA_9AB:
     david "Chris, tranquilo hermano, vamos a tomarnos esto con mas calma, no sabemos cuanto tiempo vamos a estar acá."
-    show chris at right
+    show chris
     chris "Lo siento, no estoy en mi mejor momento..."
     jump ESCENA_10
 
@@ -196,7 +196,7 @@ label ESCENA_9BA:
     show estudiante_masculino at right
     estudiante_6 "Si, yo también lo estoy."
     hide estudiante_masculino
-    show chris at right
+    show chris
     chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
     david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
     chris "...Está bien, vamos, no me hagan perder el tiempo."
@@ -236,7 +236,7 @@ label ESCENA_10:
     david "Contemos cuántas son."
     estudiante_6 "¡Hay 8 literas, suficientes para todos!"
     hide estudiante_masculino
-    show chris at right
+    show chris
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
     narrador "(algunos minutos después)"
@@ -253,7 +253,7 @@ label ESCENA_10:
     scene fondo pasillo 
     show estudiante_femenino at right
     estudiante_3 "Quisiera descansar un poco..."
-    show chris at left
+    show chris
     chris "Cuando encontremos que comer, vas a descansar."
     estudiante_3 "Está bien..."
     hide estudiante_femenino
@@ -271,7 +271,7 @@ label ESCENA_10:
 label ESCENA_11:
     scene fondo comedor with fade
     david "Esto son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
-    show chris at left
+    show chris
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
     show estudiante_femenino at right
@@ -286,10 +286,10 @@ label ESCENA_11:
     show estudiante_femenino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_femenino
-    show sara at left
+    show sara at right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
     hide sara
-    show chris at right
+    show chris
     chris "Ese aparato viejo? jaja... Suerte con eso... jaja."
     hide chris
 

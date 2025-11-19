@@ -12,19 +12,26 @@ define estudiante_6 = Character("Estudiante 6", color="#96dc14")
 define narrador = Character(None)
 image negro = "#000000"
 
+label before_main_menu:
+    $ renpy.music.set_volume(0.1, delay=0, channel="music")
+    return
+
 # Variables del sistema de moral
 default moral = 0
 default humo = 0
 
 # Inicio del juego
 label start:
+    stop music
+    $ renpy.music.set_volume(1.0, delay=1.0, channel="music")
+    centered  "{size= 65} Se recomienda bajar un poco el volumen {/size}" with fade
     call escena1a2 from _call_escena1a2
     call escena3a5 from _call_escena3a5
     call escena6a9 from _call_escena6a9
     scene negro with fade
-    centered  "{size= 65} FIN DEL ACTO 1 {/size}"
+    centered  "{size= 65} FIN DEL ACTO 1 {/size}" with fade
     call resumen_acto2
-    centered  "{size= 65} FIN DEL ACTO 2 {/size}"
+    centered  "{size= 65} FIN DEL ACTO 2 {/size}" with fade
     call act_3_escena1
     menu:
         'Calmar a Chris (Necesita moral alta).':
@@ -32,6 +39,7 @@ label start:
         'Huir con Sara (Necesita moral media/baja).':
             call huir_con_sara 
     scene negro with fade
-    centered  "{size= 65} FIN DEL ACTO 3 {/size}"
+    centered  "{size= 65} FIN DEL ACTO 3 {/size}" with fade
+    centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
 
     
