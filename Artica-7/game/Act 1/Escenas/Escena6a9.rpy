@@ -10,13 +10,13 @@ label escena6a9:
     estudiante_1 "¿Qué es este lugar?"
     hide estudiante_femenino
     
-    narrador "De repente se escucha el sonido de un generador funcionando, luces fluorescentes parpadean débilmente en el techo."
-    narrador "Se encienden completamente, iluminando un pasillo largo con paredes de concreto y cables expuestos en el techo."
-    narrador "El grupo mira alrededor. El lugar parece abandonado hace años. Hay polvo sobre las consolas."
-    
+    narrador "De repente se escucha el sonido de un generador encendiéndose."
+    show sara at center
+    sara "El grupo mira a su alrededor, hay polvo sobre las consolas, parece que lo abandonaron hace años."
+    hide sara
+
     play sound "puerta_cierra.mp3" volume 2.0
     narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
-
     narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
 
     menu:                         
@@ -59,12 +59,17 @@ label escena6a9:
 
     # ESCENA 7AB - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO - DÍA
     if humo == 0:
-        scene fondo tutor_electrocutado with fade
+        scene fondo tutor_electrocutado_radio with fade
     else:
-        scene fondo tutor_electrocutado_quemado with fade
+        scene fondo tutor_electrocutado_quemado_radio with fade
     play sound "radio interferencia.mp3"
     "Piloto" "¿Ho... hola? ¿Se escu... cha?"
     "Piloto" "¿Es... están to... dos bien?"
+    if humo == 0:
+        scene fondo tutor_electrocutado with fade
+    else:
+        scene fondo tutor_electrocutado_quemado with fade
+    
     show sara at left
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
     "Piloto" "¡Tranquila, voy a intentar pedir ayuda!"
@@ -101,9 +106,9 @@ label ESCENA_9:
     show estudiante_masculino at right
     estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
     hide estudiante_masculino
-    show estudiante_femenino at left
+    show estudiante_masculino at left
     estudiante_4 "¡Vamos a morir aquí!"
-    hide estudiante_femenino
+    hide estudiante_masculino
     show chris_furioso 
     chris "¡Maldita sea! Se suponía que sería una excursión que me ayudaría con mis problemas, ¡PERO ESTO SOLO LO EMPEORA!"
     hide chris_furioso
@@ -114,9 +119,9 @@ label ESCENA_9:
     estudiante_3 "Quiero irme a casa."
     hide estudiante_masculino
     david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos pudo haber pasado. Pero ahora mismo, en este momento, estamos vivos."
-    show estudiante_masculino at left
+    show estudiante_femenino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
-    hide estudiante_masculino
+    hide estudiante_femenino
     show chris_enojado
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_enojado
@@ -125,7 +130,7 @@ label ESCENA_9:
     show sara at right
     sara "Tienes razón, tal vez logremos encontrar algo para contactarnos con los de afuera."
     david "¡Exacto!"
-    show chris
+    show chris at left
     chris "Está bien. Espero que esto no sea una pérdida de tiempo... ¿Qué tienes en mente, héroe?"
     david "Primero, necesitamos un grupo que pueda explorar la instalación."
     hide chris
@@ -143,7 +148,7 @@ label ESCENA_9A:
     scene fondo pasillo with fade
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
     narrador "(Un estudiante intenta tocar una puerta)"
-    show chris_enojado
+    show chris_enojado at right
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
     show estudiante_femenino at left
     estudiante_5 "Lo siento, no volverá a pasar..."
@@ -190,9 +195,9 @@ label ESCENA_9BA:
     david "¡¿Qué?! No nada, nada, no me pasa nada... puedes ir a investigar?"
     chris "¡Obvio, ya tenía pensado hacerlo!"    
     hide chris
-    show estudiante_femenino at left
+    show estudiante_masculino at left
     estudiante_3 "Ya me encuentro mejor, puedo ir a investigar la zona."
-    hide estudiante_femenino
+    hide estudiante_masculino
     show estudiante_masculino at right
     estudiante_6 "Si, yo también lo estoy."
     hide estudiante_masculino
@@ -203,7 +208,7 @@ label ESCENA_9BA:
     hide chris
     narrador "David ve a Sara preocupada. Se acerca a preguntarle qué le pasa."
     david "¿Estás bien, Sara? Te veo preocupada."
-    show sara at right
+    show sara
     sara "¿Eh? ¡Sí, sí, estoy bien!"
     david "¿Estás segura? Puedes confiar en mí."
     sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
@@ -234,6 +239,7 @@ label ESCENA_10:
     estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
     scene fondo literas with fade
     david "Contemos cuántas son."
+    show estudiante_masculino at center
     estudiante_6 "¡Hay 8 literas, suficientes para todos!"
     hide estudiante_masculino
     show chris
@@ -251,12 +257,12 @@ label ESCENA_10:
     scene fondo pasillo_radio with fade
     david "y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
     scene fondo pasillo 
-    show estudiante_femenino at right
+    show estudiante_masculino at right
     estudiante_3 "Quisiera descansar un poco..."
-    show chris
+    show chris at left
     chris "Cuando encontremos que comer, vas a descansar."
     estudiante_3 "Está bien..."
-    hide estudiante_femenino
+    hide estudiante_masculino
     hide chris
     narrador "Los chicos siguieron avanzando hasta encontrar un comedor y una cocina, donde había un poco de suministros para mantenerse unos días."
     scene fondo comedor
@@ -274,29 +280,29 @@ label ESCENA_11:
     show chris
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
-    show estudiante_femenino at right
+    show estudiante_masculino at right
     show estudiante_masculino at left
     f"{estudiante_3} y {estudiante_6}" "Oh no..."
-    hide estudiante_femenino
+    hide estudiante_masculino
     hide estudiante_masculino
     david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
-    show estudiante_masculino at right
+    show estudiante_femenino at right
     estudiante_1 "Haremos nuestro mayor esfuerzo."
-    hide estudiante_masculino
-    show estudiante_femenino at left
-    estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_femenino
+    show estudiante_masculino at left
+    estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
+    hide estudiante_masculino
     show sara at right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
     hide sara
-    show chris
+    show chris at left
     chris "Ese aparato viejo? jaja... Suerte con eso... jaja."
     hide chris
 
     david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?."
     show estudiante_femenino at left
     estudiante_2 "Claro, no hay problema."
-    show estudiante_masculino at right
+    show estudiante_femenino at right
     estudiante_5 "Nosotros nos encargamos."
     hide estudiante_femenino
-    hide estudiante_masculino
+    hide estudiante_femenino

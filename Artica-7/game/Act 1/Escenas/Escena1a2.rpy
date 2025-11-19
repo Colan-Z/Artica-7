@@ -7,7 +7,7 @@ label escena1a2:
    
     # ESCENA 2 - INT. HELICÓPTERO - DÍA
     scene fondo interior_helicoptero with fade
-    play music "helicoptero.mp3" loop volume 0.1
+    $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
 
     show tutor at center
     tutor "En veinte minutos llegaremos."

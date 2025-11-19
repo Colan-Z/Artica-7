@@ -7,7 +7,7 @@ label act_3_escena1:
     # ESCENA 1 - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE   
     scene fondo comedor_desorden with fade
     david "¿Qué hiciste?"
-    show chris_enojado_ropa_rota at right
+    show chris_enojado_ropa_rota
     chris "Lo que tenía que hacer."
     david "Chris, esa era nuestra única forma de pedir ayuda al exterior."
     chris "¿Ayuda? Nadie va a venir, David. Estamos completamente solos. Y tú sigues jugando al héroe perfecto."
@@ -18,7 +18,7 @@ label act_3_escena1:
 label calmar_a_chris:
     # ESCENA 1A - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
     scene fondo comedor_desorden with fade
-    show sara_ropa_rota at left
+    show sara_ropa_rota
     sara "David… tenemos que escapar de él o nos matará."
     david "Tienes razón, Sara. No podemos dejar que esto continúe."
     sara "Pero eso ya no importa. ¡Él ya ni siquiera nos escucha!"
@@ -44,7 +44,7 @@ label intentar_calmar_a_chris:
     show chris_ropa_rota at right
     chris "..."
     hide chris_ropa_rota
-    show sara_ropa_rota at right
+    show sara_ropa_rota at left
     sara "David, no intentes acercarte a él. Aún no sabemos cómo va a reaccionar."
     hide sara_ropa_rota
 
@@ -62,7 +62,8 @@ label intentar_calmar_a_chris:
     hide sara_ropa_rota
     hide chris_ropa_rota
 
-    narrador "Chris los guía a la sala de herramientas mostrándoles la radio. Sara se acercó a la radio para comprobar que funcione."
+    narrador "Chris los guía a la sala de herramientas mostrándoles la radio. Sara se acerca y comprueba que funcione."
+    scene fondo_radio
     show sara_ropa_rota at left
     sara "¡Funciona! Voy a intentar contactarme."
     hide sara_ropa_rota
@@ -85,7 +86,7 @@ label intentar_calmar_a_chris:
     narrador "Los chicos se volvieron a ver después de varios días, hablaron de los acontecimientos que habían vivido. Nunca supieron qué pasó ahí dentro, si realmente veían y escuchaban cosas o si todo era por su falta de cordura."
     narrador "Su amistad se volvió más fuerte."
     python:
-        final = gestor.activar_final('bueno')  # o 'normal' o 'malo'
+        final = gestor.activar_final('bueno')
         resultado = gestor.obtener_resultado()
     
     scene black with fade
@@ -98,40 +99,37 @@ label intentar_calmar_a_chris:
 label huir_con_sara:
     narrador "David y Sara no ven una manera de tratar con Chris, que está casi fuera de sí. En un momento en que éste se distrae..."
     narrador "(Sara toca a David en el brazo para llamar su atención y le habla en susurros.)"
-    show sara_ropa_rota at right
+    show sara_ropa_rota
     sara "David, huyamos. Busquemos algo para defendernos o un lugar donde escondernos."
     david "No tenemos otra opción. Este ya no es mi amigo, está totalmente consumido por la locura."
     hide sara_ropa_rota
     narrador "Sara le estira del brazo al ver que David no reacciona."
-    show sara_ropa_rota at right
+    show sara_ropa_rota
     sara "¡Vayámonos David! ¡Por favor!"
     david "Sí, vamos."
     hide sara_ropa_rota
     scene fondo pasillo with fade
     narrador "David y Sara recorren los pasillos, buscando algo que los ayude en su situación."
     david "No hay ninguna puerta abierta. Siento que estamos dando vueltas."
-    show sara_ropa_rota at right
+    show sara_ropa_rota
     sara "Hay que seguir avanzando, no queda de otra."
     david "Claro, sigamos adelante."
     hide sara_ropa_rota
     scene fondo pasillo_oscuro_puerta_abierta with fade
     narrador "Ambos siguieron corriendo por el pasillo, hasta llegar a una zona oscura de la instalación, en el que había una puerta abierta, con una luz parpadeando."
-    show sara_ropa_rota at left
+    show sara_ropa_rota
     sara "Entremos, tal vez haya algo que nos sirva."
     hide sara_ropa_rota
-    scene fondo sala_herramientas_palanca with fade # falta imagen
+    scene fondo sala_herramientas_palanca with fade
     david "Nunca había visto este lugar antes. ¡Está lleno de cosas que nos pueden servir!"
-    narrador "David y Sara buscan algo útil entre las herramientas."
+    david "Veamos si encontramos algo que nos sirva."
+    scene fondo_sala_herramientas_david_palanca with fade
     david "¡Encontré algo! Es una palanca... voy a quedármela por si acaso."
-    scene fondo sala_herramientas with fade
     scene fondo_radio_sabana with fade
-    narrador "Sara, buscando, encuentra algo tapado con una sábana encima de una mesa."
     show sara_ropa_rota at left
-    sara "¡Creo que encontré algo! ¡Necesito que me des una mano!"
+    sara "¡Creo que encontré algo! ¡Ayúdame a sacar esta sábana para ver qué hay debajo!"
     hide sara_ropa_rota
-    narrador "David llega junto a Sara, ambos agarran cada punta de la sábana y la quitan de un tirón." 
     scene fondo_radio with fade
-    narrador "Debajo se encontraba una radio."
     show sara sonrisa at left
     sara "¡No lo puedo creer! Es una radio, como la que estaba intentando reparar. ¡Todo este tiempo había otra! Espero que funcione."
     hide sara sonrisa
@@ -142,7 +140,7 @@ label huir_con_sara:
     # Sonido puerta abriéndose
     scene fondo sala_herramientas with fade
     narrador "Chris entra violentamente"
-    show chris_enojado_ropa_rota at right
+    show chris_enojado_ropa_rota
     chris "¡¿QUÉ ESTÁN HACIENDO ACÁ?! ¿HUÍAN DE MÍ? ESTE LUGAR ES MÍO... ¡DEJEN ESA RADIO!"
     # David se adelanta con la palanca
     david "No estás bien Chris. Cálmate. Esta radio puede ser nuestra salvación."
@@ -164,7 +162,7 @@ label transición_a_escena_1BA:
     narrador "David bloquea el hacha con la palanca"
     narrador "David levanta la palanca que choca en el aire con el hacha. Saltan chispas."
 
-    show chris_ropa_rota at right
+    show chris_ropa_rota
     chris "Eres fuerte David. Pero yo voy a ganar."
     hide chris_ropa_rota
     # Efecto de sonido de interferencia
@@ -180,13 +178,13 @@ label transición_a_escena_1BA:
     narrador "Todos miran la radio, todavía sin asimilar lo que acaban de escuchar."
     narrador "El primero en hablar es Chris."
 
-    show chris_enojado_ropa_rota at right with hpunch
+    show chris_enojado_ropa_rota
     chris "¡Es esa voz otra vez! ¡No pueden engañarme!"
     hide chris_enojado_ropa_rota
     david "Ya lo escucharon, el rescate viene en camino."
     narrador "Los estudiantes avanzan hacia Chris"
     narrador "Chris los mira. Ellos avanzan dubitativamente hacia él. Chris los amenaza con el hacha."
-    show chris_furioso_ropa_rota at right
+    show chris_furioso_ropa_rota
     chris "¡No se metan!"
     hide chris_furioso_ropa_rota
     narrador "Los chicos retroceden por miedo a que Chris los ataque"
@@ -240,24 +238,27 @@ label transición_a_escena_final_malo:
     hide chris_ropa_rota
     scene fondo sala_herramientas_rojo
     narrador "Las luces empiezan a parpadear, luego de un rato se tornan de color rojo."
+    play sound "generador_apagado.mp3" fadeout 0.3
     narrador "El generador hace un ruido extraño, como si no le hubiera gustado lo que acababa de pasar."
     show sara_ropa_rota_rojo at left
     play sound "estatica estrella_helicoptero.mp3"
     sara "¿¡HOLA!? ¿¡Alguien me escucha!?"
     stop sound
     hide sara_ropa_rota_rojo
-    show estudiante_femenino_rojo at left
-    estudiante_6 "¿Qué esta pasando? Siento frio..."
-    hide estudiante_femenino_rojo
     show estudiante_masculino_rojo at left
+    estudiante_6 "¿Qué esta pasando? Siento frio..."
+    hide estudiante_masculino_rojo
+    show estudiante_masculino_rojo at right
     estudiante_3 "Yo también siento frio."
     hide estudiante_masculino_rojo
-    show chris_ropa_rota_rojo at right
+    show chris_ropa_rota_rojo
     chris "¡Por favor, no me dejes solo!"
     hide chris_ropa_rota_rojo
     narrador "La señal de la radio dejó de funcionar, el frío llegó a sus cuerpos, las luces cada vez tenían menos fuerza."
     narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una bestia."
     narrador "Todos murieron de frío, nadie supo nada de lo ocurrido, los chicos habían 'desaparecido'."
+
+    play music "final_malo.mp3"
     python:
         final = gestor.activar_final('malo')
         resultado = gestor.obtener_resultado()

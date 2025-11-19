@@ -3,12 +3,12 @@ define david = Character("David", color="#4169E1")
 define sara = Character("Sara", color="#ffb969")
 define chris = Character("Chris", color="#14dc61")
 define tutor = Character("Tutor", color="#dc6e14")
-define estudiante_1 = Character("Estudiante 1", color="#5a14dc")
-define estudiante_2 = Character("Estudiante 2", color="#c8dc14")
-define estudiante_3 = Character("Estudiante 3", color="#dc2114")
-define estudiante_4 = Character("Estudiante 4", color="#14d5dc")
-define estudiante_5 = Character("Estudiante 5", color="#dc14b1")
-define estudiante_6 = Character("Estudiante 6", color="#96dc14")
+define estudiante_1 = Character("Daiana", color="#5a14dc")
+define estudiante_2 = Character("Ana", color="#c8dc14")
+define estudiante_3 = Character("Diego", color="#dc2114")
+define estudiante_4 = Character("Juan", color="#14d5dc")
+define estudiante_5 = Character("Ariana", color="#dc14b1")
+define estudiante_6 = Character("Pedro", color="#96dc14")
 define narrador = Character(None)
 image negro = "#000000"
 
@@ -25,12 +25,14 @@ label start:
     stop music
     $ renpy.music.set_volume(1.0, delay=1.0, channel="music")
     centered  "{size= 65} Se recomienda bajar un poco el volumen {/size}" with fade
-    call escena1a2 from _call_escena1a2
-    call escena3a5 from _call_escena3a5
-    call escena6a9 from _call_escena6a9
+    #call escena1a2 from _call_escena1a2
+    #call escena3a5 from _call_escena3a5
+    #call escena6a9 from _call_escena6a9
     scene negro with fade
+    play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 1 {/size}" with fade
     call resumen_acto2
+    play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 2 {/size}" with fade
     call act_3_escena1
     menu:
@@ -38,8 +40,6 @@ label start:
             call calmar_a_chris
         'Huir con Sara (Necesita moral media/baja).':
             call huir_con_sara 
-    scene negro with fade
-    centered  "{size= 65} FIN DEL ACTO 3 {/size}" with fade
     centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
 
     
