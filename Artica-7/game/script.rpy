@@ -25,9 +25,9 @@ label start:
     stop music
     $ renpy.music.set_volume(1.0, delay=1.0, channel="music")
     centered  "{size= 65} Se recomienda bajar un poco el volumen {/size}" with fade
-    #call escena1a2 from _call_escena1a2
-    #call escena3a5 from _call_escena3a5
-    #call escena6a9 from _call_escena6a9
+    call escena1a2 from _call_escena1a2
+    call escena3a5 from _call_escena3a5
+    call escena6a9 from _call_escena6a9
     scene negro with fade
     play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 1 {/size}" with fade
