@@ -258,7 +258,7 @@ label transición_a_escena_final_malo:
     chris "¡Por favor, no me dejes solo!"
     hide chris_ropa_rota_llorando_rojo
     narrador "La señal de la radio dejó de funcionar, el frío llegó a sus cuerpos, las luces cada vez tenían menos fuerza."
-    narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una bestia."
+    narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una {sc=4}{color=#FF0000}bestia{/color}{/sc}."
     narrador "Todos murieron de frío, nadie supo nada de lo ocurrido, los chicos habían 'desaparecido'."
 
     play music "final_malo.mp3"
