@@ -31,15 +31,15 @@ label start:
     scene negro with fade
     play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 1 {/size}" with fade
-    call resumen_acto2
+    call resumen_acto2 from _call_resumen_acto2
     play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 2 {/size}" with fade
-    call act_3_escena1
+    call act_3_escena1 from _call_act_3_escena1
     menu:
         'Calmar a Chris (Necesita moral alta).':
-            call calmar_a_chris
+            call calmar_a_chris from _call_calmar_a_chris
         'Huir con Sara (Necesita moral media/baja).':
-            call huir_con_sara 
+            call huir_con_sara from _call_huir_con_sara 
     centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
 
     

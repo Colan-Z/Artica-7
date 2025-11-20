@@ -49,12 +49,12 @@ label escena3a5:
     show estudiante_femenino at right
     estudiante_2 "¡Señor! ¡Creo que veo algo!"
     hide estudiante_femenino
-    tutor "(Bien... parece una base abandonada, espero que podamos refugiarnos dentro.)"
+   
 
     scene fondo artica7_exterior with fade
 
-    narrador "Una estructura metálica medio enterrada en la nieve, aproximadamente a cincuenta metros de distancia."
-    narrador "Los estudiantes y el tutor se dirigen hacia la instalación, luchando contra el viento, Sara tropieza con una piedra oculta bajo la nieve."
+    narrador "Una estructura antigua oculta en la ventisca, aproximadamente a cincuenta metros de distancia."
+    narrador "Los estudiantes y el tutor se dirigen hacia la instalación, luchando contra el viento."
     show chris
     chris "¡SARA SE CAYÓ!"
     hide chris

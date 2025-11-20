@@ -147,7 +147,7 @@ label ESCENA_9:
 label ESCENA_9A:
     scene fondo pasillo with fade
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
-    narrador "(Un estudiante intenta tocar una puerta)"
+    narrador "Un estudiante intenta tocar una puerta"
     show chris_enojado at right
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
     show estudiante_femenino at left
@@ -281,10 +281,10 @@ label ESCENA_11:
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
     show estudiante_masculino at right
-    show estudiante_masculino at left
+    show estudiante_masculino_2 at left
     f"{estudiante_3} y {estudiante_6}" "Oh no..."
     hide estudiante_masculino
-    hide estudiante_masculino
+    hide estudiante_masculino_2
     david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
     show estudiante_femenino at right
     estudiante_1 "Haremos nuestro mayor esfuerzo."
@@ -294,15 +294,15 @@ label ESCENA_11:
     hide estudiante_masculino
     show sara at right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
-    hide sara
     show chris at left
     chris "Ese aparato viejo? jaja... Suerte con eso... jaja."
+    david "Bien, te encargo la radio."
     hide chris
-
-    david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?."
+    hide sara
+    david "Los que quedan ¿Podrían encargarse de los suministros?."
     show estudiante_femenino at left
     estudiante_2 "Claro, no hay problema."
-    show estudiante_femenino at right
+    show estudiante_femenino_2 at right
     estudiante_5 "Nosotros nos encargamos."
     hide estudiante_femenino
-    hide estudiante_femenino
+    hide estudiante_femenino_2
