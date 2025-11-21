@@ -5,10 +5,10 @@ from .mensaje_final import MensajeFinal
 
 class GestorFinales:
 
-    def __init__(self) -> None:
+    def __init__(self):
         self._final_actual: MensajeFinal
 
-    def activar_final(self, tipo: str) -> MensajeFinal: #Activa el final según el tipo recibido.
+    def activar_final(self, tipo: str):
         if tipo == "bueno":
             self._final_actual = FinalBueno()
         elif tipo == "normal":
@@ -18,8 +18,7 @@ class GestorFinales:
 
         return self._final_actual
 
-    def obtener_resultado(self) -> str:
-        if self._final_actual is None:
-            return "No hay final seleccionado."
-
+    def obtener_resultado(self):
+        
         return self._final_actual.mostrar_final()
+

@@ -100,7 +100,7 @@ label intentar_calmar_a_chris:
     narrador "Los chicos se volvieron a ver después de varios días, hablaron de los acontecimientos que habían vivido. Nunca supieron qué pasó ahí dentro, si realmente veían y escuchaban cosas o si todo era por su falta de cordura."
     narrador "Su amistad se volvió más fuerte."
     python:
-        final = gestor.activar_final("bueno")
+        final = gestor.activar_final("bueno")   
         resultado = gestor.obtener_resultado()
     scene black with fade
 

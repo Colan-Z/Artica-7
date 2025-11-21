@@ -1,10 +1,10 @@
 from .mensaje_final import MensajeFinal
 
 class FinalMalo(MensajeFinal):
-    def __init__(self) -> None:
+    def __init__(self):
         super().__init__("FINAL MALO")
 
-    def obtener_mensaje(self) -> str: #Mensaje que se muestra si se hace el final malo.
+    def obtener_mensaje(self): #Mensaje que se muestra si se hace el final malo.
         return (
             "La locura y el frío consumieron a todos.\n"
             "Chris asesinó a David sellando su destino.\n"
