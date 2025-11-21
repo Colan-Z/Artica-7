@@ -12,7 +12,18 @@ label act_3_escena1:
     david "Chris, esa era nuestra única forma de pedir ayuda al exterior."
     chris "¿Ayuda? Nadie va a venir, David. Estamos completamente solos. Y tú sigues jugando al héroe perfecto."
     hide chris_enojado_ropa_rota_hacha
+    while True:
+        menu:
+            'Calmar a Chris.' if moral >= 8:
+                call calmar_a_chris from _call_calmar_a_chris
+                return
+            '{color=#FE0000}Calmar a Chris (Moral demasiado baja).{/color}' if moral < 8:
+                pass   
+            'Huir con Sara.':
+                call huir_con_sara from _call_huir_con_sara
+                return
     return
+
 
 # Ramificación A: Calmar a Chris. (moral alta)
 label calmar_a_chris:
@@ -89,13 +100,14 @@ label intentar_calmar_a_chris:
     narrador "Los chicos se volvieron a ver después de varios días, hablaron de los acontecimientos que habían vivido. Nunca supieron qué pasó ahí dentro, si realmente veían y escuchaban cosas o si todo era por su falta de cordura."
     narrador "Su amistad se volvió más fuerte."
     python:
-        final = gestor.activar_final('bueno')
+        final = gestor.activar_final("bueno")
         resultado = gestor.obtener_resultado()
-    
     scene black with fade
-    centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
+
+    centered "{size=40}[resultado]{/size}"
+
     pause 3.0
-    
+
     return
 
 # ESCENA 1B - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
@@ -203,15 +215,15 @@ label transición_a_escena_1BA:
     narrador "Mientras evacuan la base, el silencio domina la escena. Los jóvenes son finalmente rescatados, pero en sus rostros queda grabado el horror de lo vivido."
     narrador "Ninguno de ellos volverá a ser el mismo: las cicatrices físicas sanarán, pero las psicológicas los acompañarán para siempre."
     python:
-        final = gestor.activar_final('normal')
+        final = gestor.activar_final("normal")
         resultado = gestor.obtener_resultado()
-        titulo_final = resultado['titulo']
-        mensaje_final = resultado['mensaje']
-    
+
     scene black with fade
-    centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
+
+    centered "{size=40}[resultado]{/size}"
+
     pause 3.0
-    
+
     return
 
 label transición_a_escena_final_malo:
@@ -261,13 +273,14 @@ label transición_a_escena_final_malo:
     narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una {sc=4}{color=#FF0000}bestia{/color}{/sc}."
     narrador "Todos murieron de frío, nadie supo nada de lo ocurrido, los chicos habían 'desaparecido'."
 
-    play music "final_malo.mp3"
     python:
-        final = gestor.activar_final('malo')
+        final = gestor.activar_final("malo")
         resultado = gestor.obtener_resultado()
-    
+
     scene black with fade
-    centered "{size=40}[resultado['titulo']]{/size}\n\n[resultado['mensaje']]\n\n"
+
+    centered "{size=40}[resultado]{/size}"
+
     pause 3.0
-    
+
     return

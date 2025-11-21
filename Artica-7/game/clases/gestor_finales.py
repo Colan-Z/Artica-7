@@ -1,26 +1,25 @@
-from typing import Dict, Optional
-from .mensaje_final import MensajeFinal
 from .final_bueno import FinalBueno
 from .final_normal import FinalNormal
 from .final_malo import FinalMalo
+from .mensaje_final import MensajeFinal
 
 class GestorFinales:
-    
+
     def __init__(self) -> None:
-        self.__finales: Dict[str, MensajeFinal] = {
-            'bueno': FinalBueno(),
-            'normal': FinalNormal(),
-            'malo': FinalMalo()
-        }
-        self.__final_actual: Optional[MensajeFinal] = None
-    
-    def activar_final(self, tipo: str) -> Optional[MensajeFinal]:
-        if tipo in self.__finales:
-            self.__final_actual = self.__finales[tipo]
-            return self.__final_actual
-        return None
-    
-    def obtener_resultado(self) -> Optional[Dict[str, str]]:
-        if self.__final_actual:
-            return self.__final_actual.mostrar_final()
-        return None
+        self._final_actual: MensajeFinal
+
+    def activar_final(self, tipo: str) -> MensajeFinal: #Activa el final según el tipo recibido.
+        if tipo == "bueno":
+            self._final_actual = FinalBueno()
+        elif tipo == "normal":
+            self._final_actual = FinalNormal()
+        elif tipo == "malo":
+            self._final_actual = FinalMalo()
+
+        return self._final_actual
+
+    def obtener_resultado(self) -> str:
+        if self._final_actual is None:
+            return "No hay final seleccionado."
+
+        return self._final_actual.mostrar_final()

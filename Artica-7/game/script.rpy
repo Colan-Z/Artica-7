@@ -17,7 +17,7 @@ label before_main_menu:
     return
 
 # Variables del sistema de moral
-default moral = 0
+default moral = 5
 default humo = 0
 
 # Inicio del juego
@@ -35,11 +35,6 @@ label start:
     play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 2 {/size}" with fade
     call act_3_escena1 from _call_act_3_escena1
-    menu:
-        'Calmar a Chris (Necesita moral alta).':
-            call calmar_a_chris from _call_calmar_a_chris
-        'Huir con Sara (Necesita moral media/baja).':
-            call huir_con_sara from _call_huir_con_sara 
     centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
 
     
