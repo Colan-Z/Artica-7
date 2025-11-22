@@ -29,14 +29,16 @@ label escena3a5:
         linear 0.06 xoffset 10
         repeat
 
-    pause
     hide sara_agarra_mochila
+    pause
     stop sfx2
-    scene fondo_aterrizaje with fade
-    stop sfx1 fadeout 1.0
-    play sfx1 "ventisca.mp3" loop volume 0.5
+    pause 0.01
+    play sfx2 "helicoptero_aterriza.mp3" noloop
+    scene fondo aterrizaje with fade
+    pause
+    stop sfx2
 
-    narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
+    # narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
 
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.5
