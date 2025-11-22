@@ -9,8 +9,13 @@ define estudiante_3 = Character("Diego", color="#dc2114")
 define estudiante_4 = Character("Juan", color="#14d5dc")
 define estudiante_5 = Character("Ariana", color="#dc14b1")
 define estudiante_6 = Character("Pedro", color="#96dc14")
+define piloto = Character("Piloto", color="#dccf14")
 define narrador = Character(None)
 image negro = "#000000"
+
+init python:
+    renpy.music.register_channel("sfx1", mixer="music", loop=True)
+    renpy.music.register_channel("sfx2",   mixer="music", loop=True)
 
 label before_main_menu:
     $ renpy.music.set_volume(0.1, delay=0, channel="music")

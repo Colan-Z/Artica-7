@@ -6,17 +6,22 @@ label escena3a5:
         linear 0.05 xoffset -10
         repeat 
     scene fondo ventisca with fade
-    play sound "ventisca.mp3" loop volume 0.5
-    narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
+    play sfx1 "ventisca.mp3" loop volume 0.5
+    
+    # narrador "De repente, el helicóptero se sacude violentamente. Los estudiantes gritan, sus voces llenas de pánico. Por la ventana, una ventisca blanca lo envuelve todo en segundos."
+    
+    stop sfx1 fadeout 1.0
+    play sfx1 "ventisca.mp3" loop volume 0.2
+    play sfx2 "alarma_helicoptero.mp3" volume 0.5
 
     scene fondo interior_helicoptero with fade
     show fondo interior_helicoptero at shake
 
-    stop sound fadeout 1.0
-    play sound "ventisca.mp3" loop volume 0.2
+    # Agregar dialogo del piloto reaccionando a la fuerte ventisca
+    piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!."
 
     pause
-    "Piloto" "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
+    piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     
     narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
     show sara_agarra_mochila at right:
@@ -26,27 +31,27 @@ label escena3a5:
 
     pause
     hide sara_agarra_mochila
-    
+    stop sfx2
     scene fondo_aterrizaje with fade
-    stop sound fadeout 1.0
-    play sound "ventisca.mp3" loop volume 0.5
+    stop sfx1 fadeout 1.0
+    play sfx1 "ventisca.mp3" loop volume 0.5
 
     narrador "Tras unos segundos de caos, el helicóptero logra estabilizarse y aterriza suavemente."
 
-    stop sound fadeout 1.0
-    play sound "ventisca.mp3" loop volume 0.6
+    stop sfx1 fadeout 1.0
+    play sfx1 "ventisca.mp3" loop volume 0.5
 
     # ESCENA 4 - EXT. ANTÁRTIDA - DÍA (VENTISCA)
-    stop sound fadeout 1.5
-    play sound "ventisca.mp3" loop volume 0.2
+    stop sfx1 fadeout 1.5
+    play sfx1 "ventisca.mp3" loop volume 0.2
     scene fondo interior_helicoptero with fade
     show tutor 
     tutor "¿Están todos.... bien...?"
     tutor "¿Qué es eso? creo que veo algo..."
     tutor "Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
     hide tutor
-    stop sound fadeout 1.0
-    play sound "ventisca.mp3" loop volume 0.5
+    stop sfx1 fadeout 1.0
+    play sfx1 "ventisca.mp3" loop volume 0.4
     scene fondo_tutor_deja_mochila with fade
     narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento."
     scene fondo_cerca_mochila_celulares with fade

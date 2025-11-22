@@ -1,24 +1,29 @@
 label escena6a9:
     
     # ESCENA 6 - INT. ÁRTICA-7 - ENTRADA - DÍA
-    scene fondo artica7_interior with fade
+    scene fondo_sala_principal_puerta_abierta with fade
     stop music
-
-    play sound "generador_enciende.mp3" volume 0.5
 
     show estudiante_femenino at left
     estudiante_1 "¿Qué es este lugar?"
     hide estudiante_femenino
+
+    play sound "generador_enciende.mp3" volume 0.5
+    # Agregar dialogo de los personajes reaccionando al sonido del generador 
+    # e1 '¿Qué es eso?' 
+    #e2 'Suena como un generador. Pero no entiendo por qué se enciende solo.' 
+    #chris 'Si... es raro.'
     
     narrador "De repente se escucha el sonido de un generador encendiéndose."
     show sara at center
     sara "El grupo mira a su alrededor, hay polvo sobre las consolas, parece que lo abandonaron hace años."
     hide sara
+    scene fondo artica7_interior
 
     play sound "puerta_cierra.mp3" volume 2.0
     narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
     narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
-
+    scene fondo_tutor_toca_puerta
     menu:                         
         "Tratar de detenerlo":
             # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA
@@ -26,13 +31,13 @@ label escena6a9:
             narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
         "No hacer nada.":
             # ESCENA 6-B - INT. ÁRTICA-7 - ENTRADA - DÍA
-            show tutor at center with hpunch
+            # show tutor at center with hpunch
             tutor "NO, NO, NO, NO, ESPERA, ESPERA, ESPERA, ¡¿QUE ESTA PASANDO?!"
 
     play sound "descarga_electrica.mp3"
-    show tutor at center with hpunch
+    # show tutor at center with hpunch
     pause 0.5
-    hide tutor
+    # hide tutor
 
     play sound "caida_suelo.mp3"
     scene fondo tutor_electrocutado_radio with fade

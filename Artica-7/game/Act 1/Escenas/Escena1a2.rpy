@@ -2,14 +2,16 @@ label escena1a2:
     # ESCENA 1 - EXT. HELICÓPTERO (CIELO ANTÁRTICO) - DÍA
     scene fondo helicoptero with fade
     play music "helicoptero.mp3" loop volume 0.2
-    narrador "Un grupo de estudiantes había ganado un concurso académico."
-    narrador "Su premio, un viaje científico a una base en la Antártida llamada Orcadas."
-   
+    # narrador "Un grupo de estudiantes había ganado un concurso académico."
+    # narrador "Su premio, un viaje científico a una base en la Antártida llamada Orcadas."
+    pause
     # ESCENA 2 - INT. HELICÓPTERO - DÍA
     scene fondo interior_helicoptero with fade
     $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
 
     show tutor at center
+    tutor "Chicos, tienen el privilegio de conocer la base Orcadas."
+    tutor "Se lo merecen por haber ganado el concurso académico."
     tutor "En veinte minutos llegaremos."
     tutor "Allí pasaremos tres semanas estudiando ecosistemas polares, cambio climático y adaptación de especies."
     tutor "Debo pedirles que me entreguen sus celulares, me gustaría que se desconectaran del mundo digital y presten atención a su entorno."
