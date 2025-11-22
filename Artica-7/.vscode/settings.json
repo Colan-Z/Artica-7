@@ -129,7 +129,20 @@
                 "settings": {
                     "foreground": "#8b0000"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#fe0000",
+                "settings": {
+                    "foreground": "#fe0000"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ff0000",
+                "settings": {
+                    "foreground": "#ff0000"
+                }
             }
         ]
-    }
+    },
+    "renpyWarp.sdkPath": "c:\\Program Files\\renpy-8.4.1-sdk"
 }
