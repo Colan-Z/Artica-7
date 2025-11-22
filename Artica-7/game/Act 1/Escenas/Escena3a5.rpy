@@ -45,11 +45,12 @@ label escena3a5:
     tutor "¿Qué es eso? creo que veo algo..."
     tutor "Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
     hide tutor
-    narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento."
-
     stop sound fadeout 1.0
     play sound "ventisca.mp3" loop volume 0.5
-    
+    scene fondo_tutor_deja_mochila with fade
+    narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento."
+    scene fondo_cerca_mochila_celulares with fade
+    pause
     stop music #detiene el sonido del helicoptero
     scene fondo camino with fade
     show tutor at left
