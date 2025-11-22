@@ -18,12 +18,12 @@ label escena6a9:
     show sara at center
     sara "El grupo mira a su alrededor, hay polvo sobre las consolas, parece que lo abandonaron hace años."
     hide sara
-    scene fondo artica7_interior
+    scene fondo artica7_interior_2
 
     play sound "puerta_cierra.mp3" volume 2.0
     narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
     narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
-    scene fondo_tutor_toca_puerta
+    scene fondo_tutor_toca_puerta_2
     menu:                         
         "Tratar de detenerlo":
             # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA
@@ -252,13 +252,13 @@ label ESCENA_10:
     hide chris
     narrador "(algunos minutos después)"
     scene fondo pasillo with fade
-    david "Perfecto, encontramos un lugar donde" 
+    david "Perfecto, encontramos un lugar donde..." 
     scene fondo literas with fade
-    david "dormir" 
+    david "dormir..." 
     scene fondo banos with fade
-    david "baños" 
+    david "baños..." 
     scene fondo invernadero with fade
-    david "un invernadero" 
+    david "un invernadero..." 
     scene fondo pasillo_radio with fade
     david "y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
     scene fondo pasillo 

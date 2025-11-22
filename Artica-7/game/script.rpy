@@ -13,10 +13,6 @@ define piloto = Character("Piloto", color="#dccf14")
 define narrador = Character(None)
 image negro = "#000000"
 
-init python:
-    renpy.music.register_channel("sfx1", mixer="music", loop=True)
-    renpy.music.register_channel("sfx2",   mixer="music", loop=True)
-
 label before_main_menu:
     $ renpy.music.set_volume(0.1, delay=0, channel="music")
     return

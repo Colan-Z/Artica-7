@@ -227,7 +227,7 @@ label transición_a_escena_1BA:
     return
 
 label transición_a_escena_final_malo:
-    narrador "David decide enfrentar a Chris, listo para acabar con todo."
+    # narrador "David decide enfrentar a Chris, listo para acabar con todo."
     david "Lo siento amigo, no puedo dejar que te acerques a esa radio."
     show chris_enojado_ropa_rota
     chris "Si no puedo cruzar por las buenas..." 
@@ -246,7 +246,7 @@ label transición_a_escena_final_malo:
     scene fondo_sala_herramientas_palanca_suelo
     play sound "palanca_cae.mp3"
     pause
-    narrador "Aprovechando ese momento, Chris decide dar un golpe final."
+    # narrador "Aprovechando ese momento, Chris decide dar un golpe final."
     # play movie "fondo_chris_hacha_hiere_david.webm"
     play sound "hacha_hiere_david.mp3"
     pause
@@ -254,19 +254,21 @@ label transición_a_escena_final_malo:
     play sound "caida_suelo.mp3"
     narrador "El hacha atraviesa el pecho de David, que cae lentamente al suelo."
     show fondo sala_herramientas
-    pause
-    show sara_gritando_que_hiciste at left
+    show sara_gritando_que_hiciste at right
     sara "¡QUÉ HICISTE!"
     hide sara_gritando_que_hiciste
-    play sound "quiebre.mp3" 
+    play sound "quiebre.mp3"
+    show chris_arrepentido 
     pause
-    show chris_arrepentido
-    chris "Qué acabo de hacer..."
+    chris "Qué... acabo de hacer..."
+    hide chris_arrepentido
+    scene david_sala_herramientas_herida_mortal2
     david "No es tu culpa hermano... trate de hacer todo el tiempo posible para que Sara pu... pudiera contactarse con alguien que pueda salvarnos."
     chris "Necesito que aguantes, todo va a salir bien."
     david "Si... todo va a salir bien..."
     hide chris_arrepentido
     narrador "Sus ojos se cierran lentamente, y su corazón se detiene."
+    show fondo sala_herramientas
     show chris_ropa_rota_llorando
     chris "¿Héroe...? ¿¡David!? ¡No responde! ¡Ayúdenlo! ¡Por favor!"
     hide chris_ropa_rota_llorando
@@ -280,15 +282,19 @@ label transición_a_escena_final_malo:
     narrador "El generador hace un ruido extraño, como si no le hubiera gustado lo que acababa de pasar."
     show sara_ropa_rota_rojo at left
     play sound "estatica estrella_helicoptero.mp3"
+    pause 1.0
     sara "¿¡HOLA!? ¿¡Alguien me escucha!?"
     stop sound
     hide sara_ropa_rota_rojo
     show estudiante_masculino_rojo at left
-    estudiante_6 "¿Qué esta pasando? Siento frio..."
+    estudiante_6 "¿Qué esta pasando? Siento frío..."
     hide estudiante_masculino_rojo
     show estudiante_masculino_rojo at right
-    estudiante_3 "Yo también siento frio."
+    estudiante_3 "Yo también siento frío."
     hide estudiante_masculino_rojo
+    show sara_ropa_rota_rojo
+    sara "¡El generador se apagó!"
+    hide sara_ropa_rota_rojo
     show chris_ropa_rota_llorando_rojo
     chris "¡Por favor, no me dejes solo!"
     hide chris_ropa_rota_llorando_rojo

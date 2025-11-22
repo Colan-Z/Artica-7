@@ -23,7 +23,7 @@ label escena3a5:
     pause
     piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     
-    narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
+    # narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
     show sara_agarra_mochila at right:
         linear 0.03 xoffset -10
         linear 0.06 xoffset 10
