@@ -235,12 +235,22 @@ label transición_a_escena_final_malo:
     show chris_furioso_ropa_rota
     chris "¡SERÁ POR LAS MALAS!"
     hide chris_furioso_ropa_rota
+    scene fondo_sala_herramientas_chris_hacha
+    pause
+    scene fondo_sala_herramientas_chris_ataca_hacha
     narrador "David y Chris se enfrentan, chispas salen con el choque de la palanca y el hacha."
     narrador "Chris logra hacerle un corte en el brazo. Haciendo que la palanca caiga al suelo."
-    narrador "Aprovechando ese momento, Chris decide dar un golpe final. El hacha atraviesa el pecho de David, que cae lentamente al suelo."
-    show sara_ropa_rota at left
+    scene fondo_sala_herramientas_palanca_suelo
+    pause
+    narrador "Aprovechando ese momento, Chris decide dar un golpe final."
+    show black
+    pause
+    narrador "El hacha atraviesa el pecho de David, que cae lentamente al suelo."
+    show fondo sala_herramientas_rojo
+    show sara_gritando_que_hiciste at left
     sara "¡QUÉ HICISTE!"
-    hide sara_ropa_rota
+    hide sara_gritando_que_hiciste
+    pause
     show chris_ropa_rota
     chris "Qué acabo de hacer..."
     david "No es tu culpa hermano... trate de hacer todo el tiempo posible para que Sara pu... pudiera contactarse con alguien que pueda salvarnos."

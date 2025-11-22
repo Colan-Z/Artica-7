@@ -14,10 +14,19 @@ label escena3a5:
 
     stop sound fadeout 1.0
     play sound "ventisca.mp3" loop volume 0.2
-
+    
+    pause
     "Piloto" "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     
     narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
+    show sara_agarra_mochila at right:
+        linear 0.03 xoffset -10
+        linear 0.06 xoffset 10
+        repeat
+
+    pause
+    hide sara_agarra_mochila
+    
     scene fondo_aterrizaje with fade
     stop sound fadeout 1.0
     play sound "ventisca.mp3" loop volume 0.5
