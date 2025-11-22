@@ -255,13 +255,14 @@ label transición_a_escena_final_malo:
     show sara_gritando_que_hiciste at left
     sara "¡QUÉ HICISTE!"
     hide sara_gritando_que_hiciste
+    play sound "quiebre.mp3" 
     pause
-    show chris_ropa_rota
+    show chris_arrepentido
     chris "Qué acabo de hacer..."
     david "No es tu culpa hermano... trate de hacer todo el tiempo posible para que Sara pu... pudiera contactarse con alguien que pueda salvarnos."
     chris "Necesito que aguantes, todo va a salir bien."
     david "Si... todo va a salir bien..."
-    hide chris_ropa_rota
+    hide chris_arrepentido
     narrador "Sus ojos se cierran lentamente, y su corazón se detiene."
     show chris_ropa_rota_llorando
     chris "¿Héroe...? ¿¡David!? ¡No responde! ¡Ayúdenlo! ¡Por favor!"
