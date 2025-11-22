@@ -14,7 +14,7 @@ label escena3a5:
 
     stop sound fadeout 1.0
     play sound "ventisca.mp3" loop volume 0.2
-    
+
     pause
     "Piloto" "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     
@@ -56,17 +56,17 @@ label escena3a5:
     tutor "2...4...6...8...9 ¡Estamos todos! ¡Síganme!"
     hide tutor
     show estudiante_femenino at right
-    estudiante_2 "¡Señor! ¡Creo que veo algo!"
-    hide estudiante_femenino
+    # estudiante_2 "¡Señor! ¡Creo que veo algo!"
+    # hide estudiante_femenino
    
 
     scene fondo artica7_exterior with fade
 
     narrador "Una estructura antigua oculta en la ventisca, aproximadamente a cincuenta metros de distancia."
     narrador "Los estudiantes y el tutor se dirigen hacia la instalación, luchando contra el viento."
-    show chris
+    show chris_gritando_sara_cayo
     chris "¡SARA SE CAYÓ!"
-    hide chris
+    hide chris_gritando_sara_cayo
     
     scene fondo sara_suelo with fade
    
