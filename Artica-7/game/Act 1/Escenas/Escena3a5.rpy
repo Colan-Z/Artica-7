@@ -74,7 +74,8 @@ label escena3a5:
         "Ayudar a Sara":
             # ESCENA 4-A - EXT. ANTÁRTIDA - DÍA (VENTISCA)  
             $ moral += 1
-            scene pov david_ayuda_sara with fade
+            # scene pov david_ayuda_sara with fade
+            scene david_ayuda_sara with fade
             david "¿Estás bien?"
             sara "Si, lo estoy, gracias..."
         "Ordenar a Chris que la ayude.":
