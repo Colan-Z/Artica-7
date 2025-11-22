@@ -56,15 +56,22 @@ label escena3a5:
     show tutor at left
     tutor "2...4...6...8...9 ¡Estamos todos! ¡Síganme!"
     hide tutor
-    show estudiante_femenino at right
+    # show estudiante_femenino at right
     # estudiante_2 "¡Señor! ¡Creo que veo algo!"
     # hide estudiante_femenino
    
 
     scene fondo artica7_exterior with fade
 
-    narrador "Una estructura antigua oculta en la ventisca, aproximadamente a cincuenta metros de distancia."
-    narrador "Los estudiantes y el tutor se dirigen hacia la instalación, luchando contra el viento."
+    # Reemplazar siguiente narrador por dialogo tutor, 'Alla hay algo, parece una instalacion de algun tipo. Aproximadamente ua unos 50 metros. Vamos chicos!
+    tutor "Allá hay algo, parece una instalación de algún tipo. Aproximadamente a unos 50 metros. ¡Vamos chicos!"
+    # narrador "Una estructura antigua oculta en la ventisca, aproximadamente a cincuenta metros de distancia."
+    scene black
+    play sound "pasos en la nieve.mp3"
+    # narrador "Los estudiantes y el tutor se dirigen hacia la instalación, luchando contra el viento."
+    pause 3.0
+    stop sound
+    scene fondo artica7_exterior with fade
     show chris_gritando_sara_cayo
     chris "¡SARA SE CAYÓ!"
     hide chris_gritando_sara_cayo
@@ -89,9 +96,12 @@ label escena3a5:
     # ESCENA 5 - EXT. ÁRTICA-7 - ENTRADA - DÍA
     scene fondo artica7_entrada with fade
     
-    narrador "Llegan a la entrada principal. Es una instalación militar con el nombre 'ÁRTICA-7' grabado en letras desgastadas."
-    
-    narrador "El tutor ve la puerta entreabierta y logra abrirla."
+    # Reemplazar el siguiente narrador por dialogo del tutor 'Llegamos... la puerta esta entreabierta. Esta un poco dura pero creo que puedo abrirla'. Sonido de puerta abriendose. '¡Entremos todos!'
+    tutor "Llegamos... la puerta está entreabierta. Está un poco dura pero creo que puedo abrirla"
+    play sound "puerta_abre.mp3"
+    pause
+    # narrador "Llegan a la entrada principal. Es una instalación militar con el nombre 'ÁRTICA-7' grabado en letras desgastadas."
+    # narrador "El tutor ve la puerta entreabierta y logra abrirla."
     
     show tutor at left
     tutor "¡Adentro! ¡Rápido! Estaremos seguros hasta que pase la ventisca."
