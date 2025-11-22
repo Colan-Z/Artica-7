@@ -239,20 +239,21 @@ label transición_a_escena_final_malo:
     pause 1.0
     scene fondo_sala_herramientas_chris_ataca_hacha
     play sound "hacha_palanca.mp3"
-    pause 1.5
+    pause 1.8
     # narrador "David y Chris se enfrentan, chispas salen con el choque de la palanca y el hacha."
     
     # narrador "Chris logra hacerle un corte en el brazo. Haciendo que la palanca caiga al suelo."
-    show fondo_sala_herramientas_palanca_suelo
+    scene fondo_sala_herramientas_palanca_suelo
     play sound "palanca_cae.mp3"
     pause
-    show black
     narrador "Aprovechando ese momento, Chris decide dar un golpe final."
+    # play movie "fondo_chris_hacha_hiere_david.webm"
     play sound "hacha_hiere_david.mp3"
     pause
     scene david_sala_herramientas_herida_mortal2
+    play sound "caida_suelo.mp3"
     narrador "El hacha atraviesa el pecho de David, que cae lentamente al suelo."
-    show fondo sala_herramientas_rojo
+    show fondo sala_herramientas
     pause
     show sara_gritando_que_hiciste at left
     sara "¡QUÉ HICISTE!"
@@ -269,7 +270,11 @@ label transición_a_escena_final_malo:
     show chris_ropa_rota_llorando
     chris "¿Héroe...? ¿¡David!? ¡No responde! ¡Ayúdenlo! ¡Por favor!"
     hide chris_ropa_rota_llorando
-    scene fondo sala_herramientas_rojo
+    show fondo sala_herramientas_rojo
+    pause 0.2
+    show fondo sala_herramientas
+    pause 0.2
+    show fondo sala_herramientas_rojo
     narrador "Las luces empiezan a parpadear, luego de un rato se tornan de color rojo."
     play sound "generador_apagado.mp3" fadeout 0.3
     narrador "El generador hace un ruido extraño, como si no le hubiera gustado lo que acababa de pasar."

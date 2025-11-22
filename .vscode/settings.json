@@ -125,5 +125,6 @@
                 }
             }
         ]
-    }
+    },
+    "renpyWarp.sdkPath": "c:\\Program Files\\renpy-8.4.1-sdk"
 }
