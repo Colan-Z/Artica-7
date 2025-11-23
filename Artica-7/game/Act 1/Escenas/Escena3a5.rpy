@@ -26,9 +26,8 @@ label escena3a5:
         linear 0.03 xoffset -10
         linear 0.06 xoffset 10
         repeat
-
-    hide sara_agarra_mochila
     pause
+    hide sara_agarra_mochila
     stop sfx2
     pause 0.01
     stop music
@@ -54,7 +53,8 @@ label escena3a5:
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.4
     scene fondo_tutor_deja_mochila with fade
-    narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento."
+    # narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento."
+    pause
     scene fondo_cerca_mochila_celulares with fade
     pause
     stop music #detiene el sonido del helicoptero
