@@ -1,3 +1,8 @@
+init python:
+    from clases import GestorFinales
+    
+    gestor = GestorFinales()
+
 label escena6a9:
     
     # ESCENA 6 - INT. ÁRTICA-7 - ENTRADA - DÍA
@@ -7,7 +12,15 @@ label escena6a9:
     show estudiante_femenino at left
     estudiante_1 "¿Qué es este lugar?"
     hide estudiante_femenino
-
+    menu:
+        "Parece ser una base militar.":
+            show estudiante_femenino at left
+            estudiante_1 "¿Por qué una base militar estaría abandonada?"
+            hide estudiante_femenino
+        "Está todo muy oscuro.":
+            show estudiante_femenino at left
+            estudiante_1 "No logro ver nada."
+            hide estudiante_femenino
     play sfx1 "generador_enciende.mp3" volume 0.5
     queue sfx1 "generador_loop.ogg" loop
     # Agregar dialogo de los personajes reaccionando al sonido del generador 
@@ -16,7 +29,7 @@ label escena6a9:
     #chris 'Si... es raro.'
     pause
     show estudiante_masculino
-    estudiante_4 "¿Qué es eso?"
+    estudiante_4 "¿Qué fue eso  ?"
     hide estudiante_masculino
     show chris at right
     chris "Suena como un generador. Pero no entiendo por qué se enciende solo."
@@ -24,30 +37,38 @@ label escena6a9:
     show tutor
     tutor "Si... es raro."
     hide tutor
-    # narrador "De repente se escucha el sonido de un generador encendiéndose."
-    
+
     show sara at left
-    sara "Parece que lo abandonaron hace años."
+    sara "Hay polvo sobre las consolas... parece que lo abandonaron hace años."
     hide sara
 
     play sound "puerta_cierra.mp3" volume 2.0
     pause 1.0
-    # narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
-    pause
+
     show tutor at left
     tutor "¡NOO! ¡La puerta se cierra!"
     hide tutor
-    narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
+    narrador "Mientras el tutor corría desesperado hacia la puerta, el walkie-talkie cae de su bolsillo."
     
     menu:                         
         "Tratar de detenerlo":
-            # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA
+            # ESCENA 10A
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
-            # narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
-            scene fondo_tutor_toca_puerta_2
+            "El tutor ignoró a David, su desesperación lo había ensordecido."
+            "David muere al intentar detener al tutor. Ambos reciben una descarga eléctrica que recorre sus cuerpos, dejándolos tirados, convulsionando, hasta que dejan de moverse."
+            "Todos comienzan a perder el control, gritando y corriendo por todo el lugar en busca de ayuda. Algunos estudiantes mueren al intentar tocar otras puertas."
+            "Chris está de rodillas, llorando y desesperado, y Sara permanece en un rincón, completamente asustada."
+            "Al final nadie fue a rescatarlos."
+            python:
+                final = gestor.activar_final("final")
+                resultado = gestor.obtener_resultado()
+            scene black with fade
+            centered "{size=40}[resultado]{/size}"
+            pause 3.0
+            return
+
         "No hacer nada.":
-            # ESCENA 6-B - INT. ÁRTICA-7 - ENTRADA - DÍA
-            # show tutor at center with hpunch
+            # ESCENA 10B
             tutor "NO, NO, NO, NO, ESPERA, ESPERA, ESPERA, ¡¿QUE ESTA PASANDO?!"
             scene fondo_tutor_toca_puerta_2
 
@@ -61,7 +82,7 @@ label escena6a9:
 
     scene fondo tutor_electrocutado_radio
    
-    # ESCENA 7 - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO - DÍA
+    # ESCENA 11
     show estudiante_femenino at left
     pause 7
     play sound "Estudiante femenino gritando.mp3" 
@@ -72,22 +93,17 @@ label escena6a9:
             # ESCENA 7-A - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO SIN HUMO - DÍA
             scene fondo_tutor_pulso
             david "No... no respira. No tiene pulso."
-            $ humo = 0
+            scene fondo tutor_electrocutado_radio with fade
         "No tocarlo, podría ser peligroso.":
             # ESCENA 7-B - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO CON HUMO - DÍA
             scene fondo tutor_electrocutado_quemado_radio with fade
             narrador "No hacia falta verificar su pulso, el olor a carne quemada que desprendía, provocaba que algunos alumnos les dieran nauseas."
-            $ humo = 1
 
     # ESCENA 7AB - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO - DÍA
-    if humo == 0:
-        scene fondo tutor_electrocutado_radio with fade
-    else:
-        scene fondo tutor_electrocutado_quemado_radio with fade
     play sound "radio interferencia.mp3"
     "Piloto" "¿Ho... hola? ¿Se escu... cha?"
     "Piloto" "¿Es... están to... dos bien?"
-    if humo == 0:
+    if renpy.showing("fondo tutor_electrocutado_radio"):
         scene fondo tutor_electrocutado with fade
     else:
         scene fondo tutor_electrocutado_quemado with fade

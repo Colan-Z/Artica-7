@@ -19,7 +19,6 @@ label before_main_menu:
 
 # Variables del sistema de moral
 default moral = 5
-default humo = 0
 
 # Inicio del juego
 label start:

@@ -64,7 +64,7 @@ label escena3a5:
     label ver_hacia_fuera:
         scene fondo helicoptero_vista_artica   
         david "¿Qué es eso?" 
-        david "Creo que veo algo..."
+        david "Señor, Creo que veo algo afuera... Parece una estructura."
     scene fondo interior_helicoptero with fade
     show tutor
     tutor "Es cierto... Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
@@ -75,6 +75,14 @@ label escena3a5:
     # narrador "Los estudiantes junto al tutor salen del helicóptero, dejando la mochila con los celulares en el asiento."
     pause
     scene fondo_cerca_mochila_celulares with fade
+    # escena 7
+    menu:
+        "Tomar tu celular.":
+            narrador "Decides tomar tu celular antes de seguir al grupo."
+            $ tiene_celular = True
+        "Dejar el celular donde esta.":
+            narrador "Decides dejar tu celular en la mochila junto a los demás."
+            $ tiene_celular = False
     pause
     stop music #detiene el sonido del helicoptero
     scene fondo camino with fade
@@ -89,7 +97,7 @@ label escena3a5:
     scene fondo artica7_exterior with fade
 
     # Reemplazar siguiente narrador por dialogo tutor, 'Alla hay algo, parece una instalacion de algun tipo. Aproximadamente ua unos 50 metros. Vamos chicos!
-    tutor "Allá hay algo, parece una instalación de algún tipo. Aproximadamente a unos 50 metros. ¡Vamos chicos!"
+    tutor "Allá esta lo que decías David. ¡Vamos chicos!"
     # narrador "Una estructura antigua oculta en la ventisca, aproximadamente a cincuenta metros de distancia."
     scene black
     play sound "pasos en la nieve.mp3"
