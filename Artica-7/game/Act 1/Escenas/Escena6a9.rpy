@@ -29,21 +29,27 @@ label escena6a9:
     show sara at left
     sara "Parece que lo abandonaron hace años."
     hide sara
-    scene fondo artica7_interior_2
 
     play sound "puerta_cierra.mp3" volume 2.0
-    narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
+    pause 1.0
+    # narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
+    pause
+    show tutor at left
+    tutor "¡NOO! ¡La puerta se cierra!"
+    hide tutor
     narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
-    scene fondo_tutor_toca_puerta
+    
     menu:                         
         "Tratar de detenerlo":
             # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
-            narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
+            # narrador "El tutor ignoró a David, su desesperación lo habia ensordecido"  
+            scene fondo_tutor_toca_puerta_2
         "No hacer nada.":
             # ESCENA 6-B - INT. ÁRTICA-7 - ENTRADA - DÍA
             # show tutor at center with hpunch
             tutor "NO, NO, NO, NO, ESPERA, ESPERA, ESPERA, ¡¿QUE ESTA PASANDO?!"
+            scene fondo_tutor_toca_puerta_2
 
     play sound "descarga_electrica.mp3"
     # show tutor at center with hpunch
