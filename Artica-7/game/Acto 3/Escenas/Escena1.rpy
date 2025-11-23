@@ -156,11 +156,11 @@ label huir_con_sara:
     show estudiante_masculino_2 at left
     show chris_enojado_ropa_rota_hacha
     chris "¡¿QUÉ HACEN ACÁ?! ¿HUÍAN DE MÍ? ESTE LUGAR ES MÍO... ¡DEJEN ESA RADIO!"
-    # David se adelanta con la palanca
     david "No estás bien Chris. Cálmate. Esta radio puede ser nuestra salvación."
-    narrador "Chris mira la palanca"
+    narrador "Chris mira la palanca."
     chris "¿Piensas atacarme, David?"
     chris "¿No? Entonces yo lo haré."
+    #Escena Chris levante el hacha y se dirige a David
     hide chris_enojado_ropa_rota_hacha
     hide estudiante_masculino 
     hide estudiante_masculino_2
@@ -178,14 +178,14 @@ label transición_a_escena_1BA:
     narrador "David bloquea el ataque con la palanca."
 
     # Efecto de sonido de interferencia
-    narrador "Interferencia. Llega la respuesta de rescate"
+    narrador "Interferencia. Llega la respuesta de rescate."
     'Rescatistas' "Aquí base Orcadas... me reciben? Cambio."
     narrador "Por un momento hubo silencio."
 
     show sara_ropa_rota at center
     sara "¡Sí! ¡Aquí Sara Clarke, desde la base Ártica-7! Somos los estudiantes que íbamos a su base. Estamos atrapados desde hace semanas. ¡Necesitamos ayuda!"
     hide sara_ropa_rota
-    'Rescatistas' "Está bien, Sara. Estábamos buscándolos. Escúchame bien, ya estamos saliendo para allá... llegamos en aproximadamente una hora."
+    'Operadores' "Está bien, Sara. Estábamos buscándolos. Escúchame bien, ya estamos saliendo para allá... llegamos en aproximadamente una hora."
 
     narrador "Todos miran la radio, todavía no logran asimilar lo que acaban de escuchar."
 
@@ -194,17 +194,17 @@ label transición_a_escena_1BA:
     david "(¿A qué voz se refiere?)"
     hide chris_enojado_ropa_rota_hacha
     david "Ya lo escucharon, el rescate viene en camino."
-    narrador "Los estudiantes avanzan hacia Chris"
-    narrador "Chris los mira. Ellos avanzan dubitativamente hacia él."
+    narrador "Los estudiantes avanzan hacia Chris."
+    narrador "Chris los mira. Ellos avanzan dubitativamente hacia él." #Hacerlo escena
     show chris_enojado_ropa_rota_hacha
     chris "¡No se metan!"
     hide chris_enojado_ropa_rota_hacha
-    narrador "Los chicos retroceden por miedo a que Chris los ataque"
+    narrador "Los chicos retroceden por miedo a que Chris los ataque."
 
-    narrador "Chris ataca de nuevo"
+    narrador "Chris ataca de nuevo."
     narrador "Intenta darle con el hacha a David."
     david "¡YA BASTA!"
-    narrador "David contrataca, enganchando la palanca al mango del hacha, haciendo palanca, logra quitarle el arma"
+    narrador "David contraataca, enganchando la palanca al mango del hacha, tirando de él, logra quitarle el arma."
     narrador "Los estudiantes aprovechan el momento y retienen a Chris."
 
     # ESCENA FINAL NORMAL - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE

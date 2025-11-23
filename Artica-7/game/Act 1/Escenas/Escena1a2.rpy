@@ -10,11 +10,12 @@ label escena1a2:
     $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
 
     show tutor at center
-    tutor "Chicos, tienen el privilegio de conocer la base Orcadas."
-    tutor "Se lo merecen por haber ganado el concurso académico."
-    tutor "En veinte minutos llegaremos."
+    tutor "Chicos, primero que nada, quiero felicitarlos por ganar el concurso."
+    tutor "Gracias a eso, tendrán el privilegio de conocer la base Orcadas."
+    tutor "En unos veinte minutos llegaremos."
     tutor "Allí pasaremos tres semanas estudiando ecosistemas polares, cambio climático y adaptación de especies."
     tutor "Debo pedirles que me entreguen sus celulares, me gustaría que se desconectaran del mundo digital y presten atención a su entorno."
+    tutor "Disfruten de este viaje, será una experiencia inolvidable."
     hide tutor
     show chris
     chris "Tres semanas. ¿Crees que sobrevivas sin videojuegos?"

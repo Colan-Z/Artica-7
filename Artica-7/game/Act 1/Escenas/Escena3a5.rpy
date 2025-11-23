@@ -47,8 +47,27 @@ label escena3a5:
     scene fondo interior_helicoptero with fade
     show tutor 
     tutor "¿Están todos.... bien...?"
-    tutor "¿Qué es eso? creo que veo algo..."
-    tutor "Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
+    menu:
+        "Responder al tutor.":
+            #Opcion A
+            jump responder_al_tutor
+        "Ver hacia fuera.":
+            #Opcion B
+            jump ver_hacia_fuera      
+    
+    label responder_al_tutor:
+        david "Si, estamos bien. ¿Y ustedes?"
+        tutor "Estamos bien, gracias por preguntar."
+        hide tutor
+    #Opcion A salta a Opcion B
+    #Opcion B
+    label ver_hacia_fuera:
+        scene fondo helicoptero_vista_artica   
+        david "¿Qué es eso?" 
+        david "Creo que veo algo..."
+    scene fondo interior_helicoptero with fade
+    show tutor
+    tutor "Es cierto... Chicos, aquí no estaremos seguros, necesito que vayan detrás de mí"
     hide tutor
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.4
