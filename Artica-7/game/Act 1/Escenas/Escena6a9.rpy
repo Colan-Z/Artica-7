@@ -8,15 +8,26 @@ label escena6a9:
     estudiante_1 "¿Qué es este lugar?"
     hide estudiante_femenino
 
-    play sound "generador_enciende.mp3" volume 0.5
+    play sfx1 "generador_enciende.mp3" volume 0.5
+    queue sfx1 "generador_loop.ogg" loop
     # Agregar dialogo de los personajes reaccionando al sonido del generador 
     # e1 '¿Qué es eso?' 
     #e2 'Suena como un generador. Pero no entiendo por qué se enciende solo.' 
     #chris 'Si... es raro.'
+    pause
+    show estudiante_masculino
+    estudiante_4 "¿Qué es eso?"
+    hide estudiante_masculino
+    show chris at right
+    chris "Suena como un generador. Pero no entiendo por qué se enciende solo."
+    hide chris
+    show tutor
+    tutor "Si... es raro."
+    hide tutor
+    # narrador "De repente se escucha el sonido de un generador encendiéndose."
     
-    narrador "De repente se escucha el sonido de un generador encendiéndose."
-    show sara at center
-    sara "El grupo mira a su alrededor, hay polvo sobre las consolas, parece que lo abandonaron hace años."
+    show sara at left
+    sara "Parece que lo abandonaron hace años."
     hide sara
     scene fondo artica7_interior_2
 
@@ -38,7 +49,6 @@ label escena6a9:
     # show tutor at center with hpunch
     pause 0.5
     # hide tutor
-
     play sound "caida_suelo.mp3"
     scene fondo tutor_electrocutado_radio with fade
     play movie "images/fondo-tutor_electrocutado_radio.webm"
@@ -54,6 +64,7 @@ label escena6a9:
     menu:
         "Tomar pulso del tutor.":
             # ESCENA 7-A - INT. ÁRTICA-7 - TUTOR ELECTROCUTADO SIN HUMO - DÍA
+            scene fondo_tutor_pulso
             david "No... no respira. No tiene pulso."
             $ humo = 0
         "No tocarlo, podría ser peligroso.":
@@ -85,16 +96,20 @@ label escena6a9:
 label ESCENA_8:
     play sound "helicoptero despega.mp3" fadein 0.5
     scene fondo helicoptero_despega with fade
-    narrador "El piloto enciende el helicóptero y procede a despegar."
+    piloto "No se preocupen. ¡Voy a buscar ayuda!"
+    # narrador "El piloto enciende el helicóptero y procede a despegar."
     scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3"
-    narrador "Al elevarse, pierde el control." 
+    piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
+    # narrador "Al elevarse, pierde el control." 
     scene fondo helicoptero_cae with fade
     play sound "helicoptero cae.mp3"
-    narrador "La ventisca era muy fuerte."
+    pause
+    # narrador "La ventisca era muy fuerte."
     scene fondo helicoptero_destrozado with fade
     play sound "helicoptero destrozado.mp3"
-    narrador "Por lo que termina estrellándose, dejando a los chicos a su suerte, dejando únicamente el ruido de la estática."
+    pause
+    # narrador "Por lo que termina estrellándose, dejando a los chicos a su suerte, dejando únicamente el ruido de la estática."
     jump ESCENA_9
     
 # ESCENA 9 - INt. ÁRTICA - ENTRADA
@@ -131,7 +146,7 @@ label ESCENA_9:
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_enojado
     
-    david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos de investigar la instalación, puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
+    david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos investigar la instalación, puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
     show sara at right
     sara "Tienes razón, tal vez logremos encontrar algo para contactarnos con los de afuera."
     david "¡Exacto!"
@@ -152,12 +167,16 @@ label ESCENA_9:
 label ESCENA_9A:
     scene fondo pasillo with fade
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
-    narrador "Un estudiante intenta tocar una puerta"
-    show chris_enojado at right
+    scene fondo_pasillo_estudiante_toca_puerta
+    pause
+    # narrador "Un estudiante intenta tocar una puerta"
+    show chris_enojado at left
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
-    show estudiante_femenino at left
+    scene fondo pasillo with fade
+    show chris_enojado at left
+    show estudiante_masculino at right
     estudiante_5 "Lo siento, no volverá a pasar..."
-    hide estudiante_femenino
+    hide estudiante_masculino
     hide chris_enojado
     menu:
         'Intervenir.':
@@ -240,6 +259,8 @@ label ESCENA_10:
     chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
     hide chris_enojado
     hide chris
+    scene fondo_pasillo_puerta_abierta
+    pause
     show estudiante_masculino at right
     estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
     scene fondo literas with fade

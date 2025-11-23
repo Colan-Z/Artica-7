@@ -113,6 +113,6 @@ label escena3a5:
     show tutor at left
     tutor "¡Adentro! ¡Rápido! Estaremos seguros hasta que pase la ventisca."
     hide tutor
-    narrador "Los estudiantes entran apresuradamente en grupo. El tutor entra último, mirando atrás hacia el helicóptero, que apenas se ve entre la nieve."
+    # narrador "Los estudiantes entran apresuradamente en grupo. El tutor entra último, mirando atrás hacia el helicóptero, que apenas se ve entre la nieve."
 
     stop sound fadeout 2.0
