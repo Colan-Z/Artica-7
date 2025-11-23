@@ -34,7 +34,7 @@ label escena6a9:
     play sound "puerta_cierra.mp3" volume 2.0
     narrador "La puerta se cierra detrás de ellos con un golpe metálico definitivo."
     narrador "Mientras el tutor corría desesperado hacia la puerta, un walkie-talkie cae de su bolsillo."
-    scene fondo_tutor_toca_puerta_2
+    scene fondo_tutor_toca_puerta
     menu:                         
         "Tratar de detenerlo":
             # ESCENA 6-A - INT. ÁRTICA-7 - ENTRADA - DÍA

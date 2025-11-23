@@ -15,12 +15,10 @@ label escena3a5:
     play sfx2 "alarma_helicoptero.mp3" volume 0.5
 
     scene fondo interior_helicoptero with fade
-    show fondo interior_helicoptero at shake
-
+    scene fondo interior_helicoptero at shake
+    pause
     # Agregar dialogo del piloto reaccionando a la fuerte ventisca
     piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!."
-
-    pause
     piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     
     # narrador "Los estudiantes se aferran a sus asientos. Sara cierra los ojos con fuerza, apretando su mochila contra el pecho."
@@ -33,6 +31,7 @@ label escena3a5:
     pause
     stop sfx2
     pause 0.01
+    stop music
     play sfx2 "helicoptero_aterriza.mp3" noloop
     scene fondo aterrizaje with fade
     pause
