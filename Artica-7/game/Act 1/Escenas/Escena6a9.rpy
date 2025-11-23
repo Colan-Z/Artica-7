@@ -175,7 +175,7 @@ label ESCENA_9A:
     scene fondo pasillo with fade
     show chris_enojado at left
     show estudiante_masculino at right
-    estudiante_5 "Lo siento, no volverá a pasar..."
+    estudiante_3 "Lo siento, no volverá a pasar..."
     hide estudiante_masculino
     hide chris_enojado
     menu:
