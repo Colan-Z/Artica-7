@@ -2,8 +2,6 @@ label escena1a2:
     # ESCENA 1 - EXT. HELICÓPTERO (CIELO ANTÁRTICO) - DÍA
     scene fondo helicoptero with fade
     play music "helicoptero.mp3" loop volume 0.2
-    # narrador "Un grupo de estudiantes había ganado un concurso académico."
-    # narrador "Su premio, un viaje científico a una base en la Antártida llamada Orcadas."
     pause
     # ESCENA 2 - INT. HELICÓPTERO - DÍA
     scene fondo interior_helicoptero with fade
@@ -18,7 +16,7 @@ label escena1a2:
     tutor "Disfruten de este viaje, será una experiencia inolvidable."
     hide tutor
     show chris
-    chris "Tres semanas. ¿Crees que sobrevivas sin videojuegos?"
+    chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
     
     menu:
         "Responder de forma cortante.":
