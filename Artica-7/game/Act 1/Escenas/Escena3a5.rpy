@@ -1,5 +1,5 @@
 label escena3a5:
-    # ESCENA 3 - EXT. HELICOPTERO - VENTISCA - DÍA
+    # ESCENA 3
     transform shake:
         zoom 1.1
         linear 0.05 xoffset 10
@@ -9,7 +9,8 @@ label escena3a5:
     scene fondo ventisca with fade
     play sfx1 "ventisca.mp3" loop volume 0.5
     pause
-     
+    
+    # ESCENA 4
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.2
     play sfx2 "alarma_helicoptero.mp3" volume 0.5
@@ -30,6 +31,7 @@ label escena3a5:
     stop sfx2
     pause 0.01
     stop music
+    # ESCENA 5
     play sfx2 "helicoptero_aterriza.mp3" noloop
     scene fondo aterrizaje with fade
     pause
@@ -38,26 +40,31 @@ label escena3a5:
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.5
 
-    # ESCENA 4 - EXT. ANTÁRTIDA - DÍA (VENTISCA)
+    # ESCENA 6
     stop sfx1 fadeout 1.5
     play sfx1 "ventisca.mp3" loop volume 0.2
     scene fondo interior_helicoptero with fade
     show tutor 
-    tutor "¿Están todos... bien...?"
+    tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
     menu:
         "Responder al tutor.":
             #Opcion A
             david "Si, estamos bien. ¿Y ustedes?"
-            tutor "Estamos bien, gracias por preguntar."
+            tutor "Estamos bien. Menos mal..."
+            tutor "Mantengan la calma. Estamos vivos, eso es lo principal."
+            tutor "Nadie se desabrocha el cinturón hasta que yo revise la salida."
         "Mirar por la ventana.":
             #Opcion B
-            scene fondo helicoptero_vista_artica   
-            david "¿Qué es eso?" 
-            david "Señor, Creo que veo algo afuera... Parece una estructura."
+            pass
+
+    scene fondo helicoptero_vista_artica   
+    david "¿Qué es eso?" 
+    david "Señor, Creo que veo algo afuera."
 
     scene fondo interior_helicoptero with fade
     show tutor
-    tutor "Es cierto... chicos, aquí no estaremos seguros, necesito que vayan detrás de mí."
+    tutor "Tienes razón... Buen ojo, David. Aquí dentro nos vamos a congelar."
+    tutor "¡Muy bien, cambio de planes! ¡Todos afuera, ahora! ¡No se separen y síganme los pasos! ¡Vamos, muévanse!"
     hide tutor
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.4
@@ -73,14 +80,15 @@ label escena3a5:
             david "Espero no arrepentirme..."
             $ tiene_celular = False
     stop music # detiene el sonido del helicoptero
+    # escena 8
     scene fondo camino with fade
     show tutor at left
-    tutor "2... 4... 6... 8... 9 ¡Estamos todos! ¡Síganme!"
+    tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero a nadie solo!"
     hide tutor
 
     scene fondo artica7_exterior with fade
     show tutor at left
-    tutor "Allá esta lo que decías David. ¡Vamos chicos!"
+    tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, muévanse!"
     scene fondo artica7_exterior with fade
     #scene black
     play sound "pasos en la nieve.mp3"
@@ -93,29 +101,30 @@ label escena3a5:
     
     scene fondo sara_suelo with fade
    
+    
     menu:                        
         "Ayudar a Sara":
-            # ESCENA 4-A - EXT. ANTÁRTIDA - DÍA (VENTISCA)  
+            #escena 8A
             $ moral += 1
             scene david_ayuda_sara with fade
             david "¿Estás bien?"
             sara "Si, lo estoy, gracias..."
         "Ordenar a Chris que la ayude.":
-            # ESCENA 4-B - EXT. ANTÁRTIDA - DÍA (VENTISCA)
+            #escena 8B
             $ moral -= 1 
             scene fondo chris_rescata_sara with fade       
             chris "..."
             sara "Gracias..."
             
-    # ESCENA 5 - EXT. ÁRTICA-7 - ENTRADA - DÍA
+    #escena 9
     scene fondo artica7_entrada with fade
     show tutor at center
-    tutor "Llegamos... la puerta está entreabierta. Está un poco dura pero creo que puedo abrirla."
+    tutor "¡Llegamos! ¡La puerta está entreabierta! ¡Maldición... el óxido la trabó!"
     play sound "puerta_abre.mp3"
     pause 2.0
-    
+    tutor "¡Ahí está!"
     show tutor at left
-    tutor "¡Adentro! ¡Rápido! Estaremos seguros hasta que pase la ventisca."
+    tutor "¡Adentro! ¡Rápido! ¡No se detengan en la entrada! ¡Pasen todos, vamos a estar seguros aquí! ¡Vamos, entren!"
     hide tutor
    
     stop sound fadeout 2.0

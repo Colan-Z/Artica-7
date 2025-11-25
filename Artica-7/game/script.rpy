@@ -9,7 +9,7 @@ define estudiante_3 = Character("Diego", color="#dc2114")
 define estudiante_4 = Character("Juan", color="#14d5dc")
 define estudiante_5 = Character("Ariana", color="#dc14b1")
 define estudiante_6 = Character("Pedro", color="#96dc14")
-define piloto = Character("Piloto", color="#dccf14")
+define piloto = Character("Piloto", color="#6b4909")
 define narrador = Character(None)
 image negro = "#000000"
 

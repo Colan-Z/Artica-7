@@ -1,19 +1,21 @@
 label escena1a2:
-    # ESCENA 1 - EXT. HELICÓPTERO (CIELO ANTÁRTICO) - DÍA
+    # ESCENA 1
     scene fondo helicoptero with fade
     play music "helicoptero.mp3" loop volume 0.2
     pause
-    # ESCENA 2 - INT. HELICÓPTERO - DÍA
+    # ESCENA 2
     scene fondo interior_helicoptero with fade
     $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
-
+    play sound "estudiantes hablando.mp3" volume 0.3 loop
     show tutor at center
-    tutor "Chicos, primero que nada, quiero felicitarlos por ganar el concurso."
-    tutor "Gracias a eso, tendrán el privilegio de conocer la base Orcadas."
-    tutor "En unos veinte minutos llegaremos."
-    tutor "Allí pasaremos tres semanas estudiando ecosistemas polares, cambio climático y adaptación de especies."
-    tutor "Debo pedirles que me entreguen sus celulares, me gustaría que se desconectaran del mundo digital y presten atención a su entorno."
-    tutor "Disfruten de este viaje, será una experiencia inolvidable."
+    tutor "¡Presten atención! "
+    stop sound fadeout 1.0
+    tutor "Miren dónde están. No cualquiera llega a la Antártida. Ustedes no están acá por suerte, están acá porque ganaron el concurso académico."
+    tutor "¡Son la élite!"
+    tutor "En veinte minutos tocamos suelo en Orcadas."
+    tutor "Esto no es un paseo turístico, es una misión científica. Ecosistemas polares, cambio climático y adaptación de especies... Vamos a ver la realidad a la cara."
+    tutor "Ahora, necesito enfoque total. Los celulares a la bolsa. ¡Ya! Allá afuera no hay señal ni tiempo para distraerse."
+    tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
     show chris
     chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
