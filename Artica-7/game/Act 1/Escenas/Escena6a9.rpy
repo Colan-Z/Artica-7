@@ -133,7 +133,7 @@ label ESCENA_9:
     play sound "estatica estrella_helicoptero.mp3" fadein 1.5
     scene fondo sara_retrocede with fade
     pause 1.5
-    play music "suspenso alumnos solos.mp3" loop volume 0.1
+    play music "suspenso alumnos solos.mp3" loop volume 0.2
     scene fondo chris_golpea_pared with fade
     play sound "golpe pared.mp3" volume 5.0
     chris "¡No! ¡Esto no puede estar pasando!"  
@@ -260,6 +260,9 @@ label ESCENA_9BA:
             hide estudiante_femenino_2
             david "Hablaremos de esto cuando Chris encuentre un lugar donde podamos instalarnos."
             david "No piensen en esas cosas, vamos a salir de esta."
+            narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
+            david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+            jump ESCENA_11
         'Hablar con Sara.':
             david "¿Estás bien, Sara? Te veo preocupada."
             show sara
@@ -310,13 +313,13 @@ label ESCENA_14:
     scene fondo pasillo with fade
     david "Perfecto, encontramos un lugar donde..." 
     scene fondo literas with fade
-    david "dormir..." 
+    david "...dormir..." 
     scene fondo banos with fade
-    david "baños en casi buen estado..." 
+    david "...baños en casi buen estado..." 
     scene fondo invernadero with fade
-    david "invernadero que podremos usar" 
+    david "...un invernadero que podremos usar..." 
     scene fondo pasillo_radio with fade
-    david "y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
+    david "...y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
     scene fondo pasillo 
     show estudiante_masculino at right
     estudiante_3 "Quisiera descansar un poco..."
@@ -336,13 +339,17 @@ label ESCENA_14:
     play sound "caminan.mp3"
     scene negro with fade
     pause 0.5
-    scene fondo artica7_interior with fade
+    scene fondo tutor_electrocutado with fade
     stop sound
     narrador "Al llegar con los demás chicos, Chris cuenta con detalle los lugares encontrados."
     david "Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+    play sound "caminan.mp3"
+    scene negro with fade
+    pause 0.5
 
 # ESCENA 15
 label ESCENA_11:
+    stop sound
     scene fondo comedor with fade
     david "Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
     show chris
