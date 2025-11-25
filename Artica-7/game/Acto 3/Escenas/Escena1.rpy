@@ -14,7 +14,7 @@ label act_3_escena1:
     hide chris_enojado_ropa_rota_hacha
     while True:
         menu:
-            'Calmar a Chris.' if moral >= 8:
+            'Calmar a Chris.' if moral >= 7:
                 call calmar_a_chris from _call_calmar_a_chris
                 return
             '{color=#FE0000}Calmar a Chris (Moral demasiado baja).{/color}' if moral < 8:
@@ -89,7 +89,9 @@ label intentar_calmar_a_chris:
 
     sara "¡Y tenga cuidado al intentar abrir la puerta! ¡Nuestro tutor recibió una descarga y murió!"
     hide sara_ropa_rota
-
+    
+    scene black with fade
+    play sound "final_bueno.mp3" volume 0.5
     narrador "Los rescatistas lograron llegar a la base Ártica-7, al pararse en frente, ven como la puerta principal se abre por sí sola."
     narrador "Frente a la puerta, estaba el cuerpo del tutor, emanaba un olor horrible, estaba muy descompuesto."
     narrador "Quitaron el cuerpo del camino y procedieron a entrar en busca de los estudiantes."
@@ -203,6 +205,8 @@ label transición_a_escena_1BA:
     narrador "Los estudiantes aprovechan el momento y retienen a Chris."
 
     # ESCENA FINAL NORMAL - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
+    scene black with fade
+    play sound "final_normal.mp3" volume 0.5
     narrador "Una hora después, la puerta principal de la base se abre. Los rescatistas irrumpen en el interior. Se dividen en equipos y recorren cada pasillo con linternas, llamando por los nombres de los desaparecidos."
     narrador "Finalmente, los encuentran en la sala de herramientas: el grupo está deshecho, agotado, con la mirada perdida. Sara reúne las pocas fuerzas que le quedan para explicar lo ocurrido, su voz quebrándose entre frases inconexas."
     narrador "David, aún con vida pero gravemente herido, es atendido de inmediato por los paramédicos. Chris, fuera de sí, es hallado apartado del resto, retenido por el grupo de exploración."
@@ -268,25 +272,29 @@ label transición_a_escena_final_malo:
     show fondo sala_herramientas_rojo
     play sound "generador_apagado.mp3" fadeout 0.3
     narrador "El generador hace un ruido extraño, como si no le hubiera gustado lo que acababa de pasar."
-    show sara_ropa_rota_rojo at left
-    play sound "estatica estrella_helicoptero.mp3"
-    pause 1.0
-    sara "¿¡HOLA!? ¿¡Alguien me escucha!?"
-    stop sound
-    hide sara_ropa_rota_rojo
     show estudiante_masculino_rojo at left
-    estudiante_6 "¿Qué esta pasando? Siento frio..."
+    estudiante_6 "¿Qué esta pasando? Siento frío..."
     hide estudiante_masculino_rojo
     show estudiante_masculino_rojo at right
-    estudiante_3 "Yo también siento frio."
+    estudiante_3 "Yo también siento frío."
     hide estudiante_masculino_rojo
+    show sara_ropa_rota_rojo
+    sara "¡El generador se apagó!"
+    hide sara_ropa_rota_rojo
     show chris_ropa_rota_llorando_rojo
     chris "¡Por favor, no me dejes solo!"
     hide chris_ropa_rota_llorando_rojo
+    show sara_ropa_rota_rojo at left
+    play sound "estatica_radio.ogg" loop
+    pause 
+    sara "¿¡HOLA!? ¿¡ALGUIEN ME ESCUCHA!? ¡TENEMOS UN HERIDO!"
+    hide sara_ropa_rota_rojo
+    stop sound
+    scene black with fade
+    play sound "final_malo.mp3"
     narrador "La señal de la radio dejó de funcionar, el frío llegó a sus cuerpos, las luces cada vez tenían menos fuerza."
     narrador "Chris no solo había matado a su amigo, mató a su única salvación, la única persona que mantuvo el orden. Chris se había convertido en una {sc=4}{color=#FF0000}bestia{/color}{/sc}."
     narrador "Todos murieron de frío, nadie supo nada de lo ocurrido, los chicos habían 'desaparecido'."
-
     python:
         final = gestor.activar_final("malo")
         resultado = gestor.obtener_resultado()
