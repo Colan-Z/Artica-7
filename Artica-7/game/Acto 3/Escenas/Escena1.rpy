@@ -306,3 +306,18 @@ label transición_a_escena_final_malo:
     pause 3.0
 
     return
+
+
+label final_alternativo:
+    scene black with fade   
+    play sound "caida_suelo.mp3"
+    narrador "David muere al intentar detener al tutor. Ambos reciben una descarga eléctrica que recorre sus cuerpos, dejándolos tirados, convulsionando, hasta que dejan de moverse."
+    narrador "Todos comienzan a perder el control, gritando y corriendo por todo el lugar en busca de ayuda. Algunos estudiantes mueren al intentar tocar otras puertas."
+    narrador "Chris está de rodillas, llorando y desesperado, y Sara permanece en un rincón, completamente asustada."
+    narrador "Al final nadie fue a rescatarlos."
+    python:
+        final = gestor.activar_final("final")
+        resultado = gestor.obtener_resultado()
+    scene black with fade
+    centered "{size=40}[resultado]{/size}"
+    pause 3.0

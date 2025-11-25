@@ -42,7 +42,7 @@ label escena6a9:
     pause 1.0
     scene fondo artica7_interior with fade
     show tutor at left
-    tutor "¡NOO! ¡Puta madre! ¡La puerta se cerro!"
+    tutor "¡NOO! ¡Puta madre! ¡La puerta se cerró!"
     hide tutor
     narrador "Mientras el tutor corría desesperado hacia la puerta, el walkie-talkie cae de su bolsillo."
     
@@ -53,24 +53,12 @@ label escena6a9:
             narrador "El tutor ignoró a David, su desesperación lo había ensordecido."
             play sound "descarga_electrica.mp3"
             pause 0.5
-            scene negro with fade
-            play sound "caida_suelo.mp3"
-            narrador "David muere al intentar detener al tutor. Ambos reciben una descarga eléctrica que recorre sus cuerpos, dejándolos tirados, convulsionando, hasta que dejan de moverse."
-            narrador "Todos comienzan a perder el control, gritando y corriendo por todo el lugar en busca de ayuda. Algunos estudiantes mueren al intentar tocar otras puertas."
-            narrador "Chris está de rodillas, llorando y desesperado, y Sara permanece en un rincón, completamente asustada."
-            narrador "Al final nadie fue a rescatarlos."
-            python:
-                final = gestor.activar_final("final")
-                resultado = gestor.obtener_resultado()
-            scene black with fade
-            centered "{size=40}[resultado]{/size}"
-            pause 3.0
-            return
+            jump final_alternativo
 
         "No hacer nada.":
             # ESCENA 10B
             scene fondo_tutor_toca_puerta_2
-            tutor "MIERDA, MIERDA, MIERDA, ¡¿QUÉ ESTA PASANDO?!"
+            tutor "MIERDA, MIERDA, MIERDA, ¡¿QUÉ ESTÁ PASANDO?!"
 
     play sound "descarga_electrica.mp3"
     pause 0.5
