@@ -320,4 +320,5 @@ label final_alternativo:
         resultado = gestor.obtener_resultado()
     scene black with fade
     centered "{size=40}[resultado]{/size}"
-    pause 3.0
+    centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
+    return

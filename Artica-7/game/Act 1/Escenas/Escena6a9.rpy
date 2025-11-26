@@ -209,7 +209,7 @@ label ESCENA_13B:
                     david "No piensen en esas cosas, vamos a salir de esta."
                     narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
                     david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-                    jump ESCENA_11
+                    jump ESCENA_16
                 'Hablar con Sara.':
                     david "¿Estás bien, Sara? Te veo preocupada."
                     show sara
@@ -232,7 +232,7 @@ label ESCENA_13B:
                             narrador "(los estudiantes siguieron hablando en susurros, su preocupación pareció aumentar.)"
                     narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
                     david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-                    jump ESCENA_11
+                    jump ESCENA_16
 
 # Escena 14
 label ESCENA_14:
