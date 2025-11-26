@@ -20,6 +20,21 @@ label before_main_menu:
 # Variables del sistema de moral
 default moral = 5
 
+#Tiempo de pestañeo
+transform parpadear(personaje):
+    "{}_neutro".format(personaje)
+    choice: 
+        1.0
+    choice: 
+        2.0
+    choice: 
+        0.5
+    "{}_neutro_blink".format(personaje)
+    choice: 
+        0.25
+    repeat
+
+
 # Inicio del juego
 label start:
     stop music

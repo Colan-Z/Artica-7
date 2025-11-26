@@ -51,8 +51,8 @@ label escena3a5:
         "Responder al tutor.":
             #Opcion A
             david "Si, estoy bien. ¿Y ustedes?"
-            show estudiante_femenino at right
-            show estudiante_masculino at left
+            show sara at right
+            show chris at left
             show estudiante_femenino_2:
                 xpos -300
                 ypos -400
@@ -60,8 +60,8 @@ label escena3a5:
                 xpos 1200
                 ypos -400           
             "estudiantes" "Estamos bien."
-            hide estudiante_femenino
-            hide estudiante_masculino
+            hide sara
+            hide chris
             hide estudiante_femenino_2
             hide estudiante_masculino_2
             tutor "Estamos bien. Menos mal..."
@@ -111,7 +111,9 @@ label escena3a5:
     stop sound
     scene fondo artica7_exterior
     show chris_gritando_sara_cayo
+    play sound "chris_hey.ogg"
     chris "¡SARA SE CAYÓ!"
+    stop sound
     hide chris_gritando_sara_cayo
     
     scene fondo sara_suelo with fade
