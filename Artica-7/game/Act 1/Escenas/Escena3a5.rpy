@@ -20,7 +20,7 @@ label escena3a5:
 
     piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!."
     piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
-    
+    play sound "chicos gritando.mp3"  volume 0.5 loop
     show sara_agarra_mochila at right:
         linear 0.03 xoffset -10
         linear 0.06 xoffset 10
@@ -29,6 +29,7 @@ label escena3a5:
     pause
     hide sara_agarra_mochila
     stop sfx2
+    stop sound
     pause 0.01
     stop music
     # ESCENA 5
@@ -49,7 +50,20 @@ label escena3a5:
     menu:
         "Responder al tutor.":
             #Opcion A
-            david "Si, estamos bien. ¿Y ustedes?"
+            david "Si, estoy bien. ¿Y ustedes?"
+            show estudiante_femenino at right
+            show estudiante_masculino at left
+            show estudiante_femenino_2:
+                xpos -300
+                ypos -400
+            show estudiante_masculino_2:
+                xpos 1200
+                ypos -400           
+            "estudiantes" "Estamos bien."
+            hide estudiante_femenino
+            hide estudiante_masculino
+            hide estudiante_femenino_2
+            hide estudiante_masculino_2
             tutor "Estamos bien. Menos mal..."
             tutor "Mantengan la calma. Estamos vivos, eso es lo principal."
             tutor "Nadie se desabrocha el cinturón hasta que yo revise la salida."
@@ -74,7 +88,7 @@ label escena3a5:
     # escena 7
     menu:
         "Tomar el celular.":
-            david "Voy a llevarlo, tal vez nos sirva de algo."
+            david "Voy a llevarlo, tal vez sirva de algo."
             $ tiene_celular = True
         "Dejar el celular.":
             david "Espero no arrepentirme..."
@@ -85,12 +99,13 @@ label escena3a5:
     show tutor at left
     tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero a nadie solo!"
     hide tutor
-
+    play sound "pasos en la nieve.mp3"
+    pause 3.0
+    stop sound
     scene fondo artica7_exterior with fade
     show tutor at left
     tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, muévanse!"
     scene fondo artica7_exterior with fade
-    #scene black
     play sound "pasos en la nieve.mp3"
     pause 3.0
     stop sound
@@ -104,13 +119,13 @@ label escena3a5:
     
     menu:                        
         "Ayudar a Sara":
-            #escena 8A
+            #Opción A:
             $ moral += 1
             scene david_ayuda_sara with fade
             david "¿Estás bien?"
             sara "Si, lo estoy, gracias..."
         "Ordenar a Chris que la ayude.":
-            #escena 8B
+            #Opción B:
             $ moral -= 1 
             scene fondo chris_rescata_sara with fade       
             chris "..."
@@ -119,7 +134,7 @@ label escena3a5:
     #escena 9
     scene fondo artica7_entrada with fade
     show tutor at center
-    tutor "¡Llegamos! ¡La puerta está entreabierta! ¡Maldición... el óxido la trabó!"
+    tutor "¡Llegamos! ¡La puerta está entreabierta! ¡Mierda... el óxido la trabó!"
     play sound "puerta_abre.mp3"
     pause 2.0
     tutor "¡Ahí está!"

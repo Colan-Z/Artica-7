@@ -17,7 +17,7 @@ label escena1a2:
     tutor "Ahora, necesito enfoque total. Los celulares a la bolsa. ¡Ya! Allá afuera no hay señal ni tiempo para distraerse."
     tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
-    show chris
+    show chris_sonrisa
     chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
     
     menu:
@@ -25,18 +25,16 @@ label escena1a2:
             # ESCENA 2-A INT. HELICÓPTERO - DÍA
             david "Sobreviviré."
             $ moral -= 1
+            hide chris_sonrisa
+            show chris
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
             david "Tú tampoco sobrevivirás mucho sin ellos."
             $ moral += 1
-            hide chris
-            show chris_sonrisa      
             chris "¿Tú crees?"
         "Responder amistosamente.":
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
             david "Al menos estaremos juntos."
-            $ moral += 2
-            hide chris
-            show chris_sonrisa      
+            $ moral += 2   
             chris "Claro, héroe" 
