@@ -72,6 +72,7 @@ label escena6a9:
     show estudiante_femenino at left
     pause 7
     play sound "Estudiante femenino gritando.mp3" 
+    play music "suspenso alumnos solos.mp3" loop volume 0.2
     estudiante_2 "¡SEÑOR!"
     hide estudiante_femenino
     menu:
@@ -122,7 +123,6 @@ label ESCENA_13:
     play sound "estatica estrella_helicoptero.mp3" fadein 1.5
     scene fondo sara_retrocede with fade
     pause 1.5
-    play music "suspenso alumnos solos.mp3" loop volume 0.2
     scene fondo chris_golpea_pared with fade
     play sound "golpe pared.mp3" volume 5.0
     chris "¡No! ¡Esto no puede estar pasando!"  
