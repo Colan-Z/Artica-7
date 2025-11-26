@@ -580,7 +580,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Hecho con {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\nProductor/Guionista: Colantonio Franco\nGame Designer: Pelleritti Nicolás\nProgramador: Gauto Carlos\nArte: Bustelo Nicolás \n\nItch.io {a=https://dream-team-ar.itch.io/artica-7}Ártica-7{/a}\n\nPodés contactarnos en dreamteamtm25@gmail.com")
+            text _("Hecho con {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\nInspirado en 'El Señor de las Moscas' de William Golding\n\nProductor/Guionista: Colantonio Franco\nGame Designer: Pelleritti Nicolás\nProgramador: Gauto Carlos\nArte: Bustelo Nicolás \n\nItch.io {a=https://dream-team-ar.itch.io/artica-7}Ártica-7{/a}\n\nPodés contactarnos en dreamteamtm25@gmail.com")
 
 
 style about_label is gui_label
