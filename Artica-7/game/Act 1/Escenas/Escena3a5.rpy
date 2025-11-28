@@ -44,26 +44,29 @@ label escena3a5:
     # ESCENA 6
     stop sfx1 fadeout 1.5
     play sfx1 "ventisca.mp3" loop volume 0.2
-    scene fondo interior_helicoptero with fade
+    scene fondo interior_helicoptero_aterrizaje_sin_tutor with fade
     show tutor 
     tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
     menu:
         "Responder al tutor.":
             #Opcion A
             david "Sí, estoy bien. ¿Y ustedes?"
-            show sara at right
-            show chris at left
-            show estudiante_femenino_2:
-                xpos -300
-                ypos -400
-            show estudiante_masculino_2:
-                xpos 1200
-                ypos -400           
-            "estudiantes" "Estamos bien."
-            hide sara
-            hide chris
-            hide estudiante_femenino_2
-            hide estudiante_masculino_2
+            # show sara at right
+            # show chris at left
+            # show estudiante_femenino_2:
+            #     xpos -300
+            #     ypos -400
+            # show estudiante_masculino_2:
+            #     xpos 1200
+            #     ypos -400           
+            "Estudiantes" "Estamos bien."
+            # hide sara
+            # hide chris
+            # hide estudiante_femenino_2
+            # hide estudiante_masculino_2
+            scene fondo interior_helicoptero_sin_tutor
+            show tutor 
+
             tutor "Menos mal..."
             tutor "Mantengan la calma. Estamos vivos, eso es lo principal."
             tutor "Nadie se desabrocha el cinturón hasta que yo revise la salida."
@@ -137,8 +140,12 @@ label escena3a5:
     scene fondo artica7_entrada with fade
     show tutor at center
     tutor "¡Llegamos! ¡La puerta está entreabierta! ¡Mierda... el óxido la trabó!"
+    hide tutor
+    scene fondo artica7_entrada_tutor_abriendo
     play sound "puerta_abre.mp3"
     pause 2.0
+    scene fondo artica7_entrada_abierta
+    show tutor at center
     tutor "¡Ahí está!"
     show tutor at left
     tutor "¡Adentro! ¡Rápido! ¡No se detengan en la entrada! ¡Pasen todos, vamos a estar seguros aquí! ¡Vamos, entren!"

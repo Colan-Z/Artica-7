@@ -1,6 +1,8 @@
 from .final_bueno import FinalBueno
 from .final_normal import FinalNormal
 from .final_malo import FinalMalo
+from .acto1_final_bueno import Acto1FinalBueno
+from .final_alternativo import FinalAlternativo
 from .final import Final
 from .mensaje_final import MensajeFinal
 
@@ -18,6 +20,10 @@ class GestorFinales:
             self._final_actual = FinalMalo()
         elif tipo == "final":
             self._final_actual = Final()
+        elif tipo == "acto1_bueno":
+            self._final_actual = Acto1FinalBueno()
+        elif tipo == "final_alternativo":
+            self._final_actual = FinalAlternativo()
 
         return self._final_actual
 

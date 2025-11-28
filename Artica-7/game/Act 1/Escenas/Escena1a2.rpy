@@ -7,6 +7,8 @@ label escena1a2:
     scene fondo interior_helicoptero with fade
     $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
     play sound "estudiantes hablando.mp3" volume 0.3 loop
+    pause
+    scene fondo interior_helicoptero_sin_tutor
     show tutor at center
     tutor "¡Presten atención!"
     stop sound fadeout 1.0
@@ -17,6 +19,7 @@ label escena1a2:
     tutor "Ahora, necesito enfoque total. Los celulares a la bolsa. ¡Ya! Allá afuera no hay señal ni tiempo para distraerse."
     tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
+    scene fondo interior_helicoptero
     show chris_sonrisa
     chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
     

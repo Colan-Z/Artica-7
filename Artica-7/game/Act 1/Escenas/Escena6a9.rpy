@@ -52,7 +52,17 @@ label escena6a9:
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
             play sound "descarga_electrica.mp3"
             pause 0.5
-            jump final_alternativo
+            scene black with fade   
+            play sound "caida_suelo.mp3"
+            python:
+                final = gestor.activar_final("final_alternativo")   
+                resultado = gestor.obtener_resultado()
+            scene black with fade
+
+            centered "{size=40}[resultado]{/size}"
+
+            pause 3.0
+            jump creditos
 
         "No hacer nada.":
             # ESCENA 10B
@@ -143,6 +153,30 @@ label ESCENA_13:
     show estudiante_masculino at right
     estudiante_3 "Quiero irme a casa."
     hide estudiante_masculino
+
+    if tiene_celular:
+        menu:
+            "Usar el celular":
+                david "Tranquilícense, por favor. Tomé mi celular al bajar del helicóptero y tiene señal. Podemos usar la función SOS para contactar al servicio de emergencias y pedir ayuda."
+                scene fondo interior_artica_sos
+                'Operador' "Puesto de comunicaciones de la Base Polar Orcadas, ¿Cuál es su emergencia?"
+                david "Habla David… estamos en la base Ártica-7. ¡Necesitamos ayuda urgente!"
+                david "Somos un grupo de estudiantes. Éramos nueve en total… y nos quedamos solos. Nuestro tutor y el piloto del helicóptero murieron."
+                'Operador' "Entendido. ¿Hay heridos entre ustedes?"
+                david "No hay heridos graves, pero estamos sin adultos atrapados aquí."
+                'Operador' "Copiado. Quédense dentro de la base y aseguren puertas y suministros. El equipo más cercano está en ruta; intentaré establecer contacto regular con ustedes cada diez minutos."
+                david "Gracias. Vamos a esperar las instrucciones."
+                python:
+                    final = gestor.activar_final("acto1_bueno")   
+                    resultado = gestor.obtener_resultado()
+                scene black with fade
+
+                centered "{size=40}[resultado]{/size}"
+
+                pause 3.0
+
+                jump creditos
+
     david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos pudo haber pasado. Pero ahora mismo, en este momento, estamos vivos."
     show estudiante_femenino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"

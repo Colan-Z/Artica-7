@@ -49,6 +49,7 @@ label start:
     play sound "final actos.mp3"
     centered  "{size= 65} FIN DEL ACTO 2 {/size}" with fade
     call act_3_escena1 from _call_act_3_escena1
-    centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
-
+    label creditos:
+        centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
+        return
     
