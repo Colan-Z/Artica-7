@@ -51,7 +51,18 @@ label start:
     call act_3_escena1 from _call_act_3_escena1
 
     label creditos:
-        centered  "{size= 65} CREDITOS \n\n Productor/Guionista: Colantonio Franco\n Game Designer: Pelleritti Nicolás\n Programador: Gauto Carlos\n Arte: Bustelo Nicolás {/size}" with fade
+        scene black
+        show text "{size=65}CREDITOS\n\nProductor/Guionista: Colantonio Franco\nGame Designer: Pelleritti Nicolás\nProgramador: Gauto Carlos\nArte: Bustelo Nicolás{/size}" as creditos_text
+        with Dissolve(1.0)
+
+        pause 2.0
+        
+        hide creditos_text
+        with Dissolve(1.0)
+
+        pause 0.2
+
         $ renpy.full_restart()
- 
+
+
     

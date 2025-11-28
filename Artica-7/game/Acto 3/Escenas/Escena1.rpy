@@ -107,7 +107,7 @@ label intentar_calmar_a_chris:
 
     pause 3.0
 
-    return
+    jump creditos
 
 # ESCENA 1B - INT. ÁRTICA-7 - COMEDOR DESORDENADO - NOCHE
 label huir_con_sara:
@@ -223,7 +223,7 @@ label transición_a_escena_1BA:
 
     pause 3.0
 
-    return
+    jump creditos
 
 label transición_a_escena_final_malo:
     david "Lo siento amigo, no puedo dejar que te acerques a esa radio."
@@ -305,7 +305,7 @@ label transición_a_escena_final_malo:
 
     pause 3.0
 
-    return
+    jump creditos
 
 
 # label final_alternativo:
