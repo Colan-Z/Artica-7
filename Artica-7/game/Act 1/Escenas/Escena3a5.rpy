@@ -18,7 +18,7 @@ label escena3a5:
     scene fondo interior_helicoptero with fade
     show fondo interior_helicoptero at shake
 
-    piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!."
+    piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!"
     piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     play sound "chicos gritando.mp3"  volume 0.5 loop
     show sara_agarra_mochila at right:
@@ -50,7 +50,7 @@ label escena3a5:
     menu:
         "Responder al tutor.":
             #Opcion A
-            david "Si, estoy bien. ¿Y ustedes?"
+            david "Sí, estoy bien. ¿Y ustedes?"
             show sara at right
             show chris at left
             show estudiante_femenino_2:
@@ -64,7 +64,7 @@ label escena3a5:
             hide chris
             hide estudiante_femenino_2
             hide estudiante_masculino_2
-            tutor "Estamos bien. Menos mal..."
+            tutor "Menos mal..."
             tutor "Mantengan la calma. Estamos vivos, eso es lo principal."
             tutor "Nadie se desabrocha el cinturón hasta que yo revise la salida."
         "Mirar por la ventana.":
@@ -73,7 +73,7 @@ label escena3a5:
 
     scene fondo helicoptero_vista_artica   
     david "¿Qué es eso?" 
-    david "Señor, Creo que veo algo afuera."
+    david "Señor, creo que veo algo afuera."
 
     scene fondo interior_helicoptero with fade
     show tutor
@@ -125,7 +125,7 @@ label escena3a5:
             $ moral += 1
             scene david_ayuda_sara with fade
             david "¿Estás bien?"
-            sara "Si, lo estoy, gracias..."
+            sara "Sí, lo estoy, gracias..."
         "Ordenar a Chris que la ayude.":
             #Opción B:
             $ moral -= 1 

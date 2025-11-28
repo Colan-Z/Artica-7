@@ -20,8 +20,8 @@ label escena6a9:
         "No logro ver nada.":
             pass
 
-    play sfx1 "generador_enciende.mp3" volume 0.5
-    queue sfx1 "generador_loop.ogg" loop
+    play sfx3 "generador_enciende.mp3" volume 0.5
+    queue sfx3 "generador_loop.ogg" loop
     show estudiante_masculino at left
     estudiante_4 "¿Qué fue eso?"
     hide estudiante_masculino
@@ -39,18 +39,17 @@ label escena6a9:
     hide sara
 
     play sound "puerta_cierra.mp3" volume 2.0
+    stop sfx1
     pause 1.0
     scene fondo artica7_interior with fade
     show tutor at left
     tutor "¡NOO! ¡Puta madre! ¡La puerta se cerró!"
     hide tutor
-    narrador "Mientras el tutor corría desesperado hacia la puerta, el walkie-talkie cae de su bolsillo."
-    
+
     menu:                         
         "Tratar de detenerlo.":
             # ESCENA 10A
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
-            narrador "El tutor ignoró a David, su desesperación lo había ensordecido."
             play sound "descarga_electrica.mp3"
             pause 0.5
             jump final_alternativo
@@ -63,12 +62,13 @@ label escena6a9:
     play sound "descarga_electrica.mp3"
     pause 0.5
     play sound "caida_suelo.mp3"
+    # ESCENA 11
     scene fondo tutor_electrocutado_radio with fade
     play movie "images/fondo-tutor_electrocutado_radio.webm"
 
     scene fondo tutor_electrocutado_radio
    
-    # ESCENA 11
+    
     show estudiante_femenino at left
     pause 7
     play sound "Estudiante femenino gritando.mp3" 
@@ -86,7 +86,7 @@ label escena6a9:
             scene fondo tutor_electrocutado_quemado_radio with fade
             narrador "No hacía falta verificar su pulso, el olor a carne quemada que desprendía, provocaba que algunos alumnos les dieran nauseas."
 
-    # ESCENA 11AB
+    # ESCENA 11A/B
     play sound "radio interferencia.mp3"
     scene fondo sara_walkie-talkie with fade
     "Piloto" "¿Ho... hola? ¿Se escu... cha?"
@@ -175,11 +175,11 @@ label ESCENA_13B:
     david "Me vendría bien un poco de ayuda..."
     hide sara 
     show chris
-    chris "¿Qué pasa, héroe? pareces un tomate "
+    chris "¿Qué pasa, héroe? pareces un tomate. "
     menu:
         'Cambiar de tema':
             # Escena 9BA - Interior - Ártica-7 - ENTRADA - DÍA
-            david "¡¿Qué?! No nada, nada, no me pasa nada... puedes ir a investigar?"
+            david "¡¿Qué?! No nada, nada, no me pasa nada... ¿Puedes ir a investigar?"
             chris "¡Obvio, ya tenía pensado hacerlo!"    
             hide chris
             show estudiante_masculino at left
@@ -220,27 +220,30 @@ label ESCENA_13B:
                     sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
                     david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
                     hide sara
-                    narrador "Algunos estudiantes escucharon esta conversación y empezaron a hablar en susurros entre ellos."
+                    play sound "alumnos susurrando.mp3"
                     david "(Los demás lo escucharon, no sé qué hacer. ¿Trato de calmarlos o no le doy mucha importancia?)"
                     menu:
                         'Hablar con los demás.':
+                            stop sound fadeout 1.0
                             david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
-                            david "Si ven o escuchan cosas es por eso, no lo oculten a los demás. Estamos juntos en esto."
-                            narrador "ante estas palabras los estudiantes parecieron tranquilizarse un poco."
+                            david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
+                            narrador "Ante estas palabras los estudiantes parecieron tranquilizarse un poco."
                         'No darle importancia.':
                             david "Seguro fue tú imaginación, Sara. Estas luces y sombras engañan fácil… No vale la pena preocuparse por eso."
-                            narrador "(los estudiantes siguieron hablando en susurros, su preocupación pareció aumentar.)"
                     narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
+                    stop sound fadeout 1.0
                     david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
                     jump ESCENA_16
 
 # Escena 14
 label ESCENA_14:
+    play sound "caminan.mp3"
+    pause 2
+    stop sound
     scene fondo pasillo with fade
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
     scene fondo_pasillo_estudiante_toca_puerta
     pause
-    # narrador "Un estudiante intenta tocar una puerta"
     show chris_enojado at left
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
     scene fondo pasillo with fade
@@ -301,16 +304,16 @@ label ESCENA_14:
     hide chris
     play sound "caminan.mp3"
     pause 2
-    stop sound # para  caminan.mp3
-    narrador "Los chicos siguieron avanzando hasta encontrar un comedor y una cocina, donde había un poco de suministros para mantenerse unos días."
     stop sound
     scene fondo comedor with fade
-    show chris at left
-    chris "¡Genial! Es hora de volver, tenemos que avisarle a los demás."
-    hide chris
+    show chris_enojado
+    chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería no parece que vaya a funcionar."
+    hide chris_enojado
+    david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
+    david "Volvamos, los demás deben estar perdiendo la cabeza con el tutor a su lado, hay que darles las 'buenas' noticias."
     play sound "caminan.mp3"
     pause 2
-    stop sound # para  caminan.mp3
+    stop sound
     scene fondo tutor_electrocutado with fade
     jump ESCENA_15
     
@@ -326,6 +329,9 @@ label ESCENA_15:
 label ESCENA_16:
     stop sound
     scene fondo comedor with fade
+    play sound "estudiantes hablando.mp3" volume 0.3 loop
+    david "Chicos hagan silencio y escúchenme."
+    stop sound fadeout 2.0
     david "Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
     show chris
     chris "Yo puedo seguir explorando con mi grupo."
@@ -345,8 +351,8 @@ label ESCENA_16:
     show sara at right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
     show chris at left
-    chris "Ese aparato viejo?... Suerte con eso..."
-    david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?."
+    chris "¿Ese aparato viejo? Suerte con eso..."
+    david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?"
     hide chris
     hide sara
     show estudiante_femenino at left

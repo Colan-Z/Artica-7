@@ -1,14 +1,14 @@
 label escena1a2:
     # ESCENA 1
     scene fondo helicoptero with fade
-    play music "helicoptero.mp3" loop volume 0.2
+    play music "helicoptero.mp3" loop volume 0.2 #SFX Rotor del helicoptero. Utilizamos music para evitar que se quite el sonido mientras suena la ventisca.
     pause
     # ESCENA 2
     scene fondo interior_helicoptero with fade
     $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
     play sound "estudiantes hablando.mp3" volume 0.3 loop
     show tutor at center
-    tutor "¡Presten atención! "
+    tutor "¡Presten atención!"
     stop sound fadeout 1.0
     tutor "Miren dónde están. No cualquiera llega a la Antártida. Ustedes no están acá por suerte, están acá porque ganaron el concurso académico."
     tutor "¡Son la élite!"
@@ -37,4 +37,4 @@ label escena1a2:
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
             david "Al menos estaremos juntos."
             $ moral += 2   
-            chris "Claro, héroe" 
+            chris "Claro, héroe." 
