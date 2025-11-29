@@ -176,6 +176,8 @@ label ESCENA_13:
                 pause 3.0
 
                 jump creditos
+            'Calmarlos':
+                pass
 
     david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos pudo haber pasado. Pero ahora mismo, en este momento, estamos vivos."
     show estudiante_femenino at left
