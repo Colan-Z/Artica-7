@@ -15,16 +15,14 @@ label escena3a5:
     piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     play sound "chicos gritando.mp3"  volume 0.5 loop
     show sara_agarra_mochila at shake_fuerte, right
-    
     pause
-    hide sara_agarra_mochila
     stop sfx2
     stop sound
-    pause 0.01
     stop music
     # ESCENA 5
     play sfx2 "helicoptero_aterriza.mp3" noloop
     scene fondo aterrizaje with fade
+    hide sara_agarra_mochila
     pause
     stop sfx2
 
