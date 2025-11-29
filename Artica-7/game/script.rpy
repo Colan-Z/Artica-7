@@ -63,6 +63,14 @@ transform shake_leve:
     linear 0.05 xoffset -2
     repeat
 
+transform shake_medio:
+    zoom 1.009
+    xalign 0.5
+    yalign 0.5
+    linear 0.05 xoffset 5
+    linear 0.05 xoffset -5
+    repeat
+
 transform yshake:
     zoom 1.2
     xalign 0.5

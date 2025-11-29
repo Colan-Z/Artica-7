@@ -6,10 +6,11 @@ init python:
 label escena6a9:
     
     #escena 10
-    scene fondo_sala_principal_puerta_abierta with fade
+    scene fondo_sala_principal_puerta_abierta 
     stop music
 
     show estudiante_femenino at left
+    with fade
     estudiante_1 "¿Qué es este lugar?"
     hide estudiante_femenino
     menu:
@@ -41,10 +42,11 @@ label escena6a9:
     play sound "puerta_cierra.mp3" volume 2.0
     stop sfx1
     pause 1.0
-    scene fondo artica7_interior with fade
+    scene fondo artica7_interior 
     show tutor at left
     tutor "¡NOO! ¡Puta madre! ¡La puerta se cerró!"
     hide tutor
+    with fade
 
     menu:                         
         "Tratar de detenerlo.":

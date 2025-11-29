@@ -1,6 +1,6 @@
 label escena3a5:
     # ESCENA 3
-    scene fondo ventisca with fade
+    scene fondo ventisca at shake_medio, with fade
     play sfx1 "ventisca.mp3" loop volume 0.5
     pause
     
@@ -32,7 +32,9 @@ label escena3a5:
     # ESCENA 6
     stop sfx1 fadeout 1.5
     play sfx1 "ventisca.mp3" loop volume 0.2
-    scene fondo interior_helicoptero_aterrizaje_sin_tutor with fade
+    scene fondo interior_helicoptero_aterrizaje with fade
+    pause 1.0
+    scene fondo interior_helicoptero_aterrizaje_sin_tutor 
     show tutor
     tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
     menu:
@@ -52,7 +54,7 @@ label escena3a5:
             # hide chris
             # hide estudiante_femenino_2
             # hide estudiante_masculino_2
-            scene fondo interior_helicoptero_sin_tutor
+            scene fondo interior_helicoptero_aterrizado_sin_tutor
             show tutor 
 
             tutor "Menos mal..."
@@ -62,18 +64,18 @@ label escena3a5:
             #Opcion B
             pass
 
-    scene fondo helicoptero_vista_artica   
+    scene fondo helicoptero_vista_artica 
     david "¿Qué es eso?" 
     david "Señor, creo que veo algo afuera."
-
-    scene fondo interior_helicoptero_sin_tutor with fade
+    scene fondo interior_helicoptero_aterrizado_sin_tutor
     show tutor
+    with fade
     tutor "Tienes razón... Buen ojo, David. Aquí dentro nos vamos a congelar."
     tutor "¡Muy bien, cambio de planes! ¡Todos afuera, ahora! ¡No se separen y síganme los pasos! ¡Vamos, muévanse!"
-    hide tutor
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.4
     scene fondo_tutor_deja_mochila with fade
+    hide tutor
     pause
     scene fondo_cerca_mochila_celulares with fade
     # escena 7
@@ -86,16 +88,18 @@ label escena3a5:
             $ tiene_celular = False
     stop music # detiene el sonido del helicoptero
     # escena 8
-    scene fondo camino with fade
+    scene fondo camino
     show tutor at left
+    with fade
     tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero a nadie solo!"
     hide tutor
     show fondo camino at yshake
     play sound "pasos en la nieve.mp3"
     pause 3.0
     stop sound
-    scene fondo artica7_exterior with fade
+    scene fondo artica7_exterior 
     show tutor at left
+    with fade
     tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, muévanse!"
     scene fondo artica7_exterior at yshake, with fade 
     play sound "pasos en la nieve.mp3"
@@ -126,11 +130,13 @@ label escena3a5:
             sara "Gracias..."
             
     #escena 9
-    scene fondo artica7_entrada with fade
+    scene fondo artica7_entrada 
     show tutor at center
-    tutor "¡Llegamos! ¡La puerta está entreabierta! ¡Mierda... el óxido la trabó!"
+    with fade
+    tutor "¡Llegamos! ¡La puerta está entreabierta!"
     hide tutor
     scene fondo artica7_entrada_tutor_abriendo
+    tutor "¡Mierda... el óxido la trabó!"
     play sound "puerta_abre.mp3"
     pause 2.0
     scene fondo artica7_entrada_abierta
