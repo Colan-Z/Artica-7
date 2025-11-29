@@ -4,12 +4,12 @@ label escena1a2:
     play music "helicoptero.mp3" loop volume 0.2 #SFX Rotor del helicoptero. Utilizamos music para evitar que se quite el sonido mientras suena la ventisca.
     pause
     # ESCENA 2
-    scene fondo interior_helicoptero with fade
+    scene fondo interior_helicoptero at shake_leve, with fade
     $ renpy.music.set_volume(0.45, delay=0.01, channel="music")
     play sound "estudiantes hablando.mp3" volume 0.3 loop
     pause
-    scene fondo interior_helicoptero_sin_tutor
-    show tutor at center
+    scene fondo interior_helicoptero_sin_tutor at shake_leve
+    show tutor at shake_leve, center, with fade
     tutor "¡Presten atención!"
     stop sound fadeout 1.0
     tutor "Miren dónde están. No cualquiera llega a la Antártida. Ustedes no están acá por suerte, están acá porque ganaron el concurso académico."
@@ -19,9 +19,10 @@ label escena1a2:
     tutor "Ahora, necesito enfoque total. Los celulares a la bolsa. ¡Ya! Allá afuera no hay señal ni tiempo para distraerse."
     tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
-    scene fondo interior_helicoptero
+    scene fondo interior_helicoptero at shake_leve
     #show chris_sonrisa
-    show chris_sonrisa at parpadear("chris_sonrisa"), center
+    show expression Image("chris_sonrisa.png") at parpadear_shake("chris_sonrisa"), shake_leve, center, with fade
+
     chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
     
     menu:
@@ -30,7 +31,7 @@ label escena1a2:
             david "Sobreviviré."
             $ moral -= 1
             hide chris_sonrisa
-            show chris at parpadear("chris"), center
+            show expression Image("chris_sonrisa.png") at parpadear_shake("chris_sonrisa"), shake_leve, center
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA

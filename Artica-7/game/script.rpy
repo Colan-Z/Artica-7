@@ -34,6 +34,42 @@ transform parpadear(personaje):
         0.25
     repeat
 
+transform parpadear_shake(p):
+    Image(p + ".png")
+    choice:
+        1.0
+    choice:
+        2.0
+    choice:
+        0.5
+    Image(p + "_blink.png")
+    choice:
+        0.25
+    repeat
+
+transform shake_fuerte:
+    zoom 1.01
+    xalign 0.5
+    yalign 0.5
+    linear 0.05 xoffset 10
+    linear 0.05 xoffset -10
+    repeat 
+
+transform shake_leve:
+    zoom 1.009
+    xalign 0.5
+    yalign 0.5
+    linear 0.05 xoffset 2
+    linear 0.05 xoffset -2
+    repeat
+
+transform yshake:
+    zoom 1.2
+    xalign 0.5
+    yalign 0.5
+    linear 0.14 yoffset -8
+    linear 0.14 yoffset 8
+    repeat
 
 # Inicio del juego
 label start:

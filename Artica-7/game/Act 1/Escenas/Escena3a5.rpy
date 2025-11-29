@@ -1,11 +1,5 @@
 label escena3a5:
     # ESCENA 3
-    transform shake:
-        zoom 1.1
-        linear 0.05 xoffset 10
-        linear 0.05 xoffset -10
-        repeat 
-    
     scene fondo ventisca with fade
     play sfx1 "ventisca.mp3" loop volume 0.5
     pause
@@ -15,16 +9,12 @@ label escena3a5:
     play sfx1 "ventisca.mp3" loop volume 0.2
     play sfx2 "alarma_helicoptero.mp3" volume 0.5
 
-    scene fondo interior_helicoptero with fade
-    show fondo interior_helicoptero at shake
+    scene fondo interior_helicoptero at shake_fuerte, with fade
 
     piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!"
     piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
     play sound "chicos gritando.mp3"  volume 0.5 loop
-    show sara_agarra_mochila at right:
-        linear 0.03 xoffset -10
-        linear 0.06 xoffset 10
-        repeat
+    show sara_agarra_mochila at shake_fuerte, right
     
     pause
     hide sara_agarra_mochila
@@ -45,7 +35,7 @@ label escena3a5:
     stop sfx1 fadeout 1.5
     play sfx1 "ventisca.mp3" loop volume 0.2
     scene fondo interior_helicoptero_aterrizaje_sin_tutor with fade
-    show tutor 
+    show tutor
     tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
     menu:
         "Responder al tutor.":
@@ -78,7 +68,7 @@ label escena3a5:
     david "¿Qué es eso?" 
     david "Señor, creo que veo algo afuera."
 
-    scene fondo interior_helicoptero with fade
+    scene fondo interior_helicoptero_sin_tutor with fade
     show tutor
     tutor "Tienes razón... Buen ojo, David. Aquí dentro nos vamos a congelar."
     tutor "¡Muy bien, cambio de planes! ¡Todos afuera, ahora! ¡No se separen y síganme los pasos! ¡Vamos, muévanse!"
@@ -102,13 +92,14 @@ label escena3a5:
     show tutor at left
     tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero a nadie solo!"
     hide tutor
+    show fondo camino at yshake
     play sound "pasos en la nieve.mp3"
     pause 3.0
     stop sound
     scene fondo artica7_exterior with fade
     show tutor at left
     tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, muévanse!"
-    scene fondo artica7_exterior with fade
+    scene fondo artica7_exterior at yshake, with fade 
     play sound "pasos en la nieve.mp3"
     pause 3.0
     stop sound
