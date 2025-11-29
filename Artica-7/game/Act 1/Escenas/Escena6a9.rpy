@@ -183,7 +183,7 @@ label ESCENA_13:
     show estudiante_femenino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
     hide estudiante_femenino
-    show chris_sonrisa at parpadear("chris_sonrisa"), center
+    show chris_enojado at parpadear("chris_enojado"), center
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_enojado
     
