@@ -183,9 +183,9 @@ label ESCENA_13:
     show estudiante_femenino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
     hide estudiante_femenino
-    show chris_enojado at parpadear("chris_enojado"), center
+    show chris_furioso at parpadear("chris_furioso"), center
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
-    hide chris_enojado
+    hide chris_furioso
     
     david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos investigar la instalación, puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
     show sara at right
