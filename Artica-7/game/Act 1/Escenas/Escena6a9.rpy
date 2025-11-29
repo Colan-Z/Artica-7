@@ -117,15 +117,19 @@ label escena6a9:
 # Escena 12
 label ESCENA_12:
     play sound "helicoptero despega.mp3" fadein 0.5
-    scene fondo helicoptero_despega with fade
+    scene fondo helicoptero_despega 
+    with fade
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
-    scene fondo helicoptero_volando_ventisca with fade
+    scene fondo helicoptero_volando_ventisca 
+    with fade
     play sound "helicoptero pierde control.mp3"
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
-    scene fondo helicoptero_cae with fade
+    scene fondo helicoptero_cae 
+    with fade
     play sound "helicoptero cae.mp3"
     pause
-    scene fondo helicoptero_destrozado with fade
+    scene fondo helicoptero_destrozado 
+    with fade
     play sound "helicoptero destrozado.mp3"
     pause
     jump ESCENA_13
@@ -135,12 +139,13 @@ label ESCENA_13:
     play sound "estatica estrella_helicoptero.mp3" fadein 1.5
     scene fondo sara_retrocede with fade
     pause 1.5
-    scene fondo chris_golpea_pared with fade
     play sound "golpe pared.mp3" volume 5.0
+    scene fondo chris_golpea_pared with fade
     chris "¡No! ¡Esto no puede estar pasando!"  
-    scene fondo tutor_electrocutado with fade
+    scene fondo tutor_electrocutado 
     hide chris_enojado
     show estudiante_masculino at right
+    with fade
     estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
     hide estudiante_masculino
     show estudiante_masculino at left
@@ -266,9 +271,11 @@ label ESCENA_13B:
                             stop sound fadeout 1.0
                             david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
                             david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
+                            # Agregar dialogo de los estudiantes, mostrando que creen a david
                             narrador "Ante estas palabras los estudiantes parecieron tranquilizarse un poco."
                         'No darle importancia.':
-                            david "Seguro fue tú imaginación, Sara. Estas luces y sombras engañan fácil… No vale la pena preocuparse por eso."
+                            david "Seguramente fue tu imaginación, Sara. Éstas luces y sombras engañan fácilmente… No vale la pena preocuparse por eso."
+                    # Poner este texto en pantalla con fondo negro
                     narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
                     stop sound fadeout 1.0
                     david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
@@ -357,6 +364,7 @@ label ESCENA_14:
     jump ESCENA_15
     
 label ESCENA_15:
+    # Reemplazar esto por texto en pantalla
     narrador "Al llegar con los demás chicos, Chris cuenta con detalle los lugares encontrados."
     david "Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
     play sound "caminan.mp3"
