@@ -113,7 +113,7 @@ label escena3a5:
     pause 3.0
     stop sound
     scene fondo artica7_exterior
-    show chris_gritando_sara_cayo
+    show chris_gritando_sara_cayo at parpadear("chris_gritando_sara_cayo"), center
     play sound "chris_hey.ogg"
     chris "¡SARA SE CAYÓ!"
     stop sound

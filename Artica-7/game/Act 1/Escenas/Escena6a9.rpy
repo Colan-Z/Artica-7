@@ -26,7 +26,7 @@ label escena6a9:
     estudiante_4 "¿Qué fue eso?"
     hide estudiante_masculino
     pause
-    show chris at right
+    show chris at parpadear("chris"), right
     chris "Suena como un generador."
     chris "Pero no entiendo por qué se enciende solo... eso no tiene sentido."
     hide chris
@@ -34,7 +34,7 @@ label escena6a9:
     tutor "Coincido. Los motores no 'despiertan' solos después de años congelados. Manténganse alerta. No toquen nada hasta que sepamos con qué estamos tratando."
     hide tutor
 
-    show sara at left
+    show sara at parpadear("sara"), left
     sara "Hay polvo sobre las consolas... parece que lo abandonaron hace años."
     hide sara
 
@@ -144,7 +144,7 @@ label ESCENA_13:
     show estudiante_masculino at left
     estudiante_4 "¡Vamos a morir aquí!"
     hide estudiante_masculino
-    show chris_furioso 
+    show chris_furioso at parpadear("chris_furioso"), center
     chris "¡Maldita sea! Se suponía que sería una excursión que me ayudaría con mis problemas, ¡PERO ESTO SOLO LO EMPEORA!"
     hide chris_furioso
     show estudiante_femenino at left
@@ -181,15 +181,16 @@ label ESCENA_13:
     show estudiante_femenino at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
     hide estudiante_femenino
-    show chris_enojado
+    show chris_sonrisa at parpadear("chris_sonrisa"), center
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_enojado
     
     david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos investigar la instalación, puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
     show sara at right
+    show sara at parpadear("sara"), right
     sara "Tienes razón, tal vez logremos encontrar algo para contactarnos con los de afuera."
     david "¡Exacto!"
-    show chris at left
+    show chris at parpadear("chris"), left
     chris "Está bien. Espero que esto no sea una pérdida de tiempo... ¿Qué tienes en mente, héroe?"
     david "Primero, necesitamos un grupo que pueda explorar la instalación."
     hide chris
@@ -204,11 +205,11 @@ label ESCENA_13:
 
 # Escena 13B
 label ESCENA_13B:
-    show sara at right
+    show sara at parpadear("sara"), right
     sara "Yo... yo puedo acompañarte para cuidarlos."
     david "Me vendría bien un poco de ayuda..."
     hide sara 
-    show chris
+    show chris at parpadear("chris"), center
     chris "¿Qué pasa, héroe? pareces un tomate. "
     menu:
         'Cambiar de tema':
@@ -222,7 +223,7 @@ label ESCENA_13B:
             show estudiante_masculino at right
             estudiante_6 "Sí, yo también lo estoy."
             hide estudiante_masculino
-            show chris
+            show chris at parpadear("chris"), center
             chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
             david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
             chris "...Está bien, vamos, no me hagan perder el tiempo."
@@ -246,7 +247,7 @@ label ESCENA_13B:
                     jump ESCENA_16
                 'Hablar con Sara.':
                     david "¿Estás bien, Sara? Te veo preocupada."
-                    show sara
+                    show sara at parpadear("sara"), center
                     sara "¿Eh? ¡Sí, sí, estoy bien!"
                     david "¿Estás segura? Puedes confiar en mí."
                     sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
@@ -278,10 +279,10 @@ label ESCENA_14:
     david "Vamos por este pasillo, parece llevar hacia el centro de la base."
     scene fondo_pasillo_estudiante_toca_puerta
     pause
-    show chris_enojado at left
+    show chris_enojado at parpadear("chris_enojado"), left
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
     scene fondo pasillo with fade
-    show chris_enojado at left
+    show chris_enojado at parpadear("chris_enojado"), left
     show estudiante_masculino at right
     estudiante_3 "Lo siento, no volverá a pasar..."
     hide estudiante_masculino
@@ -290,12 +291,12 @@ label ESCENA_14:
         'Intervenir.':
             $ moral -= 1
             david "No deberías de tratar así a las personas y menos en estos momentos."
-            show chris_enojado
+            show chris_enojado at parpadear("chris_enojado"), center
             chris "No te metas donde no te incumbe."
         'Tranquilizar.':
             $ moral += 1
             david "Chris, tranquilo hermano, vamos a tomarnos esto con más calma, no sabemos cuánto tiempo vamos a estar acá."
-            show chris
+            show chris at parpadear("chris"), center
             chris "Lo siento, no estoy en mi mejor momento..."
         'Ignorarlo.':
             pass
@@ -314,7 +315,7 @@ label ESCENA_14:
     show estudiante_masculino at center
     estudiante_6 "¡Hay 8 literas, suficientes para todos!"
     hide estudiante_masculino
-    show chris
+    show chris at parpadear("chris"), center
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
     narrador "(algunos minutos después)"
@@ -331,7 +332,7 @@ label ESCENA_14:
     scene fondo pasillo 
     show estudiante_masculino at right
     estudiante_3 "Quisiera descansar un poco..."
-    show chris at left
+    show chris at parpadear("chris"), left
     chris "Cuando encontremos qué comer, vas a descansar."
     estudiante_3 "Está bien..."
     hide estudiante_masculino
@@ -340,7 +341,7 @@ label ESCENA_14:
     pause 2
     stop sound
     scene fondo comedor with fade
-    show chris_enojado
+    show chris_enojado at parpadear("chris_enojado"), center
     chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería no parece que vaya a funcionar."
     hide chris_enojado
     david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
@@ -367,7 +368,7 @@ label ESCENA_16:
     david "Chicos hagan silencio y escúchenme."
     stop sound fadeout 2.0
     david "Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
-    show chris
+    show chris at parpadear("chris"), center
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
     show estudiante_masculino at right
@@ -382,9 +383,9 @@ label ESCENA_16:
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_masculino
-    show sara at right
+    show sara at parpadear("sara"), right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
-    show chris at left
+    show chris at parpadear("chris"), left
     chris "¿Ese aparato viejo? Suerte con eso..."
     david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?"
     hide chris

@@ -20,7 +20,8 @@ label escena1a2:
     tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
     scene fondo interior_helicoptero
-    show chris_sonrisa
+    #show chris_sonrisa
+    show chris_sonrisa at parpadear("chris_sonrisa"), center
     chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
     
     menu:
@@ -29,7 +30,7 @@ label escena1a2:
             david "Sobreviviré."
             $ moral -= 1
             hide chris_sonrisa
-            show chris
+            show chris at parpadear("chris"), center
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
