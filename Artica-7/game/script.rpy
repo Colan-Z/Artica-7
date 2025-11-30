@@ -15,9 +15,6 @@ define invisible = Character(None, what_color="#00000000", window_background="#0
 image negro = "#000000"
 
 init python:
-    def name_only(event, interact=True, **kwargs):
-        pass
-
     def forzar_desactivar_afm():
         if _preferences.afm_enable and not hasattr(store, 'afm_temporal_activo'):
             _preferences.afm_enable = False
