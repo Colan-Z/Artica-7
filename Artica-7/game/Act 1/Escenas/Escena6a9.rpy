@@ -100,7 +100,7 @@ label escena6a9:
             narrador "No hacía falta verificar su pulso, el olor a carne quemada que desprendía, provocaba que algunos alumnos les dieran nauseas."
 
     # ESCENA 11A/B
-    play sound "radio interferencia.mp3"
+    play sound "radio interferencia.mp3" loop volume 0.2
     pause
     scene fondo sara_walkie-talkie
     "Piloto" "¿Ho... hola? ¿Se escu... cha?"
@@ -110,7 +110,7 @@ label escena6a9:
     else:
         scene fondo tutor_electrocutado_quemado
     
-    show sara gritando_walkie-talkie at right
+    show sara gritando_walkie-talkie at parpadear("sara gritando_walkie-talkie"),  right
     with fade
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
     "Piloto" "¡Tranquila, voy a intentar pedir ayuda!"
@@ -119,21 +119,21 @@ label escena6a9:
 
 # Escena 12
 label ESCENA_12:
-    play sound "helicoptero despega.mp3" fadein 0.5
+    play sound "helicoptero despega.mp3" volume 0.3
     scene fondo helicoptero_despega 
     with fade
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
     scene fondo helicoptero_volando_ventisca 
     with fade
-    play sound "helicoptero pierde control.mp3"
+    play sound "helicoptero pierde control.mp3" volume 0.3
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
     scene fondo helicoptero_cae 
     with fade
-    play sound "helicoptero cae.mp3"
+    play sound "helicoptero cae.mp3" volume 0.3
     pause
     scene fondo helicoptero_destrozado 
     with fade
-    play sound "helicoptero destrozado.mp3"
+    play sound "helicoptero destrozado.mp3" volume 0.3
     pause
     jump ESCENA_13
     
@@ -302,9 +302,10 @@ label ESCENA_14:
     pause
     show chris_enojado at parpadear("chris_enojado"), left
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
-    scene fondo pasillo with fade
+    scene fondo pasillo 
     show chris_enojado at parpadear("chris_enojado"), left
     show estudiante_masculino at right
+    with fade
     estudiante_3 "Lo siento, no volverá a pasar..."
     hide estudiante_masculino
     hide chris_enojado
@@ -324,6 +325,7 @@ label ESCENA_14:
     chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
     hide chris_enojado
     hide chris
+    show fondo pasillo at yshake
     play sound "caminan.mp3"
     pause 2
     stop sound # para  caminan.mp3
@@ -361,11 +363,14 @@ label ESCENA_14:
     play sound "caminan.mp3"
     pause 2
     stop sound
-    scene fondo comedor with fade
+    scene fondo comedor 
     show chris_enojado at parpadear("chris_enojado"), center
+    with fade
+    # Dialogo inconsistente con el dialogo cuando ve las camas por primera vez
     chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería no parece que vaya a funcionar."
     hide chris_enojado
     david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
+    # Agregar mas molestia creciente de chris con david
     david "Volvamos, los demás deben estar perdiendo la cabeza con el tutor a su lado, hay que darles las 'buenas' noticias."
     play sound "caminan.mp3"
     pause 2
@@ -385,7 +390,7 @@ label ESCENA_15:
 # ESCENA 16
 label ESCENA_16:
     stop sound
-    scene fondo comedor with fade
+    scene fondo comedor_estudiantes_sentados with fade
     play sound "estudiantes hablando.mp3" volume 0.3 loop
     # Poner estudiantes en las sillas (chris y sara pueden 
     # estar parados a su lado aunque no se vean)
@@ -395,18 +400,23 @@ label ESCENA_16:
     show chris at parpadear("chris"), center
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
+    scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
     show estudiante_masculino at right
     show estudiante_masculino_2 at left
     f"{estudiante_3} y {estudiante_6}" "Oh, no..."
     hide estudiante_masculino
     hide estudiante_masculino_2
+    scene fondo comedor_estudiantes_sentados
     david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
+    scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino at right
     estudiante_1 "Haremos nuestro mayor esfuerzo."
     hide estudiante_femenino
+    scene fondo comedor_estudiantes_sentados_sin_un_masculino
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_masculino
+    scene fondo comedor_estudiantes_sentados
     show sara at parpadear("sara"), right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
     show chris at parpadear("chris"), left
@@ -414,9 +424,11 @@ label ESCENA_16:
     david "Bien, te encargo la radio. Los que quedan ¿Podrían encargarse de los suministros?"
     hide chris
     hide sara
+    scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino at left
     estudiante_2 "Claro, no hay problema."
     hide estudiante_femenino
+    scene fondo comedor_estudiantes_sentados_sin_violeta
     show estudiante_femenino_2 at right
     estudiante_5 "Nosotros nos encargaremos."
     hide estudiante_femenino_2

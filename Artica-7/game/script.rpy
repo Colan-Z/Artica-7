@@ -72,7 +72,7 @@ transform shake_medio:
     repeat
 
 transform yshake:
-    zoom 1.2
+    zoom 1.02
     xalign 0.5
     yalign 0.5
     linear 0.14 yoffset -8
