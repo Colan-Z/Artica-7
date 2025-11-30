@@ -6,6 +6,7 @@ init python:
 label escena6a9:
     
     #escena 10
+    play sfx1 "ventisca.mp3" loop volume 0.2
     scene fondo_sala_principal_puerta_abierta 
     stop music
 
@@ -42,16 +43,21 @@ label escena6a9:
     play sound "puerta_cierra.mp3" volume 2.0
     stop sfx1
     pause 1.0
-    scene fondo artica7_interior 
+    scene fondo artica7_interior
     show tutor at left
-    tutor "¡NOO! ¡Puta madre! ¡La puerta se cerró!"
-    hide tutor
     with fade
+    tutor "¡NOO! ¡Puta madre! ¡La puerta se cerró!"
+    stop sound
+    scene fondo artica7_interior_tutor_corriendo with fade
+    play sound "Corren.mp3" volume 0.3
+    hide tutor
 
-    menu:                         
+    menu:                    
         "Tratar de detenerlo.":
             # ESCENA 10A
             david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
+            stop sound
+            scene fondo_tutor_toca_puerta_david
             play sound "descarga_electrica.mp3"
             pause 0.5
             scene black with fade   
@@ -68,8 +74,9 @@ label escena6a9:
 
         "No hacer nada.":
             # ESCENA 10B
-            scene fondo_tutor_toca_puerta_2
             tutor "MIERDA, MIERDA, MIERDA, ¡¿QUÉ ESTÁ PASANDO?!"
+            stop sound
+            scene fondo_tutor_toca_puerta_2
 
     play sound "descarga_electrica.mp3"
     pause 0.5
