@@ -125,23 +125,27 @@ label ESCENA_12:
     # Marcar que AFM temporal está activo
     $ afm_temporal_activo = True
     $ _preferences.afm_enable = True
-    $ _preferences.afm_time = 10
+    $ _preferences.afm_time = 7
     
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
     
     scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3" volume 0.3
     
-    $ _preferences.afm_time = 4
+    $ _preferences.afm_time = 5
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
     
+    window hide
     scene fondo helicoptero_cae with fade
     play sound "helicoptero cae.mp3" volume 0.3
     pause 2.0
+    invisible ""
     
     scene fondo helicoptero_destrozado with fade
     play sound "helicoptero destrozado.mp3" volume 0.3
     pause 2.0
+    invisible ""
+    pause 1.0
     
     # Desactivar y limpiar flag
     $ del afm_temporal_activo
@@ -152,12 +156,25 @@ label ESCENA_12:
     
 # ESCENA 13
 label ESCENA_13:
+    window hide
     play sound "estatica estrella_helicoptero.mp3" fadein 1.5
     scene fondo sara_retrocede with fade
-    pause 1.5
+    pause 1
+    
+    $ afm_temporal_activo = True
+    $ _preferences.afm_enable = True
+    $ _preferences.afm_time = 8
+    invisible ""
+    $ del afm_temporal_activo
+    $ _preferences.afm_enable = False
+    $ renpy.restart_interaction()
+    
     play sound "golpe pared.mp3" volume 5.0
     scene fondo chris_golpea_pared with fade
-    chris "¡No! ¡Esto no puede estar pasando!"  
+    invisible ""
+    window auto
+    
+    chris "¡No! ¡Esto no puede estar pasando!"
     scene fondo tutor_electrocutado 
     hide chris_enojado
     show estudiante_masculino at right

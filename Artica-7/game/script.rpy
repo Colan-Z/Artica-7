@@ -11,9 +11,13 @@ define estudiante_5 = Character("Ariana", color="#dc14b1")
 define estudiante_6 = Character("Pedro", color="#96dc14")
 define piloto = Character("Piloto", color="#6b4909")
 define narrador = Character(None)
+define invisible = Character(None, what_color="#00000000", window_background="#00000000")
 image negro = "#000000"
 
 init python:
+    def name_only(event, interact=True, **kwargs):
+        pass
+
     def forzar_desactivar_afm():
         if _preferences.afm_enable and not hasattr(store, 'afm_temporal_activo'):
             _preferences.afm_enable = False
