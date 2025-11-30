@@ -200,9 +200,10 @@ label ESCENA_13:
     estudiante_3 "Quiero irme a casa."
     hide estudiante_masculino_2
 
-    if tiene_celular:
+    $ salir_del_bucle = True
+    while salir:
         menu:
-            "Usar el celular":
+            "Usar el celular" if tiene_celular:
                 david "Tranquilícense, por favor. Tomé mi celular al bajar del helicóptero y tiene señal. Podemos usar la función SOS para contactar al servicio de emergencias y pedir ayuda."
                 scene fondo interior_artica_sos
                 'Operador' "Puesto de comunicaciones de la Base Polar Orcadas, ¿Cuál es su emergencia?"
@@ -216,14 +217,15 @@ label ESCENA_13:
                     final = gestor.activar_final("acto1_bueno")   
                     resultado = gestor.obtener_resultado()
                 scene black with fade
-
                 centered "{size=40}[resultado]{/size}"
-
                 pause 3.0
-
                 jump creditos
-            'Calmarlos':
+
+            '{color=#FE0000}Usar el celular.{/color}' if not tiene_celular:
                 pass
+
+            'Calmarlos':
+                $ salir_del_bucle = False
 
     david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos pudo haber pasado. Pero ahora mismo, en este momento, estamos vivos."
     show estudiante_femenino_3 at left
