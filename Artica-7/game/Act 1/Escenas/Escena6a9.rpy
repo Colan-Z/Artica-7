@@ -23,6 +23,7 @@ label escena6a9:
 
     play sfx3 "generador_enciende.mp3" volume 0.5
     queue sfx3 "generador_loop.ogg" loop
+    pause 0.5
     show estudiante_masculino at left
     estudiante_4 "¿Qué fue eso?"
     hide estudiante_masculino
@@ -100,15 +101,17 @@ label escena6a9:
 
     # ESCENA 11A/B
     play sound "radio interferencia.mp3"
-    scene fondo sara_walkie-talkie with fade
+    pause
+    scene fondo sara_walkie-talkie
     "Piloto" "¿Ho... hola? ¿Se escu... cha?"
     "Piloto" "¿Es... están to... dos bien?"
     if renpy.showing("fondo tutor_electrocutado_radio"):
-        scene fondo tutor_electrocutado with fade
+        scene fondo tutor_electrocutado
     else:
-        scene fondo tutor_electrocutado_quemado with fade
+        scene fondo tutor_electrocutado_quemado
     
-    show sara gritando_walkie-talkie at left
+    show sara gritando_walkie-talkie at right
+    with fade
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
     "Piloto" "¡Tranquila, voy a intentar pedir ayuda!"
     hide sara gritando_walkie-talkie
@@ -235,6 +238,9 @@ label ESCENA_13B:
             show chris at parpadear("chris"), center
             chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
             david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
+            # Aca chris podria empezar a enojarse un poco con 
+            # como le habla david pero aceptar igual (un gruñido o algo por el estilo)
+            # agregar sprite de chris (un poco) enojado
             chris "...Está bien, vamos, no me hagan perder el tiempo."
             hide chris
             menu:
@@ -256,6 +262,7 @@ label ESCENA_13B:
                     jump ESCENA_16
                 'Hablar con Sara.':
                     david "¿Estás bien, Sara? Te veo preocupada."
+                    # Agregar sara preocupada (sprite y en celtex)
                     show sara at parpadear("sara"), center
                     sara "¿Eh? ¡Sí, sí, estoy bien!"
                     david "¿Estás segura? Puedes confiar en mí."
@@ -265,13 +272,16 @@ label ESCENA_13B:
                     david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
                     hide sara
                     play sound "alumnos susurrando.mp3"
+                    pause
                     david "(Los demás lo escucharon, no sé qué hacer. ¿Trato de calmarlos o no le doy mucha importancia?)"
                     menu:
                         'Hablar con los demás.':
+                            # Hacer una rama o algo que no quede como cosmetico
+                            # aca se puede poner el final normal, que se note como les esta afectando todo
                             stop sound fadeout 1.0
                             david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
                             david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
-                            # Agregar dialogo de los estudiantes, mostrando que creen a david
+                            # Agregar dialogo de los estudiantes, mostrando que creen a david (por el momento)
                             narrador "Ante estas palabras los estudiantes parecieron tranquilizarse un poco."
                         'No darle importancia.':
                             david "Seguramente fue tu imaginación, Sara. Éstas luces y sombras engañan fácilmente… No vale la pena preocuparse por eso."
@@ -377,6 +387,8 @@ label ESCENA_16:
     stop sound
     scene fondo comedor with fade
     play sound "estudiantes hablando.mp3" volume 0.3 loop
+    # Poner estudiantes en las sillas (chris y sara pueden 
+    # estar parados a su lado aunque no se vean)
     david "Chicos hagan silencio y escúchenme."
     stop sound fadeout 2.0
     david "Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
@@ -408,3 +420,4 @@ label ESCENA_16:
     show estudiante_femenino_2 at right
     estudiante_5 "Nosotros nos encargaremos."
     hide estudiante_femenino_2
+    # Agregar final normal ()
