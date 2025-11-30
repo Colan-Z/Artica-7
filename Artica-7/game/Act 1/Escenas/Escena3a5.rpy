@@ -93,6 +93,7 @@ label escena3a5:
     with fade
     tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero a nadie solo!"
     hide tutor
+    window hide
     show fondo camino at yshake
     play sound "pasos en la nieve.mp3"
     pause 3.0

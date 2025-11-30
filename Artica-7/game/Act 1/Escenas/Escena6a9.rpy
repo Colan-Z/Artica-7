@@ -23,7 +23,7 @@ label escena6a9:
 
     play sfx3 "generador_enciende.mp3" volume 0.5
     queue sfx3 "generador_loop.ogg" loop
-    pause 0.5
+    pause
     show estudiante_masculino at left
     estudiante_4 "¿Qué fue eso?"
     hide estudiante_masculino
@@ -83,7 +83,7 @@ label escena6a9:
    
     
     show estudiante_femenino at left
-    pause 7
+    pause 1.5
     play sound "Estudiante femenino gritando.mp3" 
     play music "suspenso alumnos solos.mp3" loop volume 0.2
     estudiante_2 "¡SEÑOR!"
@@ -123,9 +123,9 @@ label ESCENA_12:
     scene fondo helicoptero_despega with fade
     
     # Marcar que AFM temporal está activo
-    $ afm_temporal_activo = True
-    $ _preferences.afm_enable = True
-    $ _preferences.afm_time = 7
+    # $ afm_temporal_activo = True
+    # $ _preferences.afm_enable = True
+    # $ _preferences.afm_time = 7
     
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
     
@@ -139,18 +139,18 @@ label ESCENA_12:
     scene fondo helicoptero_cae with fade
     play sound "helicoptero cae.mp3" volume 0.3
     pause 2.0
-    invisible ""
+    # invisible ""
     
     scene fondo helicoptero_destrozado with fade
     play sound "helicoptero destrozado.mp3" volume 0.3
     pause 2.0
-    invisible ""
-    pause 1.0
+    # invisible ""
+    # pause 1.0
     
     # Desactivar y limpiar flag
-    $ del afm_temporal_activo
-    $ _preferences.afm_enable = False
-    $ renpy.restart_interaction()
+    # $ del afm_temporal_activo
+    # $ _preferences.afm_enable = False
+    # $ renpy.restart_interaction()
     
     jump ESCENA_13
     
@@ -161,18 +161,18 @@ label ESCENA_13:
     scene fondo sara_retrocede with fade
     pause 1
     
-    $ afm_temporal_activo = True
-    $ _preferences.afm_enable = True
-    $ _preferences.afm_time = 8
-    invisible ""
-    $ del afm_temporal_activo
-    $ _preferences.afm_enable = False
-    $ renpy.restart_interaction()
+    # $ afm_temporal_activo = True
+    # $ _preferences.afm_enable = True
+    # $ _preferences.afm_time = 8
+    # invisible ""
+    # $ del afm_temporal_activo
+    # $ _preferences.afm_enable = False
+    # $ renpy.restart_interaction()
     
     play sound "golpe pared.mp3" volume 5.0
     scene fondo chris_golpea_pared with fade
-    invisible ""
-    window auto
+    # invisible ""
+    # window auto
     
     chris "¡No! ¡Esto no puede estar pasando!"
     scene fondo tutor_electrocutado 

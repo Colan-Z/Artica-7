@@ -14,23 +14,23 @@ define narrador = Character(None)
 define invisible = Character(None, what_color="#00000000", window_background="#00000000")
 image negro = "#000000"
 
-init python:
-    def forzar_desactivar_afm():
-        if _preferences.afm_enable and not hasattr(store, 'afm_temporal_activo'):
-            _preferences.afm_enable = False
-            renpy.restart_interaction()
+# init python:
+#     def forzar_desactivar_afm():
+#         if _preferences.afm_enable and not hasattr(store, 'afm_temporal_activo'):
+#             _preferences.afm_enable = False
+#             renpy.restart_interaction()
     
-    config.after_default_callbacks.append(forzar_desactivar_afm)
+#     config.after_default_callbacks.append(forzar_desactivar_afm)
 
-label afm_temporal_inicio:
-    $ _preferences.afm_enable = True
-    $ _preferences.afm_time = 4.0
-    return
+# label afm_temporal_inicio:
+#     $ _preferences.afm_enable = True
+#     $ _preferences.afm_time = 4.0
+#     return
 
-label afm_temporal_fin:
-    $ _preferences.afm_enable = False
-    $ renpy.restart_interaction()
-    return
+# label afm_temporal_fin:
+#     $ _preferences.afm_enable = False
+#     $ renpy.restart_interaction()
+#     return
 
 label before_main_menu:
     $ renpy.music.set_volume(0.1, delay=0, channel="music")
