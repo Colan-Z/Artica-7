@@ -119,22 +119,35 @@ label escena6a9:
 
 # Escena 12
 label ESCENA_12:
+    nvl clear
     play sound "helicoptero despega.mp3" volume 0.3
-    scene fondo helicoptero_despega 
-    with fade
+    scene fondo helicoptero_despega with fade
+    
+    # Diálogo 1: 3 segundos
+    $ _preferences.afm_enable = True # Esto es para que toda la secuencia del accidente avance sola y no se cortan los sonidos, se puede pausar con click
+    $ _preferences.afm_time = 4.0
+    $ _preferences.afm_after_click = True
+
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
-    scene fondo helicoptero_volando_ventisca 
-    with fade
+    
+    scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3" volume 0.3
+    
+    # Diálogo 2: 4 segundos (más tiempo porque es más dramático)
+    $ _preferences.afm_time = 4.0
+    $ _preferences.afm_after_click = True
+    
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
-    scene fondo helicoptero_cae 
-    with fade
+    
+    scene fondo helicoptero_cae with fade
     play sound "helicoptero cae.mp3" volume 0.3
-    pause
-    scene fondo helicoptero_destrozado 
-    with fade
+    pause 2.0  # Pausa para el sonido
+    
+    scene fondo helicoptero_destrozado with fade
     play sound "helicoptero destrozado.mp3" volume 0.3
-    pause
+    pause 2.0  # Pausa para el sonido
+    
+    $ _preferences.afm_enable = False
     jump ESCENA_13
     
 # ESCENA 13
