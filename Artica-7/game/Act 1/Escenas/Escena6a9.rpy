@@ -204,14 +204,14 @@ label ESCENA_13:
     while salir:
         menu:
             "Usar el celular" if tiene_celular:
-                david "Tranquilícense, por favor. Tomé mi celular al bajar del helicóptero y tiene señal. Podemos usar la función SOS para contactar al servicio de emergencias y pedir ayuda."
+                david "Cálmense todos. Antes al bajar del helicóptero tome mi celular en caso de que algo pasara."
+                david "Acá dentro hay algo de señal, voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
                 scene fondo interior_artica_sos
-                'Operador' "Puesto de comunicaciones de la Base Polar Orcadas, ¿Cuál es su emergencia?"
-                david "Habla David… estamos en la base Ártica-7. ¡Necesitamos ayuda urgente!"
-                david "Somos un grupo de estudiantes. Éramos nueve en total… y nos quedamos solos. Nuestro tutor y el piloto del helicóptero murieron."
-                'Operador' "Entendido. ¿Hay heridos entre ustedes?"
-                david "No hay heridos graves, pero estamos sin adultos atrapados aquí."
-                'Operador' "Copiado. Quédense dentro de la base y aseguren puertas y suministros. El equipo más cercano está en ruta; intentaré establecer contacto regular con ustedes cada diez minutos."
+                'Operador' "Aquí base orcadas. ¿Cuál es su emergencia?"
+                david "Hola, me llamo David, somos los estudiantes que iban a una expedición en orcadas, tuvimos un problema por una ventisca por lo que decidimos refugiarnos en una instalación llamada Artcia-7"
+                'Operador' "¿Artica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
+                david "Puede que vean humo en el cielo, el helicóptero que nos llevaba se estrello."
+                'Operador' "Eso puede servirnos, estamos preparando el equipo de rescate, manténganse ahí, llegaremos lo antes posible."
                 david "Gracias. Vamos a esperar las instrucciones."
                 python:
                     final = gestor.activar_final("acto1_bueno")   
