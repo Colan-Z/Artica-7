@@ -103,8 +103,8 @@ label escena6a9:
     play sound "radio interferencia.mp3" loop volume 0.2
     pause
     scene fondo sara_walkie-talkie
-    "Piloto" "¿Ho... hola? ¿Se escu... cha?"
-    "Piloto" "¿Es... están to... dos bien?"
+    piloto "¿Ho... hola? ¿Se escu... cha?"
+    piloto "¿Es... están to... dos bien?"
     if renpy.showing("fondo tutor_electrocutado_radio"):
         scene fondo tutor_electrocutado
     else:
@@ -113,41 +113,38 @@ label escena6a9:
     show sara gritando_walkie-talkie at parpadear("sara gritando_walkie-talkie"),  right
     with fade
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
-    "Piloto" "¡Tranquila, voy a intentar pedir ayuda!"
+    piloto "¡Tranquila, voy a intentar pedir ayuda!"
     hide sara gritando_walkie-talkie
     jump ESCENA_12
 
 # Escena 12
 label ESCENA_12:
-    nvl clear
     play sound "helicoptero despega.mp3" volume 0.3
     scene fondo helicoptero_despega with fade
     
-    # Diálogo 1: 3 segundos
-    $ _preferences.afm_enable = True # Esto es para que toda la secuencia del accidente avance sola y no se cortan los sonidos, se puede pausar con click
+    # Activar solo para los diálogos específicos
+    $ _preferences.afm_enable = True
     $ _preferences.afm_time = 4.0
-    $ _preferences.afm_after_click = True
-
+    
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
     
     scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3" volume 0.3
     
-    # Diálogo 2: 4 segundos (más tiempo porque es más dramático)
     $ _preferences.afm_time = 4.0
-    $ _preferences.afm_after_click = True
-    
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
     
     scene fondo helicoptero_cae with fade
     play sound "helicoptero cae.mp3" volume 0.3
-    pause 2.0  # Pausa para el sonido
+    pause 2.0
     
     scene fondo helicoptero_destrozado with fade
     play sound "helicoptero destrozado.mp3" volume 0.3
-    pause 2.0  # Pausa para el sonido
+    pause 2.0
     
+    # Desactivar inmediatamente
     $ _preferences.afm_enable = False
+    $ renpy.restart_interaction()
     jump ESCENA_13
     
 # ESCENA 13
