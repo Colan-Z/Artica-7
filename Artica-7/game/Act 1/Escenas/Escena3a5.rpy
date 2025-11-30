@@ -99,7 +99,7 @@ label escena3a5:
     pause 3.0
     stop sound
     scene fondo artica7_exterior 
-    show tutor at left
+    show tutor at right
     with fade
     tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, muévanse!"
     scene fondo artica7_exterior at yshake, with fade 

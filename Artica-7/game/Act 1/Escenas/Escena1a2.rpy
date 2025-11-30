@@ -11,6 +11,7 @@ label escena1a2:
     scene fondo interior_helicoptero_sin_tutor at shake_leve
     show tutor at shake_leve, center, with fade
     tutor "¡Presten atención!"
+    
     stop sound fadeout 1.0
     tutor "Miren dónde están. No cualquiera llega a la Antártida. Ustedes no están acá por suerte, están acá porque ganaron el concurso académico."
     tutor "¡Son la élite!"

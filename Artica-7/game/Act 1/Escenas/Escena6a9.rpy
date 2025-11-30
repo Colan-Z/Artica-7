@@ -27,7 +27,6 @@ label escena6a9:
     show estudiante_masculino at left
     estudiante_4 "¿Qué fue eso?"
     hide estudiante_masculino
-    pause
     show chris at parpadear("chris"), right
     chris "Suena como un generador."
     chris "Pero no entiendo por qué se enciende solo... eso no tiene sentido."
@@ -86,14 +85,14 @@ label escena6a9:
     pause 1.5
     play sound "Estudiante femenino gritando.mp3" 
     play music "suspenso alumnos solos.mp3" loop volume 0.2
-    estudiante_2 "¡SEÑOR!"
+    estudiante_1 "¡SEÑOR!"
     hide estudiante_femenino
     menu:
         "Tomar pulso del tutor.":
             #escena 11A
             scene fondo_tutor_pulso
             david "No... no respira. No tiene pulso."
-            scene fondo tutor_electrocutado_radio with fade
+            scene fondo tutor_electrocutado_quemado_radio with fade
         "No tocarlo, podría ser peligroso.":
             #escena 11B
             scene fondo tutor_electrocutado_quemado_radio with fade
@@ -132,10 +131,10 @@ label ESCENA_12:
     scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3" volume 0.3
     
-    $ _preferences.afm_time = 5
+    # $ _preferences.afm_time = 5
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
     
-    window hide
+    # window hide
     scene fondo helicoptero_cae with fade
     play sound "helicoptero cae.mp3" volume 0.3
     pause 2.0
@@ -159,7 +158,7 @@ label ESCENA_13:
     window hide
     play sound "estatica estrella_helicoptero.mp3" fadein 1.5
     scene fondo sara_retrocede with fade
-    pause 1
+    pause 2.0
     
     # $ afm_temporal_activo = True
     # $ _preferences.afm_enable = True
@@ -177,10 +176,10 @@ label ESCENA_13:
     chris "¡No! ¡Esto no puede estar pasando!"
     scene fondo tutor_electrocutado 
     hide chris_enojado
-    show estudiante_masculino at right
+    show estudiante_masculino_2 at right
     with fade
     estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
-    hide estudiante_masculino
+    hide estudiante_masculino_2
     show estudiante_masculino at left
     estudiante_4 "¡Vamos a morir aquí!"
     hide estudiante_masculino
@@ -190,9 +189,9 @@ label ESCENA_13:
     show estudiante_femenino at left
     estudiante_1 "¡Qué vamos a hacer!"
     hide estudiante_femenino
-    show estudiante_masculino at right
+    show estudiante_masculino_2 at right
     estudiante_3 "Quiero irme a casa."
-    hide estudiante_masculino
+    hide estudiante_masculino_2
 
     if tiene_celular:
         menu:
@@ -220,9 +219,9 @@ label ESCENA_13:
                 pass
 
     david "Escuchen... escúchenme todos. Sé que esto es horrible. Lo peor que nos pudo haber pasado. Pero ahora mismo, en este momento, estamos vivos."
-    show estudiante_femenino at left
+    show estudiante_femenino_3 at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
-    hide estudiante_femenino
+    hide estudiante_femenino_3
     show chris_furioso at parpadear("chris_furioso"), center
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_furioso
@@ -259,12 +258,12 @@ label ESCENA_13B:
             david "¡¿Qué?! No nada, nada, no me pasa nada... ¿Puedes ir a investigar?"
             chris "¡Obvio, ya tenía pensado hacerlo!"    
             hide chris
-            show estudiante_masculino at left
+            show estudiante_masculino_2 at left
             estudiante_3 "Ya me encuentro mejor, puedo ir a investigar la zona."
-            hide estudiante_masculino
-            show estudiante_masculino at right
+            hide estudiante_masculino_2
+            show estudiante_masculino_3 at right
             estudiante_6 "Sí, yo también lo estoy."
-            hide estudiante_masculino
+            hide estudiante_masculino_3
             show chris at parpadear("chris"), center
             chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
             david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
@@ -334,10 +333,10 @@ label ESCENA_14:
     chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
     scene fondo pasillo 
     show chris_enojado at parpadear("chris_enojado"), left
-    show estudiante_masculino at right
+    show estudiante_masculino_2 at right
     with fade
     estudiante_3 "Lo siento, no volverá a pasar..."
-    hide estudiante_masculino
+    hide estudiante_masculino_2
     hide chris_enojado
     menu:
         'Intervenir.':
@@ -361,13 +360,13 @@ label ESCENA_14:
     stop sound # para  caminan.mp3
     scene fondo_pasillo_puerta_abierta with fade
     pause 0.2
-    show estudiante_masculino at right
+    show estudiante_masculino_3 at right
     estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
     scene fondo literas with fade
     david "Contemos cuántas son."
-    show estudiante_masculino at center
+    show estudiante_masculino_3 at center
     estudiante_6 "¡Hay 8 literas, suficientes para todos!"
-    hide estudiante_masculino
+    hide estudiante_masculino_3
     show chris at parpadear("chris"), center
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
@@ -383,12 +382,12 @@ label ESCENA_14:
     scene fondo pasillo_radio with fade
     david "...y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
     scene fondo pasillo 
-    show estudiante_masculino at right
+    show estudiante_masculino_2 at right
     estudiante_3 "Quisiera descansar un poco..."
     show chris at parpadear("chris"), left
     chris "Cuando encontremos qué comer, vas a descansar."
     estudiante_3 "Está bien..."
-    hide estudiante_masculino
+    hide estudiante_masculino_2
     hide chris
     play sound "caminan.mp3"
     pause 2
@@ -398,10 +397,11 @@ label ESCENA_14:
     with fade
     # Dialogo inconsistente con el dialogo cuando ve las camas por primera vez
     chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería no parece que vaya a funcionar."
-    hide chris_enojado
+    
     david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
     # Agregar mas molestia creciente de chris con david
     david "Volvamos, los demás deben estar perdiendo la cabeza con el tutor a su lado, hay que darles las 'buenas' noticias."
+    hide chris_enojado
     play sound "caminan.mp3"
     pause 2
     stop sound
@@ -411,6 +411,7 @@ label ESCENA_14:
 label ESCENA_15:
     # Reemplazar esto por texto en pantalla
     narrador "Al llegar con los demás chicos, Chris cuenta con detalle los lugares encontrados."
+    # poner sprites de algunos estudiantes escuchando a chris
     david "Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
     play sound "caminan.mp3"
     pause 2
@@ -431,10 +432,10 @@ label ESCENA_16:
     chris "Yo puedo seguir explorando con mi grupo."
     hide chris
     scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
-    show estudiante_masculino at right
+    show estudiante_masculino_3 at right
     show estudiante_masculino_2 at left
     f"{estudiante_3} y {estudiante_6}" "Oh, no..."
-    hide estudiante_masculino
+    hide estudiante_masculino_3
     hide estudiante_masculino_2
     scene fondo comedor_estudiantes_sentados
     david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
@@ -442,7 +443,7 @@ label ESCENA_16:
     show estudiante_femenino at right
     estudiante_1 "Haremos nuestro mayor esfuerzo."
     hide estudiante_femenino
-    scene fondo comedor_estudiantes_sentados_sin_un_masculino
+    scene fondo comedor_estudiantes_sentados_sin_otro_masculino
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_masculino
@@ -455,11 +456,11 @@ label ESCENA_16:
     hide chris
     hide sara
     scene fondo comedor_estudiantes_sentados_sin_beige
-    show estudiante_femenino at left
+    show estudiante_femenino_2 at left
     estudiante_2 "Claro, no hay problema."
-    hide estudiante_femenino
-    scene fondo comedor_estudiantes_sentados_sin_violeta
-    show estudiante_femenino_2 at right
-    estudiante_5 "Nosotros nos encargaremos."
     hide estudiante_femenino_2
+    scene fondo comedor_estudiantes_sentados_sin_violeta
+    show estudiante_femenino_3 at right
+    estudiante_5 "Nosotros nos encargaremos."
+    hide estudiante_femenino_3
     # Agregar final normal ()
