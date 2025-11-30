@@ -122,16 +122,11 @@ label ESCENA_12:
     play sound "helicoptero despega.mp3" volume 0.3
     scene fondo helicoptero_despega with fade
     
-    # Activar solo para los diálogos específicos
-    $ _preferences.afm_enable = True
-    $ _preferences.afm_time = 4.0
-    
     piloto "No se preocupen. ¡Voy a buscar ayuda!"
     
     scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3" volume 0.3
     
-    $ _preferences.afm_time = 4.0
     piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
     
     scene fondo helicoptero_cae with fade
@@ -141,10 +136,6 @@ label ESCENA_12:
     scene fondo helicoptero_destrozado with fade
     play sound "helicoptero destrozado.mp3" volume 0.3
     pause 2.0
-    
-    # Desactivar inmediatamente
-    $ _preferences.afm_enable = False
-    $ renpy.restart_interaction()
     jump ESCENA_13
     
 # ESCENA 13
