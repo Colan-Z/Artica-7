@@ -284,13 +284,15 @@ label ESCENA_13B:
     chris "¿Qué pasa, héroe? Pareces un tomate. "
     menu:
         'Después te cuento.':
+            show borde_verde at borde_top_simple
             $ moral += 1
             chris "Eso espero, amigo."
         'Cambiar de tema.':
+            show borde_rojo at borde_top_simple
+            $ moral -= 1
             hide chris_sonrisa
             show chris at parpadear("chris"), center
             david "¡¿Qué?! No, nada... no me pasa nada..."
-            $ moral -= 1
     # Escena 9BA - Interior - Ártica-7 - ENTRADA - DÍA
     david "¿Puedes ir a investigar?"
     hide chris_sonrisa
@@ -387,11 +389,13 @@ label ESCENA_14:
     hide chris_enojado
     menu:
         'Intervenir.':
+            show borde_rojo at borde_top_simple
             $ moral -= 1
             david "No deberías de tratar así a las personas y menos en estos momentos."
             show chris_enojado at parpadear("chris_enojado"), center
             chris "No te metas donde no te incumbe."
         'Tranquilizar.':
+            show borde_verde at borde_top_simple
             $ moral += 1
             david "Chris, tranquilo hermano, vamos a tomarnos esto con más calma, no sabemos cuánto tiempo vamos a estar acá."
             show chris at parpadear("chris"), center
@@ -511,14 +515,14 @@ label ESCENA_16:
             show borde_verde at borde_top_simple
             $ moral += 1
             show chris at parpadear("chris"), right
-            chris "Perfecto, encontramos un lugar donde..."
+            chris "Bueno, no es perfecto, pero servirá. Al menos encontramos un techo."
             hide chris
             scene fondo literas with fade
-            chris "...dormir..." 
+            chris "Ahí podemos dormir. Nada cómodo, pero es lo que hay." 
             scene fondo banos with fade
-            chris "...baños en casi buen estado..." 
+            chris "Los baños... están en un estado 'aceptable'. Mejor que nada, supongo." 
             scene fondo invernadero with fade
-            chris "...un invernadero que podremos usar..."
+            chris "Y eso... un invernadero. Podría ser útil. Si sabemos usarlo."
 
     scene fondo comedor_estudiantes_sentados with fade
     show Chris at parpadear("chris"), left
@@ -579,9 +583,7 @@ label ESCENA_16:
         stop sound fadeout 1.0
     else:
         david "Chicos, tengo algo de qué hablar con ustedes... hace un rato Sara me contó que vio una sombra en uno de los pasillos."
-        hide sara_preocupada
     
-    hide sara_preocupada
     show estudiante_masculino at right
     estudiante_3 "¿Una sombra? ¡Estás loca! No hay nadie más aquí."
     hide estudiante_masculino

@@ -29,21 +29,24 @@ label escena1a2:
     menu:
         "Responder de forma cortante.":
             # ESCENA 2-A INT. HELICÓPTERO - DÍA
-            david "Sobreviviré."
+            show borde_rojo at borde_top_simple
             $ moral -= 1
+            david "Sobreviviré."
             hide chris_sonrisa
             show expression Image("chris.png") at parpadear_shake("chris"), shake_leve, center
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
+            show borde_verde at borde_top_simple
+            $ moral += 1
             david "Tú tampoco sobrevivirás mucho sin ellos."
             show expression Image("chris_sonrisa.png") at shake_leve, center
-            $ moral += 1
             chris "¿Tú crees?"
         "Responder amistosamente.":
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
+            show borde_verde at borde_top_simple
+            $ moral += 2   
             show expression Image("chris_sonrisa.png") at shake_leve, center
             david "Al menos estaremos juntos."
-            $ moral += 2   
             chris "Claro, héroe." 
             

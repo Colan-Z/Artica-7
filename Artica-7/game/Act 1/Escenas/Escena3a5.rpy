@@ -119,12 +119,14 @@ label escena3a5:
     menu:                        
         "Ayudar a Sara":
             #Opción A:
+            show borde_verde at borde_top_simple
             $ moral += 1
             scene david_ayuda_sara with fade
             david "¿Estás bien?"
             sara "Sí, lo estoy, gracias..."
         "Ordenar a Chris que la ayude.":
             #Opción B:
+            show borde_rojo at borde_top_simple
             $ moral -= 1 
             scene fondo chris_rescata_sara with fade       
             chris "..."
