@@ -122,7 +122,7 @@ label escena6a9:
     else:
         scene fondo tutor_electrocutado_quemado
     
-    show sara gritando_walkie-talkie at parpadear("sara gritando_walkie-talkie"),  right
+    show sara gritando_walkie-talkie1 at parpadear("sara gritando_walkie-talkie1"),  right
     with fade
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
     piloto "Mantengan la calma, solicitaré apoyo inmediato."

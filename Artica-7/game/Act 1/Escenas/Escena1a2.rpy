@@ -37,11 +37,13 @@ label escena1a2:
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
             david "Tú tampoco sobrevivirás mucho sin ellos."
-            show expression Image("chris_feliz_3.png") at shake_leve, center
+            show expression Image("chris_sonrisa.png") at shake_leve, center
             $ moral += 1
             chris "¿Tú crees?"
         "Responder amistosamente.":
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
+            show expression Image("chris_sonrisa.png") at shake_leve, center
             david "Al menos estaremos juntos."
             $ moral += 2   
             chris "Claro, héroe." 
+            
