@@ -14,6 +14,18 @@ define narrador = Character(None)
 define invisible = Character(None, what_color="#00000000", window_background="#00000000")
 image negro = "#000000"
 
+
+image borde_rojo = Solid("#ff000080")
+image borde_verde = Solid("#00ff227e")
+
+transform borde_top_simple:
+    xpos 0
+    ypos 0
+    xsize config.screen_width
+    ysize 40
+    alpha 1.0
+    ease 0.6 alpha 0.0
+
 # init python:
 #     def forzar_desactivar_afm():
 #         if _preferences.afm_enable and not hasattr(store, 'afm_temporal_activo'):

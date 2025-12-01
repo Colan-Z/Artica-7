@@ -62,8 +62,10 @@ label escena6a9:
             pause 0.5
             scene black with fade   
             play sound "caida_suelo.mp3"
+            play sound "final_malo.mp3"
+
             python:
-                final = gestor.activar_final("final_alternativo")   
+                final = gestor.activar_final("acto1_final_malo")   
                 resultado = gestor.obtener_resultado()
             scene black with fade
 
@@ -109,8 +111,8 @@ label escena6a9:
     play sound "radio interferencia.mp3" loop volume 0.2
     pause
     scene fondo sara_walkie-talkie
-    piloto "¿Ho... hola? ¿Se escu... cha?"
-    piloto "¿Es... están to... dos bien?"
+    piloto "¿Hola? ¿Me copia alguien?"
+    piloto "Pasajeros, reporten estado. ¿Todos en condiciones?"
     if renpy.showing("fondo tutor_electrocutado_radio"):
         scene fondo tutor_electrocutado
     else:
@@ -119,7 +121,7 @@ label escena6a9:
     show sara gritando_walkie-talkie at parpadear("sara gritando_walkie-talkie"),  right
     with fade
     sara "¡Necesitamos ayuda! ¡Nuestro tutor acaba de morir por una descarga eléctrica!"
-    piloto "¡Tranquila, voy a intentar pedir ayuda!"
+    piloto "Mantengan la calma, solicitaré apoyo inmediato."
     hide sara gritando_walkie-talkie
     jump ESCENA_12
 
@@ -133,13 +135,13 @@ label ESCENA_12:
     # $ _preferences.afm_enable = True
     # $ _preferences.afm_time = 7
     
-    piloto "No se preocupen. ¡Voy a buscar ayuda!"
+    piloto "No se muevan. Iré a buscar ayuda."
     
     scene fondo helicoptero_volando_ventisca with fade
     play sound "helicoptero pierde control.mp3" volume 0.3
     
     # $ _preferences.afm_time = 5
-    piloto "¡NO! ¡La ventisca es muy fuerte! ¡¡Estoy perdiendo el control!!"
+    piloto "Imposible! ¡La ventisca es demasiado intensa, pierdo control de la nave!"
     
     # window hide
     scene fondo helicoptero_cae with fade
@@ -201,7 +203,7 @@ label ESCENA_13:
     hide estudiante_masculino_2
 
     $ salir_del_bucle = True
-    while salir:
+    while salir_del_bucle:
         menu:
             "Usar el celular" if tiene_celular:
                 david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara. Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
@@ -211,9 +213,9 @@ label ESCENA_13:
                 'Operador' "¿Ártica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
                 david "Puede que vean humo en el cielo, el helicóptero que nos llevaba se estrelló."
                 'Operador' "Eso puede servirnos, estamos preparando el equipo de rescate. Manténganse ahí, llegaremos lo antes posible."
-                
+                play sound "final_bueno.mp3" volume 0.5
                 python:
-                    final = gestor.activar_final("acto1_bueno")   
+                    final = gestor.activar_final("acto1_final_bueno")   
                     resultado = gestor.obtener_resultado()
                 scene black with fade
                 centered "{size=40}[resultado]{/size}"
@@ -246,9 +248,11 @@ label ESCENA_13:
     hide sara
     menu:
         "Ir con Chris a explorar la base.":
+            $ir_con_chris = True    
             # ESCENA 9A - INT - ÁRTICA-7 - PASILLOS - DíA
             jump ESCENA_14
-        "Quedarse ayudando a los demás.":  
+        "Quedarse ayudando a los demás.": 
+            $ir_con_chris = False 
             # Escena 9B - Interior - Ártica-7 - ENTRADA - DÍA
             jump ESCENA_13B
 
@@ -334,17 +338,7 @@ label ESCENA_13B:
             stop sound fadeout 1.0
             pause
             # david "(Los demás lo escucharon, no sé qué hacer. ¿Trato de calmarlos o no le doy mucha importancia?)"
-            # menu:
-            #     'Hablar con los demás.':
-                    # Hacer una rama o algo que no quede como cosmetico
-                    # aca se puede poner el final normal, que se note como les esta afectando todo
-                    # stop sound fadeout 1.0
-                    # david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
-                    # david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
-                    # Agregar dialogo de los estudiantes, mostrando que creen a david (por el momento)
-                #     narrador "Ante estas palabras los estudiantes parecieron tranquilizarse un poco."
-                # 'No darle importancia.':
-                #     david "Seguramente fue tu imaginación, Sara. Éstas luces y sombras engañan fácilmente… No vale la pena preocuparse por eso."
+            
             # Poner este texto en pantalla con fondo negro
             # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
             scene black
@@ -400,23 +394,23 @@ label ESCENA_14:
     scene fondo literas with fade
     david "Contemos cuántas son."
     show estudiante_masculino_3 at center
-    estudiante_6 "¡Hay 8 literas, suficientes para todos!"
+    estudiante_6 "¡Hay ocho literas, suficientes para todos!"
     hide estudiante_masculino_3
     show chris at parpadear("chris"), center
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
     scene black with fade
     centered "{size=40}Algunos minutos después...{/size}"
-    scene fondo pasillo with fade
-    david "Perfecto, encontramos un lugar donde..." 
-    scene fondo literas with fade
-    david "...dormir..." 
-    scene fondo banos with fade
-    david "...baños en casi buen estado..." 
-    scene fondo invernadero with fade
-    david "...un invernadero que podremos usar..." 
-    scene fondo pasillo_radio with fade
-    david "...y una radio, pero creo que no funciona... sigamos caminando tal vez encontremos algo de comida."
+    scene fondo pasillo
+    # david "Perfecto, encontramos un lugar donde..." 
+    # scene fondo literas with fade
+    # david "...dormir..." 
+    # scene fondo banos with fade
+    # david "...baños en casi buen estado..." 
+    # scene fondo invernadero with fade
+    # david "...un invernadero que podremos usar..." 
+    # scene fondo pasillo_radio with fade
+    chris "¡Miren! Encontré una radio... Tal vez podamos pedir ayuda. Sigamos caminando tal vez encontremos algo de comida."
     scene fondo pasillo 
     show estudiante_masculino_2 at right
     with fade
@@ -478,34 +472,61 @@ label ESCENA_16:
     # estar parados a su lado aunque no se vean)
     david "Chicos hagan silencio y escúchenme."
     stop sound fadeout 2.0
-    david "Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
-    show chris at parpadear("chris"), center
-    chris "Yo puedo seguir explorando con mi grupo."
+    menu:
+        # "Dividirse en grupos de trabajo.":
+        #     jump ESCENA_17A
+        # "Quedarse todos juntos.":
+        #     jump ESCENA_17B
+        "Contar lo que encontraron.":
+            show borde_rojo at borde_top_simple
+            $ moral -= 1
+            david "Perfecto, encontramos un lugar donde..." 
+            scene fondo literas with fade
+            david "...dormir..." 
+            scene fondo banos with fade
+            david "...baños en casi buen estado..." 
+            scene fondo invernadero with fade
+            david "...un invernadero que podremos usar..."
+        "Dejar que Chris hable.":
+            show borde_verde at borde_top_simple
+            $ moral += 1
+            show chris at parpadear("chris"), right
+            chris "Perfecto, encontramos un lugar donde..."
+            hide chris
+            scene fondo literas with fade
+            chris "...dormir..." 
+            scene fondo banos with fade
+            chris "...baños en casi buen estado..." 
+            scene fondo invernadero with fade
+            chris "...un invernadero que podremos usar..."
+
+    scene fondo comedor_estudiantes_sentados with fade
+    chris "...y una radio, pero creo que no funciona..."
+    show pov_radio at center
+    david "Bueno, al menos tenemos una radio."
+    hide pov_radio
+    show sara at parpadear("sara"), right
+    sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila. Tal vez si la reparo, consigamos pedir ayuda."
+    show chris at parpadear("chris"), left
+    chris "¿Ese aparato viejo? Suerte con eso..."
     hide chris
-    scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
-    show estudiante_masculino_3 at right
-    show estudiante_masculino_2 at left
-    f"{estudiante_3} y {estudiante_6}" "Oh, no..."
-    hide estudiante_masculino_3
-    hide estudiante_masculino_2
+    david "Bien, te encargo la radio. Los que quedan, ¿Podrían encargarse de los suministros?"
+    hide sara
+
+    david "Bueno. Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
+    pause
+    
     scene fondo comedor_estudiantes_sentados
-    david "Me parece bien, entonces los 6 que quedamos. Por mi parte, me encargaré de que todo esté bajo control, ustedes dos se encargarán del invernadero."
+    david "Me parece bien, entonces los cuatro que quedamos... Por mi parte, me encargaré de que todo esté bajo control. Daiana, Juan, ustedes gestionan los recursos. Ana y Ariana, ustedes dos se encargarán del invernadero."
     scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino at right
-    estudiante_1 "Haremos nuestro mayor esfuerzo."
+    estudiante_1 "Haré mi mayor esfuerzo."
     hide estudiante_femenino
     scene fondo comedor_estudiantes_sentados_sin_otro_masculino
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_masculino
     scene fondo comedor_estudiantes_sentados
-    show sara at parpadear("sara"), right
-    sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila, tal vez pueda conseguir ayuda."
-    show chris at parpadear("chris"), left
-    chris "¿Ese aparato viejo? Suerte con eso..."
-    david "Bien, te encargo la radio. Los que quedan, ¿Podrían encargarse de los suministros?"
-    hide chris
-    hide sara
     scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino_2 at left
     estudiante_2 "Claro, no hay problema."
@@ -514,4 +535,138 @@ label ESCENA_16:
     show estudiante_femenino_3 at right
     estudiante_5 "Nosotros nos encargaremos."
     hide estudiante_femenino_3
+
+    show sara_preocupada at parpadear("sara_preocupada"), right
+    
+    if ir_con_chris:
+        david "¿Estás bien, Sara? Te veo preocupada."
+        hide sara_preocupada
+        show sara_timida at parpadear("sara_timida"), right
+        sara "¿Eh? ¡Sí, sí, estoy bien!"
+        david "¿Estás segura? Puedes confiar en mí."
+        sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
+        david "¿Algo? ¿A qué te refieres con algo?"
+        hide sara_timida at parpadear("sara_timida")
+        show sara at parpadear("sara"), right
+        sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
+        play sound "alumnos susurrando.mp3"
+        david "¿Una sombra?"
+        sara "Sí... no sé qué era, pero me asusté."
+        david "¿Dónde la viste?"
+        sara "En uno de los pasillos, cuando ustedes se fueron a explorar."
+        hide sara
+        stop sound fadeout 1.0
+    else:
+        david "Chicos, tengo algo de qué hablar con ustedes... hace un rato Sara me contó que vio una sombra en uno de los pasillos."
+        hide sara_preocupada
+    
+    hide sara_preocupada
+    show estudiante_masculino at right
+    estudiante_3 "¿Una sombra? ¡Estás loca! No hay nadie más aquí."
+    hide estudiante_masculino
+    show estudiante_femenino_2 at left
+    estudiante_2 "Tengo miedo... ¿Y si entró algún tipo de {sc=4}{color=#FF0000}bestia{/color}{/sc}? La puerta estaba abierta..."
+    hide estudiante_femenino_2
+    show chris_sonrisa at parpadear("chris_sonrisa"), center
+    chris "¿Una sombra? Ja, seguro que fue tu imaginación, Sara."
+    hide chris_sonrisa
+
+    menu:
+        'Calmar a los demás.':
+            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
+            david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
+        'No darle importancia.':
+            david "(No puedo permitir que entren en pánico.)"
+            david "Seguramente fue alguno de nosotros, Sara. Éstas luces y sombras engañan fácilmente… No vale la pena preocuparse por eso."
+            show chris at parpadear("chris"), center
+            chris "Nosotros cuando fuimos a explorar no vimos nada raro."
+            hide chris
+    pause
+    david "De todas formas, debemos estar atentos. Cualquier cosa rara que vean, me la cuentan de inmediato."
+
+    hide sara_preocupada
+
+    david "Sigamos con la asignación de grupos."
+    david "Chris... Tú sigue explorando con Diego y Pedro."
+
+    # En base a la moral obtenida por el jugador, chris puede aceptar ir acompañado o no y cerramos el acto 1 
+    # mostrando que de cualquier manera chris es el más afectado por la situación.
+    if moral >= 8:
+        show chris at parpadear("chris"), center
+        chris "Yo puedo seguir explorando, pero voy sólo."
+        david "No podemos permitir que vayas solo, Chris. Es demasiado peligroso."
+        david "Pedro y Diego te acompañarán."
+        hide chris
+        scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
+        show estudiante_masculino_3 at right
+        show estudiante_masculino_2 at left
+        f"{estudiante_3} y {estudiante_6}" "Cuenta con nosotros..."
+        hide estudiante_masculino_3
+        hide estudiante_masculino_2
+        show chris at parpadear("chris"), center
+        chris "Está bien, pero no seré su niñera."
+        hide chris
+    else:
+        chris "Estoy cansado de que mes des órdenes, héroe."
+        chris "Y no soporto ese maldito ruido del generador, ni siquiera sabemos dónde está."
+        chris "Iré sólo."
+
+
+    # while salir_del_bucle:
+    #     menu:
+    #         'Exigirle que vaya acompañado.' if moral < 3:
+
+    #             chris "Nos vemos, chicos."
+    #         'Convencerlo de que no vaya sólo.' if moral < 5:
+    #             show chris at parpadear("chris"), center
+    #             chris "Yo puedo seguir explorando, pero voy sólo."
+    #             david "No podemos permitir que vayas solo, Chris. Es demasiado peligroso."
+    #             david "Pedro y Diego te acompañarán."
+    #             hide chris
+    #             scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
+    #             show estudiante_masculino_3 at right
+    #             show estudiante_masculino_2 at left
+    #             f"{estudiante_3} y {estudiante_6}" "Cuenta con nosotros..."
+    #             hide estudiante_masculino_3
+    #             hide estudiante_masculino_2
+    #             show chris at parpadear("chris"), center
+    #             chris "Está bien, pero no seré su niñera."
+    #             hide chris
+    #         'Pedirle que traiga repuestos para la radio.' if moral < 9:
+
+    
+    # if moral >= 8:
+    #     show chris at parpadear("chris"), center
+    #     chris "Yo puedo seguir explorando, pero voy sólo."
+    #     david ""
+    #     david "Está bien, lo siento."
+    #     hide chris
+    #     scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
+    #     show estudiante_masculino_3 at right
+    #     show estudiante_masculino_2 at left
+    #     f"{estudiante_3} y {estudiante_6}" "Cuenta con nosotros..."
+    #     hide estudiante_masculino_3
+    #     hide estudiante_masculino_2
+    #     chris ""
+    # else:
+    #     show Chris_enojado at parpadear("Chris_enojado"), center
+        
+    #     hide Chris_enojado
+
+    # menu:
+    #     'Hacerlo entrar en razón.':
+    #         david "Chris, cálmate. No estamos en condiciones de pelear entre nosotros."
+    #     'Responder con firmeza.':
+    #         david "¡Basta, Chris! No voy a permitir que pongas en riesgo a los demás por tu egoísmo."
+            
+
+
+    play sound "final_normal.mp3" volume 0.2
+    python:
+        final = gestor.activar_final("acto1_final_normal")   
+        resultado = gestor.obtener_resultado()
+    scene black with fade
+    centered "{size=40}[resultado]{/size}"
+    pause 3.0
+    jump creditos
     # Agregar final normal ()

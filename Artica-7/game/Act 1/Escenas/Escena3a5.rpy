@@ -11,8 +11,8 @@ label escena3a5:
 
     scene fondo interior_helicoptero at shake_fuerte, with fade
 
-    piloto "¡Tenemos problemas! ¡Hay una fuerte ventisca!"
-    piloto "¡Haremos un aterrizaje de emergencia! ¡¡Sosténganse fuerte!! ¡¡¡Sosténganse fuerte!!!"
+    piloto "¡Ventisca pesada, perdemos estabilidad!"
+    piloto "¡Prepararse para aterrizaje de emergencia! ¡Aseguren posiciones!"
     play sound "chicos gritando.mp3"  volume 0.5 loop
     show sara_agarra_mochila at shake_fuerte, right
     pause
