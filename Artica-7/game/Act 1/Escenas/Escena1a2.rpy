@@ -32,11 +32,12 @@ label escena1a2:
             david "Sobreviviré."
             $ moral -= 1
             hide chris_sonrisa
-            show expression Image("chris_sonrisa.png") at parpadear_shake("chris_sonrisa"), shake_leve, center
+            show expression Image("chris.png") at parpadear_shake("chris"), shake_leve, center
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
             david "Tú tampoco sobrevivirás mucho sin ellos."
+            show expression Image("chris_feliz_3.png") at shake_leve, center
             $ moral += 1
             chris "¿Tú crees?"
         "Responder amistosamente.":

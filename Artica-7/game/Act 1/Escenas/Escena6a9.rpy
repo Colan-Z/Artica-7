@@ -101,7 +101,7 @@ label escena6a9:
             #escena 11A
             scene fondo_tutor_pulso
             david "No... no respira. No tiene pulso."
-            scene fondo tutor_electrocutado_quemado_radio with fade
+            scene fondo tutor_electrocutado_radio with fade
         "No tocarlo, podría ser peligroso.":
             #escena 11B
             scene fondo tutor_electrocutado_quemado_radio with fade
@@ -203,6 +203,7 @@ label ESCENA_13:
     hide estudiante_masculino_2
 
     $ salir_del_bucle = True
+    while salir_del_bucle:
     while salir_del_bucle:
         menu:
             "Usar el celular" if tiene_celular:
