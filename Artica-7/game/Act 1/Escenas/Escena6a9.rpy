@@ -204,7 +204,6 @@ label ESCENA_13:
 
     $ salir_del_bucle = True
     while salir_del_bucle:
-    while salir_del_bucle:
         menu:
             "Usar el celular" if tiene_celular:
                 david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara. Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
