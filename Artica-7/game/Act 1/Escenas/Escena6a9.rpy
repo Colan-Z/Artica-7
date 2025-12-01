@@ -62,8 +62,9 @@ label escena6a9:
             pause 0.5
             scene black with fade   
             play sound "caida_suelo.mp3"
-            play sound "final_malo.mp3"
 
+            stop music
+            play sound "final_malo.mp3"
             python:
                 final = gestor.activar_final("acto1_final_malo")   
                 resultado = gestor.obtener_resultado()
@@ -110,10 +111,13 @@ label escena6a9:
     # ESCENA 11A/B
     play sound "radio interferencia.mp3" loop volume 0.2
     pause
-    scene fondo sara_walkie-talkie
+    if renpy.showing("fondo tutor_electrocutado_radio"):
+        scene fondo sara_walkie-talkie_sin_humo
+    else:
+        scene fondo sara_walkie-talkie
     piloto "¿Hola? ¿Me copia alguien?"
     piloto "Pasajeros, reporten estado. ¿Todos en condiciones?"
-    if renpy.showing("fondo tutor_electrocutado_radio"):
+    if renpy.showing("fondo sara_walkie-talkie_sin_humo"):
         scene fondo tutor_electrocutado
     else:
         scene fondo tutor_electrocutado_quemado
@@ -141,7 +145,7 @@ label ESCENA_12:
     play sound "helicoptero pierde control.mp3" volume 0.3
     
     # $ _preferences.afm_time = 5
-    piloto "Imposible! ¡La ventisca es demasiado intensa, pierdo control de la nave!"
+    piloto "¡Imposible! ¡La ventisca es demasiado intensa, pierdo control de la nave!"
     
     # window hide
     scene fondo helicoptero_cae with fade
@@ -206,13 +210,15 @@ label ESCENA_13:
     while salir_del_bucle:
         menu:
             "Usar el celular" if tiene_celular:
-                david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara. Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
+                david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara."
+                david "Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
                 scene fondo interior_artica_sos
                 'Operador' "Aquí base Orcadas. ¿Cuál es su emergencia?"
                 david "Hola, me llamo David, somos los estudiantes que iban a una expedición en Orcadas, tuvimos un problema por una ventisca por lo que decidimos refugiarnos en una instalación llamada Artcia-7."
                 'Operador' "¿Ártica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
                 david "Puede que vean humo en el cielo, el helicóptero que nos llevaba se estrelló."
                 'Operador' "Eso puede servirnos, estamos preparando el equipo de rescate. Manténganse ahí, llegaremos lo antes posible."
+                stop music
                 play sound "final_bueno.mp3" volume 0.5
                 python:
                     final = gestor.activar_final("acto1_final_bueno")   
@@ -248,10 +254,22 @@ label ESCENA_13:
     hide sara
     menu:
         "Ir con Chris a explorar la base.":
+            david "Chris, ¿Puedes ir a explorar? Yo puedo acompañarte."
+            show estudiante_masculino_2 at left
+            estudiante_3 "¿Yo también puedo ir? Ya me encuentro mejor."
+            hide estudiante_masculino_2
+            show estudiante_masculino_3 at right
+            estudiante_6 "A mi también me gustaría ir con ustedes."
+            hide estudiante_masculino_3
+            show chris at parpadear("chris"), center
+            chris "David y yo ya somos suficientes."
+            david "Claro, pueden venir con nosotros."
+            chris "..."
+            hide chris
             $ir_con_chris = True    
             # ESCENA 9A - INT - ÁRTICA-7 - PASILLOS - DíA
             jump ESCENA_14
-        "Quedarse ayudando a los demás.": 
+        "Quedarse con los demás.": 
             $ir_con_chris = False 
             # Escena 9B - Interior - Ártica-7 - ENTRADA - DÍA
             jump ESCENA_13B
@@ -332,7 +350,7 @@ label ESCENA_13B:
             sara "Sí... no sé qué era, pero me asusté y retrocedí."
             play sound "alumnos susurrando.mp3"
             david "(Los demás lo escucharon, no sé qué hacer.)"
-            david "Hablaremos de eso más tarde, ahora esperemos a David y los demás para organizarnos."
+            david "Hablaremos de eso más tarde, ahora esperemos a Chris y los demás para organizarnos."
             # david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
             hide sara
             stop sound fadeout 1.0
@@ -410,7 +428,9 @@ label ESCENA_14:
     # scene fondo invernadero with fade
     # david "...un invernadero que podremos usar..." 
     # scene fondo pasillo_radio with fade
+    show chris at parpadear("chris"), left
     chris "¡Miren! Encontré una radio... Tal vez podamos pedir ayuda. Sigamos caminando tal vez encontremos algo de comida."
+    hide chris
     scene fondo pasillo 
     show estudiante_masculino_2 at right
     with fade
@@ -501,7 +521,9 @@ label ESCENA_16:
             chris "...un invernadero que podremos usar..."
 
     scene fondo comedor_estudiantes_sentados with fade
+    show Chris at parpadear("chris"), left
     chris "...y una radio, pero creo que no funciona..."
+    hide Chris
     show pov_radio at center
     david "Bueno, al menos tenemos una radio."
     hide pov_radio
@@ -535,10 +557,9 @@ label ESCENA_16:
     show estudiante_femenino_3 at right
     estudiante_5 "Nosotros nos encargaremos."
     hide estudiante_femenino_3
-
-    show sara_preocupada at parpadear("sara_preocupada"), right
     
     if ir_con_chris:
+        show sara_preocupada at parpadear("sara_preocupada"), right
         david "¿Estás bien, Sara? Te veo preocupada."
         hide sara_preocupada
         show sara_timida at parpadear("sara_timida"), right
@@ -607,9 +628,11 @@ label ESCENA_16:
         chris "Está bien, pero no seré su niñera."
         hide chris
     else:
+        show chris_enojado at parpadear("chris_enojado"), center
         chris "Estoy cansado de que mes des órdenes, héroe."
         chris "Y no soporto ese maldito ruido del generador, ni siquiera sabemos dónde está."
         chris "Iré sólo."
+        hide chris_enojado
 
 
     # while salir_del_bucle:
@@ -660,7 +683,7 @@ label ESCENA_16:
     #         david "¡Basta, Chris! No voy a permitir que pongas en riesgo a los demás por tu egoísmo."
             
 
-
+    stop music
     play sound "final_normal.mp3" volume 0.2
     python:
         final = gestor.activar_final("acto1_final_normal")   
