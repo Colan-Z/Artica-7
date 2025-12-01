@@ -596,7 +596,7 @@ label ESCENA_16:
 
     menu:
         'Calmar a los demás.':
-            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... síndrome ártico... Cuanto más le demos importancia será peor."
+            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... \n{sc=4}{color=#ADD8E6}Síndrome ártico{/color}{/sc}... Cuanto más le demos importancia será peor."
             david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
         'No darle importancia.':
             david "(No puedo permitir que entren en pánico.)"
