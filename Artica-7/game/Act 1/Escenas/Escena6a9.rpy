@@ -99,7 +99,7 @@ label escena6a9:
             #escena 11A
             scene fondo_tutor_pulso
             david "No... no respira. No tiene pulso."
-            scene fondo tutor_electrocutado_quemado_radio with fade
+            scene fondo tutor_electrocutado_radio with fade
         "No tocarlo, podría ser peligroso.":
             #escena 11B
             scene fondo tutor_electrocutado_quemado_radio with fade
@@ -108,7 +108,11 @@ label escena6a9:
     # ESCENA 11A/B
     play sound "radio interferencia.mp3" loop volume 0.2
     pause
-    scene fondo sara_walkie-talkie
+    if renpy.showing("fondo tutor_electrocutado_radio"):
+        scene fondo sara_walkie-talkie # poner la sara sin fuegito
+    else:
+        scene fondo sara_walkie-talkie
+    
     piloto "¿Ho... hola? ¿Se escu... cha?"
     piloto "¿Es... están to... dos bien?"
     if renpy.showing("fondo tutor_electrocutado_radio"):
@@ -201,7 +205,7 @@ label ESCENA_13:
     hide estudiante_masculino_2
 
     $ salir_del_bucle = True
-    while salir:
+    while salir_del_bucle:
         menu:
             "Usar el celular" if tiene_celular:
                 david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara. Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
