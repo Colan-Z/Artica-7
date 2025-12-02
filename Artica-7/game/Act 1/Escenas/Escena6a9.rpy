@@ -421,8 +421,9 @@ label ESCENA_14:
     show chris at parpadear("chris"), center
     chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
-    scene black with fade
+    scene black 
     centered "{size=40}Algunos minutos después...{/size}"
+    with fade
     scene fondo pasillo
     # david "Perfecto, encontramos un lugar donde..." 
     # scene fondo literas with fade
@@ -431,10 +432,10 @@ label ESCENA_14:
     # david "...baños en casi buen estado..." 
     # scene fondo invernadero with fade
     # david "...un invernadero que podremos usar..." 
-    # scene fondo pasillo_radio with fade
-    show chris at parpadear("chris"), left
+    scene fondo pasillo_radio
+    # show chris at parpadear("chris"), left
     chris "¡Miren! Encontré una radio... Tal vez podamos pedir ayuda. Sigamos caminando tal vez encontremos algo de comida."
-    hide chris
+    # hide chris
     scene fondo pasillo 
     show estudiante_masculino_2 at right
     with fade
