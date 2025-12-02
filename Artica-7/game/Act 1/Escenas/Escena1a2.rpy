@@ -21,7 +21,6 @@ label escena1a2:
     tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
     scene fondo interior_helicoptero at shake_leve
-    #show chris_sonrisa
     show expression Image("chris_sonrisa.png") at parpadear_shake("chris_sonrisa"), shake_leve, center, with fade
 
     chris "Tres semanas. ¿Crees que sobrevivirás sin videojuegos?"
@@ -33,6 +32,7 @@ label escena1a2:
             $ moral -= 1
             david "Sobreviviré."
             hide chris_sonrisa
+            scene fondo interior_helicoptero at shake_leve
             show expression Image("chris.png") at parpadear_shake("chris"), shake_leve, center
             chris "Está bien... supongo."
         "Bromear.":

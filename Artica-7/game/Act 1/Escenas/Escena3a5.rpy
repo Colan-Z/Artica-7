@@ -1,6 +1,6 @@
 label escena3a5:
     # ESCENA 3
-    scene fondo ventisca at shake_medio, with fade
+    scene fondo ventisca with fade
     play sfx1 "ventisca.mp3" loop volume 0.5
     pause
     
@@ -20,8 +20,8 @@ label escena3a5:
     stop sound
     stop music
     # ESCENA 5
-    play sfx2 "helicoptero_aterriza.mp3" noloop
-    scene fondo aterrizaje with fade
+    play sfx2 "aterrizaje forzoso.mp3" noloop
+    scene fondo interior_helicoptero_aterrizaje with fade
     hide sara_agarra_mochila
     pause
     stop sfx2
@@ -32,9 +32,10 @@ label escena3a5:
     # ESCENA 6
     stop sfx1 fadeout 1.5
     play sfx1 "ventisca.mp3" loop volume 0.2
-    scene fondo interior_helicoptero_aterrizaje with fade
+    play sfx2 "helicoptero_aterriza.mp3" noloop
+    scene fondo aterrizaje with fade
     pause 1.0
-    scene fondo interior_helicoptero_aterrizaje_sin_tutor 
+    scene fondo interior_helicoptero_aterrizado_sin_tutor
     show tutor
     tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
     menu:
@@ -54,7 +55,6 @@ label escena3a5:
             # hide chris
             # hide estudiante_femenino_2
             # hide estudiante_masculino_2
-            scene fondo interior_helicoptero_aterrizado_sin_tutor
             show tutor 
 
             tutor "Menos mal..."

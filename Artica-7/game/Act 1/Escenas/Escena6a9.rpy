@@ -218,9 +218,12 @@ label ESCENA_13:
             "Usar el celular" if tiene_celular:
                 david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara."
                 david "Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
-                scene fondo interior_artica_sos
+                scene fondo tutor_electrocutado_pov_celular
                 play sound "sos.ogg" volume 0.5
                 pause 1.0
+                play sound "llamando celular.mp3" volume 0.5
+                pause 2.0
+                scene fondo tutor_electrocutado
                 'Operador' "Aquí base Orcadas. ¿Cuál es su emergencia?"
                 david "Hola, me llamo David. Somos los estudiantes que iban a una expedición en Orcadas. Tuvimos un problema con una ventisca, así que decidimos refugiarnos en una instalación llamada Ártica-7."
                 'Operador' "¿Ártica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
@@ -532,17 +535,18 @@ label ESCENA_16:
             show borde_verde at borde_top_simple
             $ moral += 1
             show chris_orgulloso at parpadear("chris_orgulloso"), right
-            chris "Bueno lo que encontramos fue."
+            chris "Bueno lo que encontramos fue..."
             hide chris_orgulloso
             scene fondo literas with fade
-            chris "Literas que no se veian cómodas." 
+            chris "...literas sucias, llenas de polvo, que lo más probable nos dé contracturas..." 
             scene fondo banos with fade
-            chris "Baños..." 
+            chris "...baños, en buen estado, quitando el olor horrible que emana..." 
             scene fondo invernadero with fade
-            chris "Un invernadero..."
+            chris "...un invernadero, que siendo sincero ¿Alguna vez plantaron algo, o tocaron pasto?"
+
     scene fondo comedor_estudiantes_sentados with fade
     show Chris at parpadear("chris"), left
-    chris "...y una radio, pero creo que no funciona..."
+    chris "Y una radio, que no me sorprendería que no funcione..."
     hide Chris
     show pov_radio at center
     david "Bueno, al menos tenemos una radio."
@@ -555,7 +559,7 @@ label ESCENA_16:
     hide sara
     pause
     scene fondo comedor_estudiantes_sentados
-    david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Daiana y Juan, ustedes dos gestionarán los recursos. Ana y Ariana, encárguense del invernadero."
+    david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Daiana y Juan, ustedes dos gestionarán los recursos."
     show estudiante_femenino at right
     estudiante_1 "Haré mi mayor esfuerzo."
     hide estudiante_femenino
@@ -563,6 +567,7 @@ label ESCENA_16:
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_masculino
+    david "Ana y Ariana, encárguense del invernadero."
     scene fondo comedor_estudiantes_sentados
     scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino_2 at left
@@ -588,9 +593,9 @@ label ESCENA_16:
         sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
         play sound "alumnos susurrando.mp3"
         david "¿Una sombra?"
-        sara "Sí... no sé qué era, pero me asusté."
+        sara "Sí... era como una silueta, no llegué a verlo del todo bien... tenía mucho miedo."
         david "¿Dónde la viste?"
-        sara "En uno de los pasillos, cuando ustedes se fueron a explorar."
+        sara "En el pasillo, despues de la muerte del... piloto."
         hide sara
         stop sound fadeout 1.0
     else:
@@ -643,7 +648,7 @@ label ESCENA_16:
         hide chris
     else:
         show chris_enojado at parpadear("chris_enojado"), center
-        chris "Estoy cansado de que mes des órdenes, héroe."
+        chris "Estoy cansado de que me des órdenes, héroe."
         chris "Y no soporto ese maldito ruido del generador, ni siquiera sabemos dónde está."
         chris "Iré solo."
         hide chris_enojado
