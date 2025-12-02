@@ -419,7 +419,7 @@ label ESCENA_14:
     estudiante_6 "¡Hay ocho literas, suficientes para todos!"
     hide estudiante_masculino_3
     show chris at parpadear("chris"), center
-    chris "Los colchones son viejos, tienen un poco de polvo. Bien, ya tenemos un lugar donde dormir, sigamos buscando."
+    chris "Los colchones son viejos y tienen polvo. Bueno... ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
     scene black 
     centered "{size=40}Algunos minutos después...{/size}"
@@ -432,11 +432,16 @@ label ESCENA_14:
     # david "...baños en casi buen estado..." 
     # scene fondo invernadero with fade
     # david "...un invernadero que podremos usar..." 
+    show chris_sonrisa at parpadear("chris_sonrisa"), left
+    chris "¡Miren! Encontré una radio... Tal vez podamos pedir ayuda."
+    hide chris_sonrisa
     scene fondo pasillo_radio
-    # show chris at parpadear("chris"), left
-    chris "¡Miren! Encontré una radio... Tal vez podamos pedir ayuda. Sigamos caminando tal vez encontremos algo de comida."
-    # hide chris
+    david "Genial, déjame verla."
+    david "Después veremos si funciona..."
     scene fondo pasillo 
+    show chris at parpadear("chris"), left
+    chris "Sigamos caminando tal vez encontremos algo de comida."
+    hide chris
     show estudiante_masculino_2 at right
     with fade
     estudiante_3 "Quisiera descansar un poco..."
@@ -449,11 +454,11 @@ label ESCENA_14:
     play sound "caminan.mp3"
     pause 2
     stop sound
-    scene fondo comedor 
-    show chris_enojado at parpadear("chris_enojado"), center
+    scene fondo comedor
     with fade
-    # Dialogo inconsistente con el dialogo cuando ve las camas por primera vez
+    show chris_enojado at parpadear("chris_enojado"), center
     chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería no parece que vaya a funcionar."
+    hide chris_enojado
     david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
     # Agregar mas molestia creciente de chris con david
     david "Volvamos, los demás deben estar perdiendo la cabeza con el tutor a su lado, hay que darles las 'buenas' noticias."
