@@ -40,13 +40,13 @@ label escena1a2:
             show borde_verde at borde_top_simple
             $ moral += 1
             david "Tú tampoco sobrevivirás mucho sin ellos."
-            show expression Image("chris_sonrisa.png") at shake_leve, center
+            # show expression Image("chris_sonrisa.png") at shake_leve, center
             chris "¿Tú crees?"
         "Responder amistosamente.":
             # ESCENA 2-C INT. HELICÓPTERO - DÍA
             show borde_verde at borde_top_simple
             $ moral += 2   
-            show expression Image("chris_sonrisa.png") at shake_leve, center
+            # show expression Image("chris_sonrisa.png") at shake_leve, center
             david "Al menos estaremos juntos."
             chris "Claro, héroe." 
             

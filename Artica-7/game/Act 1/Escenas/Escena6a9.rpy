@@ -30,7 +30,7 @@ label escena6a9:
     hide estudiante_masculino
     show chris at parpadear("chris"), right
     chris "Suena como un generador."
-    chris "Pero no entiendo por qué se enciende solo... eso no tiene sentido."
+    chris "Pero no entiendo por qué se enciende solo... no tiene sentido."
     hide chris
     show tutor
     tutor "Coincido. Los motores no 'despiertan' solos después de años congelados. Manténganse alerta. No toquen nada hasta que sepamos con qué estamos tratando."
@@ -46,7 +46,7 @@ label escena6a9:
     scene fondo artica7_interior
     show tutor at left
     with fade
-    tutor "¡NOO! ¡Puta madre! ¡La puerta se cerró!"
+    tutor "¡No! ¡Puta madre! ¡La puerta se cerró!"
     stop sound
     scene fondo artica7_interior_tutor_corriendo with fade
     play sound "Corren.mp3" volume 0.3
@@ -106,7 +106,7 @@ label escena6a9:
         "No tocarlo, podría ser peligroso.":
             #escena 11B
             scene fondo tutor_electrocutado_quemado_radio with fade
-            narrador "No hacía falta verificar su pulso, el olor a carne quemada que desprendía, provocaba que algunos alumnos les dieran nauseas."
+            narrador "No hacía falta verificar su pulso; el olor a carne quemada que desprendía provocaba que algunos alumnos les dieran nauseas."
 
     # ESCENA 11A/B
     play sound "radio interferencia.mp3" loop volume 0.2
@@ -276,10 +276,10 @@ label ESCENA_13:
 
 # Escena 13B
 label ESCENA_13B:
-    show sara at parpadear("sara"), right
+    show sara_timida at parpadear("sara_timida"), right
     sara "Yo... yo puedo acompañarte para cuidarlos."
     david "Me vendría bien un poco de ayuda..."
-    hide sara 
+    hide sara_timida 
     show chris_sonrisa at parpadear("chris_sonrisa"), center
     chris "¿Qué pasa, héroe? Pareces un tomate. "
     menu:
@@ -293,11 +293,13 @@ label ESCENA_13B:
             hide chris_sonrisa
             show chris at parpadear("chris"), center
             david "¡¿Qué?! No, nada... no me pasa nada..."
+            hide chris
     # Escena 9BA - Interior - Ártica-7 - ENTRADA - DÍA
     david "¿Puedes ir a investigar?"
     hide chris_sonrisa
-    show chris at parpadear("chris"), center
+    show chris_orgulloso at parpadear("chris_orgulloso"), center
     chris "¡Obvio, ya tenía pensado hacerlo!"
+    hide chris_orgulloso
     hide chris
     show estudiante_masculino_2 at left
     estudiante_3 "Ya me encuentro mejor, puedo ir a investigar la zona."
@@ -305,14 +307,14 @@ label ESCENA_13B:
     show estudiante_masculino_3 at right
     estudiante_6 "Sí, yo también lo estoy."
     hide estudiante_masculino_3
-    show chris at parpadear("chris"), center
+    show chris_enojado at parpadear("chris_enojado"), center
     chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
     david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
     # Aca chris podria empezar a enojarse un poco con 
     # como le habla david pero aceptar igual (un gruñido o algo por el estilo)
     # agregar sprite de chris (un poco) enojado
     chris "...Está bien, vamos, no me hagan perder el tiempo."
-    hide chris
+    hide chris_enojado
     menu:
         'Verificar que los demás estén bien.':
             david "¿Cómo se encuentran?"
@@ -345,11 +347,10 @@ label ESCENA_13B:
             david "¿Estás segura? Puedes confiar en mí."
             sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
             david "¿Algo? ¿A qué te refieres con algo?"
-            hide sara_timida at parpadear("sara_timida")
-            show sara at parpadear("sara"), center
             sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
             david "¿Una sombra?"
             sara "Sí... no sé qué era, pero me asusté y retrocedí."
+            hide sara_timida at parpadear("sara_timida")
             play sound "alumnos susurrando.mp3"
             david "(Los demás lo escucharon, no sé qué hacer.)"
             david "Hablaremos de eso más tarde, ahora esperemos a Chris y los demás para organizarnos."
@@ -379,7 +380,7 @@ label ESCENA_14:
     scene fondo_pasillo_estudiante_toca_puerta
     pause
     show chris_enojado at parpadear("chris_enojado"), left
-    chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor?! ¡¡¿FRITO?!!."
+    chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor!? ¡¿FRITO!?"
     scene fondo pasillo 
     show chris_enojado at parpadear("chris_enojado"), left
     show estudiante_masculino_2 at right
@@ -432,12 +433,12 @@ label ESCENA_14:
     # david "...baños en casi buen estado..." 
     # scene fondo invernadero with fade
     # david "...un invernadero que podremos usar..." 
-    show chris_sonrisa at parpadear("chris_sonrisa"), left
-    chris "¡Miren! Encontré una radio... Tal vez podamos pedir ayuda."
-    hide chris_sonrisa
+    show chris_radio at parpadear("chris_radio"), left
+    chris "¡Miren! Encontré una {sc=4}{color=#008000}radio{/color}{/sc}... Tal vez podamos pedir ayuda."
+    hide chris_radio
     scene fondo pasillo_radio
     david "Genial, déjame verla."
-    david "Después veremos si funciona..."
+    david "Bien, después veremos si funciona..."
     scene fondo pasillo 
     show chris at parpadear("chris"), left
     chris "Sigamos caminando tal vez encontremos algo de comida."
@@ -520,15 +521,15 @@ label ESCENA_16:
         "Dejar que Chris hable.":
             show borde_verde at borde_top_simple
             $ moral += 1
-            show chris at parpadear("chris"), right
+            show chris_orgulloso at parpadear("chris_orgulloso"), right
             chris "Bueno, no es perfecto, pero servirá. Al menos encontramos un techo."
-            hide chris
+            hide chris_orgulloso
             scene fondo literas with fade
             chris "Ahí podemos dormir. Nada cómodo, pero es lo que hay." 
             scene fondo banos with fade
             chris "Los baños... están en un estado 'aceptable'. Mejor que nada, supongo." 
             scene fondo invernadero with fade
-            chris "Y eso... un invernadero. Podría ser útil. Si sabemos usarlo."
+            chris "Y un invernadero. Podría ser útil si sabemos usarlo."
 
     scene fondo comedor_estudiantes_sentados with fade
     show Chris at parpadear("chris"), left
@@ -539,18 +540,13 @@ label ESCENA_16:
     hide pov_radio
     show sara at parpadear("sara"), right
     sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila. Tal vez si la reparo, consigamos pedir ayuda."
-    show chris at parpadear("chris"), left
+    show chris_sarcastico at parpadear("chris_sarcastico"), left
     chris "¿Ese aparato viejo? Suerte con eso..."
-    hide chris
-    david "Bien, te encargo la radio. Los que quedan, ¿Podrían encargarse de los suministros?"
+    hide chris_sarcastico
     hide sara
-
-    david "Bueno. Estos son los lugares accesibles que tenemos por ahora, si queremos que esto funcione, tendremos que dividirnos en grupos."
     pause
-    
     scene fondo comedor_estudiantes_sentados
-    david "Me parece bien, entonces los cuatro que quedamos... Por mi parte, me encargaré de que todo esté bajo control. Daiana, Juan, ustedes gestionan los recursos. Ana y Ariana, ustedes dos se encargarán del invernadero."
-    scene fondo comedor_estudiantes_sentados_sin_beige
+    david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Daiana y Juan, ustedes dos gestionarán los recursos. Ana y Ariana, encárguense del invernadero."
     show estudiante_femenino at right
     estudiante_1 "Haré mi mayor esfuerzo."
     hide estudiante_femenino
@@ -596,9 +592,9 @@ label ESCENA_16:
     show estudiante_femenino_2 at left
     estudiante_2 "Tengo miedo... ¿Y si entró algún tipo de {sc=4}{color=#FF0000}bestia{/color}{/sc}? La puerta estaba abierta..."
     hide estudiante_femenino_2
-    show chris_sonrisa at parpadear("chris_sonrisa"), center
+    show chris_sarcastico at parpadear("chris_sarcastico"), center
     chris "¿Una sombra? Ja, seguro que fue tu imaginación, Sara."
-    hide chris_sonrisa
+    hide chris_sarcastico
 
     menu:
         'Calmar a los demás.':
@@ -639,7 +635,7 @@ label ESCENA_16:
         show chris_enojado at parpadear("chris_enojado"), center
         chris "Estoy cansado de que mes des órdenes, héroe."
         chris "Y no soporto ese maldito ruido del generador, ni siquiera sabemos dónde está."
-        chris "Iré sólo."
+        chris "Iré solo."
         hide chris_enojado
 
 

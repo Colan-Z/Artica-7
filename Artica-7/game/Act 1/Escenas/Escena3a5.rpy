@@ -80,10 +80,10 @@ label escena3a5:
     scene fondo_cerca_mochila_celulares with fade
     # escena 7
     menu:
-        "Tomar el celular.":
+        "Tomar el {sc=4}{color=#9c416e}celular{/color}{/sc}.":
             david "Voy a llevarlo, tal vez sirva de algo."
             $ tiene_celular = True
-        "Dejar el celular.":
+        "Dejar el {sc=4}{color=#9c416e}celular{/color}{/sc}.":
             david "Espero no arrepentirme..."
             $ tiene_celular = False
     stop music # detiene el sonido del helicoptero
