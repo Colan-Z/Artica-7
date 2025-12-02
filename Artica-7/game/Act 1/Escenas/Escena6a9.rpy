@@ -583,20 +583,19 @@ label ESCENA_16:
         pause
         david "¿Estás bien, Sara? Te veo preocupada."
         hide sara_preocupada
-        show sara_timida at parpadear("sara_timida"), right
+        show sara_miedo at parpadear("sara_miedo"), right
         sara "¿Eh? ¡Sí, sí, estoy bien!"
         david "¿Estás segura? Puedes confiar en mí."
         sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
         david "¿Algo? ¿A qué te refieres con algo?"
-        hide sara_timida at parpadear("sara_timida")
-        show sara at parpadear("sara"), right
+        # show sara at parpadear("sara"), right
         sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
         play sound "alumnos susurrando.mp3"
         david "¿Una sombra?"
         sara "Sí... era como una silueta, no llegué a verlo del todo bien... tenía mucho miedo."
         david "¿Dónde la viste?"
-        sara "En el pasillo, despues de la muerte del... piloto."
-        hide sara
+        sara "En el pasillo, después de la muerte del... piloto."
+        hide sara_miedo
         stop sound fadeout 1.0
     else:
         david "Chicos, tengo algo de qué hablar con ustedes... hace un rato Sara me contó que vio una sombra en uno de los pasillos."

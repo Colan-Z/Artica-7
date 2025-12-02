@@ -33,7 +33,7 @@ label escena1a2:
             david "Sobreviviré."
             hide chris_sonrisa
             scene fondo interior_helicoptero at shake_leve
-            show expression Image("chris.png") at parpadear_shake("chris"), shake_leve, center
+            # show expression Image("chris.png") at parpadear_shake("chris"), shake_leve, center
             chris "Está bien... supongo."
         "Bromear.":
             # ESCENA 2-B INT. HELICÓPTERO - DÍA
