@@ -64,6 +64,7 @@ label escena6a9:
             play sound "caida_suelo.mp3"
 
             stop music
+            stop sfx3
             play sound "final_malo.mp3"
             python:
                 final = gestor.activar_final("acto1_final_malo")   
@@ -106,7 +107,7 @@ label escena6a9:
         "No tocarlo, podría ser peligroso.":
             #escena 11B
             scene fondo tutor_electrocutado_quemado_radio with fade
-            narrador "No hacía falta verificar su pulso; el olor a carne quemada que desprendía provocaba que algunos alumnos les dieran nauseas."
+            narrador "No hacía falta verificar su pulso; el olor a carne quemada que desprendía provocaba que algunos alumnos les dieran náuseas."
 
     # ESCENA 11A/B
     play sound "radio interferencia.mp3" loop volume 0.2
@@ -116,7 +117,7 @@ label escena6a9:
     else:
         scene fondo sara_walkie-talkie
     piloto "¿Hola? ¿Me copia alguien?"
-    piloto "Pasajeros, reporten estado. ¿Todos en condiciones?"
+    piloto "Reporten estado. ¿Todos en condiciones?"
     if renpy.showing("fondo sara_walkie-talkie_sin_humo"):
         scene fondo tutor_electrocutado
     else:
@@ -131,6 +132,7 @@ label escena6a9:
 
 # Escena 12
 label ESCENA_12:
+    stop sfx3
     play sound "helicoptero despega.mp3" volume 0.3
     scene fondo helicoptero_despega with fade
     
@@ -145,7 +147,7 @@ label ESCENA_12:
     play sound "helicoptero pierde control.mp3" volume 0.3
     
     # $ _preferences.afm_time = 5
-    piloto "¡Imposible! ¡La ventisca es demasiado intensa, pierdo control de la nave!"
+    piloto "¡Imposible! ¡La ventisca es demasiado intensa, no puedo estabilizarlo!"
     
     # window hide
     scene fondo helicoptero_cae with fade
@@ -169,6 +171,7 @@ label ESCENA_12:
 # ESCENA 13
 label ESCENA_13:
     # window hide
+    play sfx3 "generador_loop.ogg" loop
     play sound "estatica estrella_helicoptero.mp3" fadein 1.5
     scene fondo sara_retrocede with fade
     pause 2.0
@@ -196,8 +199,11 @@ label ESCENA_13:
     show estudiante_masculino at left
     estudiante_4 "¡Vamos a morir aquí!"
     hide estudiante_masculino
+    show chris_enojado at parpadear("chris_enojado"), center
+    chris "¡Maldita sea! Se suponía que sería una excursión que me ayudaría con mis problemas."
+    hide chris_enojado
     show chris_furioso at parpadear("chris_furioso"), center
-    chris "¡Maldita sea! Se suponía que sería una excursión que me ayudaría con mis problemas, ¡PERO ESTO SOLO LO EMPEORA!"
+    chris "¡PERO ESTO SOLO LO EMPEORA!"
     hide chris_furioso
     show estudiante_femenino at left
     estudiante_1 "¡Qué vamos a hacer!"
@@ -213,12 +219,15 @@ label ESCENA_13:
                 david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara."
                 david "Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
                 scene fondo interior_artica_sos
+                play sound "sos.ogg" volume 0.5
+                pause 1.0
                 'Operador' "Aquí base Orcadas. ¿Cuál es su emergencia?"
                 david "Hola, me llamo David. Somos los estudiantes que iban a una expedición en Orcadas. Tuvimos un problema con una ventisca, así que decidimos refugiarnos en una instalación llamada Ártica-7."
                 'Operador' "¿Ártica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
                 david "Puede que vean humo en el cielo, el helicóptero que nos llevaba se estrelló."
                 'Operador' "Eso puede servirnos, estamos preparando el equipo de rescate. Manténganse ahí, llegaremos lo antes posible."
                 stop music
+                stop sfx3
                 play sound "final_bueno.mp3" volume 0.5
                 python:
                     final = gestor.activar_final("acto1_final_bueno")   
@@ -270,7 +279,6 @@ label ESCENA_13:
             # ESCENA 9A - INT - ÁRTICA-7 - PASILLOS - DíA
             jump ESCENA_14
         "Quedarse con los demás.": 
-            $ir_con_chris = False 
             # Escena 9B - Interior - Ártica-7 - ENTRADA - DÍA
             jump ESCENA_13B
 
@@ -293,10 +301,10 @@ label ESCENA_13B:
             hide chris_sonrisa
             show chris at parpadear("chris"), center
             david "¡¿Qué?! No, nada... no me pasa nada..."
-            hide chris
     # Escena 9BA - Interior - Ártica-7 - ENTRADA - DÍA
     david "¿Puedes ir a investigar?"
     hide chris_sonrisa
+    hide chris
     show chris_orgulloso at parpadear("chris_orgulloso"), center
     chris "¡Obvio, ya tenía pensado hacerlo!"
     hide chris_orgulloso
@@ -317,6 +325,7 @@ label ESCENA_13B:
     hide chris_enojado
     menu:
         'Verificar que los demás estén bien.':
+            $ir_con_chris = True 
             david "¿Cómo se encuentran?"
             show estudiante_femenino at center
             estudiante_1 "No sé como sentirme... todo pasó tan rápido."
@@ -331,13 +340,14 @@ label ESCENA_13B:
             david "Hablaremos de esto cuando Chris encuentre un lugar donde podamos instalarnos."
             # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
             scene black
-            centered "{size=40}Chris regresa de la exploración.{/size}"
+            centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
             with fade
             scene fondo tutor_electrocutado
             # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
             # david "Gracias Chris por la información. Vamos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
             jump ESCENA_15
         'Hablar con Sara.':
+            $ir_con_chris = False 
             show sara_preocupada at parpadear("sara_preocupada"), center
             pause
             david "¿Estás bien, Sara? Te veo preocupada."
@@ -363,7 +373,7 @@ label ESCENA_13B:
             # Poner este texto en pantalla con fondo negro
             # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
             scene black
-            centered "{size=40}Chris regresa de la exploración.{/size}"
+            centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
             with fade
             scene fondo tutor_electrocutado
             # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
@@ -380,7 +390,7 @@ label ESCENA_14:
     scene fondo_pasillo_estudiante_toca_puerta
     pause
     show chris_enojado at parpadear("chris_enojado"), left
-    chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor!? ¡¿FRITO!?"
+    chris "¡No la toques! ¿¡Quieres terminar como nuestro tutor!? ¡¿FRITO?!"
     scene fondo pasillo 
     show chris_enojado at parpadear("chris_enojado"), left
     show estudiante_masculino_2 at right
@@ -501,7 +511,7 @@ label ESCENA_16:
     play sound "estudiantes hablando.mp3" volume 0.3 loop
     # Poner estudiantes en las sillas (chris y sara pueden 
     # estar parados a su lado aunque no se vean)
-    david "Chicos hagan silencio y escúchenme."
+    david "Chicos, hagan silencio y escuchen."
     stop sound fadeout 2.0
     menu:
         # "Dividirse en grupos de trabajo.":
@@ -522,15 +532,14 @@ label ESCENA_16:
             show borde_verde at borde_top_simple
             $ moral += 1
             show chris_orgulloso at parpadear("chris_orgulloso"), right
-            chris "Bueno, no es perfecto, pero servirá. Al menos encontramos un techo."
+            chris "Bueno lo que encontramos fue."
             hide chris_orgulloso
             scene fondo literas with fade
-            chris "Ahí podemos dormir. Nada cómodo, pero es lo que hay." 
+            chris "Literas que no se veian cómodas." 
             scene fondo banos with fade
-            chris "Los baños... están en un estado 'aceptable'. Mejor que nada, supongo." 
+            chris "Baños..." 
             scene fondo invernadero with fade
-            chris "Y un invernadero. Podría ser útil si sabemos usarlo."
-
+            chris "Un invernadero..."
     scene fondo comedor_estudiantes_sentados with fade
     show Chris at parpadear("chris"), left
     chris "...y una radio, pero creo que no funciona..."
@@ -566,6 +575,7 @@ label ESCENA_16:
     
     if ir_con_chris:
         show sara_preocupada at parpadear("sara_preocupada"), right
+        pause
         david "¿Estás bien, Sara? Te veo preocupada."
         hide sara_preocupada
         show sara_timida at parpadear("sara_timida"), right
@@ -597,7 +607,7 @@ label ESCENA_16:
     hide chris_sarcastico
 
     menu:
-        'Calmar a los demás.':
+        'Hablar de Síndrome ártico.':
             david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... \n{sc=4}{color=#ADD8E6}Síndrome ártico{/color}{/sc}... Cuanto más le demos importancia será peor."
             david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
         'No darle importancia.':
@@ -688,6 +698,7 @@ label ESCENA_16:
             
 
     stop music
+    stop sfx3
     play sound "final_normal.mp3" volume 0.2
     python:
         final = gestor.activar_final("acto1_final_normal")   
