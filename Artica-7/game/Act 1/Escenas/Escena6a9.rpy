@@ -88,7 +88,7 @@ label escena6a9:
     # ESCENA 11
     scene fondo tutor_electrocutado_radio with fade
     play movie "images/fondo-tutor_electrocutado_radio.webm"
-
+    pause 5.8
     scene fondo tutor_electrocutado_radio
    
     
@@ -274,10 +274,12 @@ label ESCENA_13:
             estudiante_6 "A mi también me gustaría ir con ustedes."
             hide estudiante_masculino_3
             show chris at parpadear("chris"), center
-            chris "David y yo ya somos suficientes."
+            chris "David y yo somos suficientes."
             david "Claro, pueden venir con nosotros."
-            chris "..."
             hide chris
+            show chris_enojado at parpadear("chris_enojado"), center
+            chris "..."
+            hide chris_enojado
             $ir_con_chris = True    
             # ESCENA 9A - INT - ÁRTICA-7 - PASILLOS - DíA
             jump ESCENA_14
@@ -291,97 +293,101 @@ label ESCENA_13B:
     sara "Yo... yo puedo acompañarte para cuidarlos."
     david "Me vendría bien un poco de ayuda..."
     hide sara_timida 
-    show chris_sonrisa at parpadear("chris_sonrisa"), center
+    show chris_sarcastico at parpadear("chris_sarcastico"), center
     chris "¿Qué pasa, héroe? Pareces un tomate. "
     menu:
-        'Después te cuento.':
-            show borde_verde at borde_top_simple
-            $ moral += 1
-            chris "Eso espero, amigo."
-        'Cambiar de tema.':
+        'Nada.':
             show borde_rojo at borde_top_simple
             $ moral -= 1
-            hide chris_sonrisa
-            show chris at parpadear("chris"), center
+            hide chris_sarcastico
+            show chris_enojado at parpadear("chris_enojado"), center
+            chris "Okey..."
+            david "¿Puedes ir a investigar?"
+            chris "Eso iba a hacer."
+            hide chris_enojado
+            jump estudiante_recuperado
+        'Cambiar de tema.':
+            show borde_verde at borde_top_simple
+            $ moral += 1
             david "¡¿Qué?! No, nada... no me pasa nada..."
-    # Escena 9BA - Interior - Ártica-7 - ENTRADA - DÍA
-    david "¿Puedes ir a investigar?"
-    hide chris_sonrisa
-    hide chris
-    show chris_orgulloso at parpadear("chris_orgulloso"), center
-    chris "¡Obvio, ya tenía pensado hacerlo!"
-    hide chris_orgulloso
-    hide chris
-    show estudiante_masculino_2 at left
-    estudiante_3 "Ya me encuentro mejor, puedo ir a investigar la zona."
-    hide estudiante_masculino_2
-    show estudiante_masculino_3 at right
-    estudiante_6 "Sí, yo también lo estoy."
-    hide estudiante_masculino_3
-    show chris_enojado at parpadear("chris_enojado"), center
-    chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
-    david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
-    # Aca chris podria empezar a enojarse un poco con 
-    # como le habla david pero aceptar igual (un gruñido o algo por el estilo)
-    # agregar sprite de chris (un poco) enojado
-    chris "...Está bien, vamos, no me hagan perder el tiempo."
-    hide chris_enojado
-    menu:
-        'Verificar que los demás estén bien.':
-            $ir_con_chris = True 
-            david "¿Cómo se encuentran?"
-            show estudiante_femenino at center
-            estudiante_1 "No sé como sentirme... todo pasó tan rápido."
-            hide estudiante_femenino
-            show estudiante_masculino at center
-            estudiante_4 "Tengo miedo. ¿Y si no salimos de esta? ¿Y si hay alguien más dentro?"
-            hide estudiante_masculino
-            show estudiante_femenino_2 at center
-            estudiante_2 "No digas esas estupideces ¿Cómo puede haber alguien dentro de este lugar de mierda?"
-            hide estudiante_femenino_2
-            david "No piensen en esas cosas, vamos a salir de esta."
-            david "Hablaremos de esto cuando Chris encuentre un lugar donde podamos instalarnos."
-            # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
-            scene black
-            centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
-            with fade
-            scene fondo tutor_electrocutado
-            # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-            # david "Gracias Chris por la información. Vamos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-            jump ESCENA_15
-        'Hablar con Sara.':
-            $ir_con_chris = False 
-            show sara_preocupada at parpadear("sara_preocupada"), center
-            pause
-            david "¿Estás bien, Sara? Te veo preocupada."
-            hide sara_preocupada
-            show sara_timida at parpadear("sara_timida"), center
-            sara "¿Eh? ¡Sí, sí, estoy bien!"
-            david "¿Estás segura? Puedes confiar en mí."
-            sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
-            david "¿Algo? ¿A qué te refieres con algo?"
-            sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
-            david "¿Una sombra?"
-            sara "Sí... no sé qué era, pero me asusté y retrocedí."
-            hide sara_timida at parpadear("sara_timida")
-            play sound "alumnos susurrando.mp3"
-            david "(Los demás lo escucharon, no sé qué hacer.)"
-            david "Hablaremos de eso más tarde, ahora esperemos a Chris y los demás para organizarnos."
-            # david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
-            hide sara
-            stop sound fadeout 1.0
-            pause
-            # david "(Los demás lo escucharon, no sé qué hacer. ¿Trato de calmarlos o no le doy mucha importancia?)"
-            
-            # Poner este texto en pantalla con fondo negro
-            # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
-            scene black
-            centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
-            with fade
-            scene fondo tutor_electrocutado
-            # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-            # david "Vamos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
-            jump ESCENA_15
+            david "¿Puedes ir a investigar?"
+            hide chris_sarcastico
+            show chris_orgulloso at parpadear("chris_orgulloso"), center
+            chris "¡Obvio, ya tenía pensado hacerlo!"
+            hide chris_orgulloso
+            jump estudiante_recuperado
+    
+    label estudiante_recuperado:   
+        show estudiante_masculino_2 at left
+        estudiante_3 "Ya me encuentro mejor, puedo ir a investigar la zona."
+        hide estudiante_masculino_2
+        show estudiante_masculino_3 at right
+        estudiante_6 "Sí, yo también lo estoy."
+        hide estudiante_masculino_3
+        show chris_enojado at parpadear("chris_enojado"), center
+        chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
+        david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
+        # Aca chris podria empezar a enojarse un poco con 
+        # como le habla david pero aceptar igual (un gruñido o algo por el estilo)
+        # agregar sprite de chris (un poco) enojado
+        chris "...Está bien, vamos, no me hagan perder el tiempo."
+        hide chris_enojado
+        menu:
+            'Verificar que los demás estén bien.':
+                $ir_con_chris = True 
+                david "¿Cómo se encuentran?"
+                show estudiante_femenino at center
+                estudiante_1 "No sé como sentirme... todo pasó tan rápido."
+                hide estudiante_femenino
+                show estudiante_masculino at center
+                estudiante_4 "Tengo miedo. ¿Y si no salimos de esta? ¿Y si hay alguien más dentro?"
+                hide estudiante_masculino
+                show estudiante_femenino_2 at center
+                estudiante_2 "No digas esas estupideces ¿Cómo puede haber alguien dentro de este lugar de mierda?"
+                hide estudiante_femenino_2
+                david "No piensen en esas cosas, vamos a salir de esta."
+                david "Hablaremos de esto cuando Chris encuentre un lugar donde podamos instalarnos."
+                # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
+                scene black
+                centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
+                with fade
+                scene fondo tutor_electrocutado
+                # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+                # david "Gracias Chris por la información. Vamos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+                jump ESCENA_15
+            'Hablar con Sara.':
+                $ir_con_chris = False 
+                show sara_preocupada at parpadear("sara_preocupada"), center
+                pause
+                david "¿Estás bien, Sara? Te veo preocupada."
+                hide sara_preocupada
+                show sara_timida at parpadear("sara_timida"), center
+                sara "¿Eh? ¡Sí, sí, estoy bien!"
+                david "¿Estás segura? Puedes confiar en mí."
+                sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
+                david "¿Algo? ¿A qué te refieres con algo?"
+                sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
+                david "¿Una sombra?"
+                sara "Sí... no sé qué era, pero me asusté y retrocedí."
+                hide sara_timida at parpadear("sara_timida")
+                play sound "alumnos susurrando.mp3"
+                david "(Los demás lo escucharon, no sé qué hacer.)"
+                david "Hablaremos de eso más tarde, ahora esperemos a Chris y los demás para organizarnos."
+                # david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
+                hide sara
+                stop sound fadeout 1.0
+                pause
+                # david "(Los demás lo escucharon, no sé qué hacer. ¿Trato de calmarlos o no le doy mucha importancia?)"
+                
+                # Poner este texto en pantalla con fondo negro
+                # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
+                scene black
+                centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
+                with fade
+                scene fondo tutor_electrocutado
+                # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+                # david "Vamos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+                jump ESCENA_15
 
 # Escena 14
 label ESCENA_14:
@@ -405,18 +411,23 @@ label ESCENA_14:
         'Intervenir.':
             show borde_rojo at borde_top_simple
             $ moral -= 1
-            david "No deberías de tratar así a las personas y menos en estos momentos."
+            david "No deberías tratar así a las personas y menos en estos momentos."
             show chris_enojado at parpadear("chris_enojado"), center
             chris "No te metas donde no te incumbe."
+            chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
         'Tranquilizar.':
             show borde_verde at borde_top_simple
             $ moral += 1
             david "Chris, tranquilo hermano, vamos a tomarnos esto con más calma, no sabemos cuánto tiempo vamos a estar acá."
             show chris at parpadear("chris"), center
             chris "Lo siento, no estoy en mi mejor momento..."
+            chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
         'Ignorarlo.':
+            show chris_enojado at parpadear("chris_enojado"), center
+            chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
             pass
-    chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
+    
+    
     hide chris_enojado
     hide chris
     show fondo pasillo at yshake
@@ -439,13 +450,6 @@ label ESCENA_14:
     centered "{size=40}Algunos minutos después...{/size}"
     with fade
     scene fondo pasillo
-    # david "Perfecto, encontramos un lugar donde..." 
-    # scene fondo literas with fade
-    # david "...dormir..." 
-    # scene fondo banos with fade
-    # david "...baños en casi buen estado..." 
-    # scene fondo invernadero with fade
-    # david "...un invernadero que podremos usar..." 
     show chris_radio at parpadear("chris_radio"), left
     chris "¡Miren! Encontré una {sc=4}{color=#008000}radio{/color}{/sc}... Tal vez podamos pedir ayuda."
     hide chris_radio
@@ -471,7 +475,7 @@ label ESCENA_14:
     scene fondo comedor
     with fade
     show chris_enojado at parpadear("chris_enojado"), center
-    chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería no parece que vaya a funcionar."
+    chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería que no parece que vaya a funcionar."
     hide chris_enojado
     david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
     # Agregar mas molestia creciente de chris con david
@@ -559,7 +563,7 @@ label ESCENA_16:
     hide sara
     pause
     scene fondo comedor_estudiantes_sentados
-    david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Daiana y Juan, ustedes dos gestionarán los recursos."
+    david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Aurora y Liam, ustedes dos gestionarán los recursos."
     show estudiante_femenino at right
     estudiante_1 "Haré mi mayor esfuerzo."
     hide estudiante_femenino
@@ -567,7 +571,7 @@ label ESCENA_16:
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
     hide estudiante_masculino
-    david "Ana y Ariana, encárguense del invernadero."
+    david "Zoe y Elisa, encárguense del invernadero."
     scene fondo comedor_estudiantes_sentados
     scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino_2 at left
@@ -626,7 +630,7 @@ label ESCENA_16:
     hide sara_preocupada
 
     david "Sigamos con la asignación de grupos."
-    david "Chris... Tú sigue explorando con Diego y Pedro."
+    david "Chris... Tú sigue explorando con Noah y Erik."
 
     # En base a la moral obtenida por el jugador, chris puede aceptar ir acompañado o no y cerramos el acto 1 
     # mostrando que de cualquier manera chris es el más afectado por la situación.
@@ -634,7 +638,7 @@ label ESCENA_16:
         show chris at parpadear("chris"), center
         chris "Yo puedo seguir explorando, pero voy sólo."
         david "No podemos permitir que vayas solo, Chris. Es demasiado peligroso."
-        david "Pedro y Diego te acompañarán."
+        david "Noah y Erik te acompañarán."
         hide chris
         scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
         show estudiante_masculino_3 at right
