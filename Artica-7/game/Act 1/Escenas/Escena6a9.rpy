@@ -214,7 +214,7 @@ label ESCENA_13:
                 david "Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
                 scene fondo interior_artica_sos
                 'Operador' "Aquí base Orcadas. ¿Cuál es su emergencia?"
-                david "Hola, me llamo David, somos los estudiantes que iban a una expedición en Orcadas, tuvimos un problema por una ventisca por lo que decidimos refugiarnos en una instalación llamada Artcia-7."
+                david "Hola, me llamo David. Somos los estudiantes que iban a una expedición en Orcadas. Tuvimos un problema con una ventisca, así que decidimos refugiarnos en una instalación llamada Ártica-7."
                 'Operador' "¿Ártica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
                 david "Puede que vean humo en el cielo, el helicóptero que nos llevaba se estrelló."
                 'Operador' "Eso puede servirnos, estamos preparando el equipo de rescate. Manténganse ahí, llegaremos lo antes posible."
