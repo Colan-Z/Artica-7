@@ -127,7 +127,7 @@ label start:
 
     label creditos:
         scene black
-        show text "{size=65}CREDITOS\n\nProductor/Guionista: Colantonio Franco\nGame Designer: Pelleritti Nicolás\nProgramador: Gauto Carlos\nArte: Bustelo Nicolás{/size}" as creditos_text
+        show text "{size=65}CRÉDITOS\n\nProductor/Guionista: Colantonio Franco\nGame Designer: Pelleritti Nicolás\nProgramador: Gauto Carlos\nArte: Bustelo Nicolás{/size}" as creditos_text
         with Dissolve(1.0)
 
         pause 2.0

@@ -35,7 +35,7 @@ label escena3a5:
     play sfx2 "helicoptero_aterriza.mp3" noloop
     scene fondo aterrizaje with fade
     pause 1.0
-    scene fondo interior_helicoptero_aterrizado_sin_tutor
+    scene fondo interior_helicoptero_aterrizado_sin_tutor with fade
     show tutor
     tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
     menu:

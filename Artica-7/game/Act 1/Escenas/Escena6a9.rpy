@@ -111,7 +111,7 @@ label escena6a9:
 
     # ESCENA 11A/B
     play sound "radio interferencia.mp3" loop volume 0.2
-    pause
+    pause 2.0
     if renpy.showing("fondo tutor_electrocutado_radio"):
         scene fondo sara_walkie-talkie_sin_humo
     else:
@@ -337,7 +337,7 @@ label ESCENA_13B:
                 $ir_con_chris = True 
                 david "¿Cómo se encuentran?"
                 show estudiante_femenino at center
-                estudiante_1 "No sé como sentirme... todo pasó tan rápido."
+                estudiante_1 "No sé cómo sentirme... todo pasó tan rápido."
                 hide estudiante_femenino
                 show estudiante_masculino at center
                 estudiante_4 "Tengo miedo. ¿Y si no salimos de esta? ¿Y si hay alguien más dentro?"
@@ -361,16 +361,16 @@ label ESCENA_13B:
                 pause
                 david "¿Estás bien, Sara? Te veo preocupada."
                 hide sara_preocupada
-                show sara_timida at parpadear("sara_timida"), center
+                show sara_miedo at parpadear("sara_miedo"), center
                 sara "¿Eh? ¡Sí, sí, estoy bien!"
                 david "¿Estás segura? Puedes confiar en mí."
                 sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
                 david "¿Algo? ¿A qué te refieres con algo?"
                 sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
+                play sound "alumnos susurrando.mp3"
                 david "¿Una sombra?"
                 sara "Sí... no sé qué era, pero me asusté y retrocedí."
-                hide sara_timida at parpadear("sara_timida")
-                play sound "alumnos susurrando.mp3"
+                hide sara_miedo at parpadear("sara_miedo")
                 david "(Los demás lo escucharon, no sé qué hacer.)"
                 david "Hablaremos de eso más tarde, ahora esperemos a Chris y los demás para organizarnos."
                 # david "(Puede que tenga razón, espero que no le pase nada a los chicos.)"
@@ -382,9 +382,11 @@ label ESCENA_13B:
                 # Poner este texto en pantalla con fondo negro
                 # narrador "Luego de un rato, Chris vuelve y cuenta con detalle los lugares encontrados en la instalación."
                 scene black
+                stop sfx3
                 centered "{size=40}Chris regresa de la exploración y le cuenta a David lo que encontraron.{/size}"
                 with fade
                 scene fondo tutor_electrocutado
+                play sfx3 "generador_loop.ogg" loop
                 # david "Gracias Chris por la información. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
                 # david "Vamos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
                 jump ESCENA_15
@@ -446,10 +448,13 @@ label ESCENA_14:
     show chris at parpadear("chris"), center
     chris "Los colchones son viejos y tienen polvo. Bueno... ya tenemos un lugar donde dormir, sigamos buscando."
     hide chris
-    scene black 
+    scene black
+    with fade
+    stop sfx3
     centered "{size=40}Algunos minutos después...{/size}"
     with fade
-    scene fondo pasillo
+    play sfx3 "generador_loop.ogg" loop
+    scene fondo pasillo with fade
     show chris_radio at parpadear("chris_radio"), left
     chris "¡Miren! Encontré una {sc=4}{color=#008000}radio{/color}{/sc}... Tal vez podamos pedir ayuda."
     hide chris_radio
@@ -458,10 +463,15 @@ label ESCENA_14:
     david "Bien, después veremos si funciona..."
     scene fondo pasillo 
     show chris at parpadear("chris"), left
-    chris "Sigamos caminando tal vez encontremos algo de comida."
+    chris "Sigamos caminando, tal vez encontremos algo de comida."
     hide chris
-    show estudiante_masculino_2 at right
+    play sound "caminan.mp3"
+    scene fondo pasillo at yshake
+    pause 2.0
+    stop sound
+    scene fondo pasillo
     with fade
+    show estudiante_masculino_2 at right
     estudiante_3 "Quisiera descansar un poco..."
     show chris at parpadear("chris"), left
     chris "Cuando encontremos qué comer, vas a descansar."
@@ -501,7 +511,7 @@ label ESCENA_15:
         xpos 1200
         ypos -400  
     with fade
-    david "Gracias Chris. Bueno, vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+    david "Vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
     hide sara
     hide chris
     hide estudiante_femenino_2
@@ -564,20 +574,22 @@ label ESCENA_16:
     pause
     scene fondo comedor_estudiantes_sentados
     david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Aurora y Liam, ustedes dos gestionarán los recursos."
+    scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino at right
     estudiante_1 "Haré mi mayor esfuerzo."
     hide estudiante_femenino
     scene fondo comedor_estudiantes_sentados_sin_otro_masculino
     show estudiante_masculino at left
     estudiante_4 "No soy bueno con las plantas, pero lo intentaré."
+    scene fondo comedor_estudiantes_sentados
     hide estudiante_masculino
     david "Zoe y Elisa, encárguense del invernadero."
     scene fondo comedor_estudiantes_sentados
-    scene fondo comedor_estudiantes_sentados_sin_beige
+    scene fondo comedor_estudiantes_sentados_sin_violeta
     show estudiante_femenino_2 at left
     estudiante_2 "Claro, no hay problema."
     hide estudiante_femenino_2
-    scene fondo comedor_estudiantes_sentados_sin_violeta
+    scene fondo comedor_estudiantes_sentados
     show estudiante_femenino_3 at right
     estudiante_5 "Nosotros nos encargaremos."
     hide estudiante_femenino_3
@@ -604,19 +616,22 @@ label ESCENA_16:
     else:
         david "Chicos, tengo algo de qué hablar con ustedes... hace un rato Sara me contó que vio una sombra en uno de los pasillos."
     
+    scene fondo comedor_estudiantes_sentados_sin_otro_masculino
     show estudiante_masculino at right
     estudiante_3 "¿Una sombra? ¡Estás loca! No hay nadie más aquí."
     hide estudiante_masculino
+    scene fondo comedor_estudiantes_sentados_sin_violeta
     show estudiante_femenino_2 at left
     estudiante_2 "Tengo miedo... ¿Y si entró algún tipo de {sc=4}{color=#FF0000}bestia{/color}{/sc}? La puerta estaba abierta..."
     hide estudiante_femenino_2
+    scene fondo comedor_estudiantes_sentados
     show chris_sarcastico at parpadear("chris_sarcastico"), center
     chris "¿Una sombra? Ja, seguro que fue tu imaginación, Sara."
     hide chris_sarcastico
 
     menu:
         'Hablar de Síndrome ártico.':
-            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... \n{sc=4}{color=#ADD8E6}Síndrome ártico{/color}{/sc}... Cuanto más le demos importancia será peor."
+            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... \n{sc=4}{color=#ADD8E6}Síndrome ártico{/color}{/sc}... Cuanto más importancia le demos será peor."
             david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
         'No darle importancia.':
             david "(No puedo permitir que entren en pánico.)"
