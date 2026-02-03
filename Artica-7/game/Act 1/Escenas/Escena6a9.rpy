@@ -33,11 +33,11 @@ label escena6a9:
     chris "Pero no entiendo por qué se enciende solo... no tiene sentido."
     hide chris
     show tutor
-    tutor "Coincido. Los motores no 'despiertan' solos después de años congelados. Manténganse alerta. No toquen nada hasta que sepamos con qué estamos tratando."
+    tutor "Exacto Chris. Los motores no \"despiertan\" solos después de años congelados. Manténganse alerta. No toquen nada hasta que sepamos con qué estamos tratando."
     hide tutor
 
     show sara at parpadear("sara"), left
-    sara "Hay polvo sobre las consolas... parece que lo abandonaron hace años."
+    sara "Hay polvo sobre las consolas... parece que la abandonaron hace años."
     hide sara
 
     play sound "puerta_cierra.mp3" volume 2.0
@@ -46,7 +46,7 @@ label escena6a9:
     scene fondo artica7_interior
     show tutor at left
     with fade
-    tutor "¡No! ¡Puta madre! ¡La puerta se cerró!"
+    tutor "¡No! ¡La puerta se cerró!"
     stop sound
     scene fondo artica7_interior_tutor_corriendo with fade
     play sound "Corren.mp3" volume 0.3
@@ -55,7 +55,7 @@ label escena6a9:
     menu:                    
         "Tratar de detenerlo.":
             # ESCENA 10A
-            david "¡Profesor, espere! ¡No creo que sea buena idea tocar esa puerta!"
+            david "¡Profesor, espere!"
             stop sound
             scene fondo_tutor_toca_puerta_david
             play sound "descarga_electrica.mp3"
@@ -78,7 +78,7 @@ label escena6a9:
 
         "No hacer nada.":
             # ESCENA 10B
-            tutor "MIERDA, MIERDA, MIERDA, ¡¿QUÉ ESTÁ PASANDO?!"
+            tutor "¡No, no, no! ¡¿QUÉ ESTÁ PASANDO?!"
             stop sound
             scene fondo_tutor_toca_puerta_2
 
@@ -107,7 +107,7 @@ label escena6a9:
         "No tocarlo, podría ser peligroso.":
             #escena 11B
             scene fondo tutor_electrocutado_quemado_radio with fade
-            narrador "No hacía falta verificar su pulso; el olor a carne quemada que desprendía provocaba que algunos alumnos les dieran náuseas."
+            narrador "No hacía falta verificar su pulso; el olor a carne quemada que desprendía provocaba náuseas en algunos alumnos."
 
     # ESCENA 11A/B
     play sound "radio interferencia.mp3" loop volume 0.2
@@ -194,7 +194,7 @@ label ESCENA_13:
     hide chris_enojado
     show estudiante_masculino_2 at right
     with fade
-    estudiante_3 "¡Tenemos que salir de aquí! ¡YA!"
+    estudiante_3 "¡Tenemos que salir de aquí! ¡Quiero ver a mi mamá!"
     hide estudiante_masculino_2
     show estudiante_masculino at left
     estudiante_4 "¡Vamos a morir aquí!"
@@ -216,8 +216,9 @@ label ESCENA_13:
     while salir_del_bucle:
         menu:
             "Usar el celular" if tiene_celular:
-                david "Cálmense todos. Antes al bajar del helicóptero tomé mi celular en caso de que algo pasara."
-                david "Acá dentro hay algo de señal; voy a hacer una llamada de SOS para pedir ayuda. Espero que funcione..."
+                david "Cálmense todos. Antes de bajar del helicóptero tomé mi celular en caso de que algo pasara."
+                david "Acá hay algo de señal; voy a hacer una llamada para pedir ayuda."
+                david "Espero que funcione..."
                 scene fondo tutor_electrocutado_pov_celular
                 play sound "sos.ogg" volume 0.5
                 pause 1.0
@@ -225,10 +226,10 @@ label ESCENA_13:
                 pause 2.0
                 scene fondo tutor_electrocutado
                 'Operador' "Aquí base Orcadas. ¿Cuál es su emergencia?"
-                david "Hola, me llamo David. Somos los estudiantes que iban a una expedición en Orcadas. Tuvimos un problema con una ventisca, así que decidimos refugiarnos en una instalación llamada Ártica-7."
+                david "Hola, me llamo David. Somos los estudiantes que iban a una expedición en Orcadas. Tuvimos un problema por una ventisca, así que decidimos refugiarnos en una instalación llamada Ártica-7."
                 'Operador' "¿Ártica-7? No conozco nada con ese nombre... Tal vez pueda localizar tu llamada."
                 david "Puede que vean humo en el cielo, el helicóptero que nos llevaba se estrelló."
-                'Operador' "Eso puede servirnos, estamos preparando el equipo de rescate. Manténganse ahí, llegaremos lo antes posible."
+                'Operador' "Eso puede servirnos. Estamos preparando el equipo de rescate. Manténganse ahí, llegaremos lo antes posible."
                 stop music
                 stop sfx3
                 play sound "final_bueno.mp3" volume 0.5
@@ -254,7 +255,7 @@ label ESCENA_13:
     chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
     hide chris_furioso
     
-    david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos investigar la instalación, puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
+    david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos investigar la instalación; puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
     show sara at right
     show sara at parpadear("sara"), right
     sara "Tienes razón, tal vez logremos encontrar algo para contactarnos con los de afuera."
@@ -325,8 +326,8 @@ label ESCENA_13B:
         estudiante_6 "Sí, yo también lo estoy."
         hide estudiante_masculino_3
         show chris_enojado at parpadear("chris_enojado"), center
-        chris "Lo siento, pero no me gusta trabajar en equipo, me gusta estar solo."
-        david "Vas a tener que trabajar con ellos Chris, no te queda de otra."
+        chris "Lo siento, pero no me gusta trabajar en equipo; prefiero estar solo."
+        david "Vas a tener que trabajar con ellos, Chris. No te queda de otra."
         # Aca chris podria empezar a enojarse un poco con 
         # como le habla david pero aceptar igual (un gruñido o algo por el estilo)
         # agregar sprite de chris (un poco) enojado
@@ -343,7 +344,7 @@ label ESCENA_13B:
                 estudiante_4 "Tengo miedo. ¿Y si no salimos de esta? ¿Y si hay alguien más dentro?"
                 hide estudiante_masculino
                 show estudiante_femenino_2 at center
-                estudiante_2 "No digas esas estupideces ¿Cómo puede haber alguien dentro de este lugar de mierda?"
+                estudiante_2 "No digas esas estupideces. ¿Cómo puede haber alguien dentro de este lugar de mierda?"
                 hide estudiante_femenino_2
                 david "No piensen en esas cosas, vamos a salir de esta."
                 david "Hablaremos de esto cuando Chris encuentre un lugar donde podamos instalarnos."
@@ -365,7 +366,7 @@ label ESCENA_13B:
                 sara "¿Eh? ¡Sí, sí, estoy bien!"
                 david "¿Estás segura? Puedes confiar en mí."
                 sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
-                david "¿Algo? ¿A qué te refieres con algo?"
+                david "¿Algo? ¿A qué te refieres con \"algo\"?"
                 sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
                 play sound "alumnos susurrando.mp3"
                 david "¿Una sombra?"
@@ -415,18 +416,18 @@ label ESCENA_14:
             $ moral -= 1
             david "No deberías tratar así a las personas y menos en estos momentos."
             show chris_enojado at parpadear("chris_enojado"), center
-            chris "No te metas donde no te incumbe."
-            chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
+            chris "No te metas en lo que no te incumbe."
+            chris "Vamos a entrar en habitaciones que tengan las puertas abiertas."
         'Tranquilizar.':
             show borde_verde at borde_top_simple
             $ moral += 1
-            david "Chris, tranquilo hermano, vamos a tomarnos esto con más calma, no sabemos cuánto tiempo vamos a estar acá."
+            david "Chris, tranquilo hermano, vamos a tomarnos esto con más calma; no sabemos cuánto tiempo vamos a estar acá."
             show chris at parpadear("chris"), center
             chris "Lo siento, no estoy en mi mejor momento..."
-            chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
+            chris "Vamos a entrar en habitaciones que tengan las puertas abiertas."
         'Ignorarlo.':
             show chris_enojado at parpadear("chris_enojado"), center
-            chris "Solamente vamos a entrar en habitaciones que tengan las puertas abiertas."
+            chris "Vamos a entrar en habitaciones que tengan las puertas abiertas."
             pass
     
     
@@ -439,14 +440,14 @@ label ESCENA_14:
     scene fondo_pasillo_puerta_abierta with fade
     pause 0.2
     show estudiante_masculino_3 at right
-    estudiante_6 "¡Aquí hay una puerta abierta! ¡Hay literas!"
+    estudiante_6 "¡Encontré una puerta abierta!"
     scene fondo literas with fade
-    david "Contemos cuántas son."
+    david "¡Genial! Un lugar donde dormir; contemos cuántas literas hay."
     show estudiante_masculino_3 at center
     estudiante_6 "¡Hay ocho literas, suficientes para todos!"
     hide estudiante_masculino_3
     show chris at parpadear("chris"), center
-    chris "Los colchones son viejos y tienen polvo. Bueno... ya tenemos un lugar donde dormir, sigamos buscando."
+    chris "Los colchones son viejos y tienen polvo. Bueno... ya tenemos un lugar donde dormir; sigamos buscando."
     hide chris
     scene black
     with fade
@@ -460,10 +461,10 @@ label ESCENA_14:
     hide chris_radio
     scene fondo pasillo_radio
     david "Genial, déjame verla."
-    david "Bien, después veremos si funciona..."
+    david "Bien, más tarde veremos si funciona..."
     scene fondo pasillo 
     show chris at parpadear("chris"), left
-    chris "Sigamos caminando, tal vez encontremos algo de comida."
+    chris "Sigamos caminando, espero encontrar algo de comida."
     hide chris
     play sound "caminan.mp3"
     scene fondo pasillo at yshake
@@ -472,9 +473,9 @@ label ESCENA_14:
     scene fondo pasillo
     with fade
     show estudiante_masculino_2 at right
-    estudiante_3 "Quisiera descansar un poco..."
+    estudiante_3 "Quiero descansar un poco..."
     show chris at parpadear("chris"), left
-    chris "Cuando encontremos qué comer, vas a descansar."
+    chris "\"Quiri disquinsir in piqui\". Cuando encuentres comida vas a poder descansar."
     estudiante_3 "Está bien..."
     hide estudiante_masculino_2
     hide chris
@@ -484,12 +485,13 @@ label ESCENA_14:
     stop sound
     scene fondo comedor
     with fade
+    david "¡Un comedor! Tenemos comida en lata, mesas, sillas..."
     show chris_enojado at parpadear("chris_enojado"), center
-    chris "¡Genial! Tenemos camas sucias, algunas latas de comida están podridas y esta radio de porquería que no parece que vaya a funcionar."
+    chris "¡Genial! Tenemos camas sucias, algunas latas de comida están vencidas y esta radio de porquería que no parece que vaya a funcionar."
     hide chris_enojado
     david "Al menos tenemos comida y camas... eso nos compra tiempo. Es mejor que nada."
     # Agregar mas molestia creciente de chris con david
-    david "Volvamos, los demás deben estar perdiendo la cabeza con el tutor a su lado, hay que darles las 'buenas' noticias."
+    david "Volvamos; los demás deben estar perdiendo la cabeza con el tutor a su lado; hay que darles las \"buenas\" noticias."
     hide chris_enojado
     scene fondo comedor at yshake
     play sound "caminan.mp3"
@@ -511,7 +513,7 @@ label ESCENA_15:
         xpos 1200
         ypos -400  
     with fade
-    david "Vamos a movernos al comedor, necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
+    david "Vamos a movernos al comedor; necesitamos un plan que nos ayude a sobrevivir con lo que tengamos."
     hide sara
     hide chris
     hide estudiante_femenino_2
@@ -549,24 +551,24 @@ label ESCENA_16:
             show borde_verde at borde_top_simple
             $ moral += 1
             show chris_orgulloso at parpadear("chris_orgulloso"), right
-            chris "Bueno lo que encontramos fue..."
+            chris "Bueno, lo que encontramos fue..."
             hide chris_orgulloso
             scene fondo literas with fade
-            chris "...literas sucias, llenas de polvo, que lo más probable nos dé contracturas..." 
+            chris "...literas sucias, llenas de polvo, que lo más probable es que nos dé contracturas..." 
             scene fondo banos with fade
-            chris "...baños, en buen estado, quitando el olor horrible que emana..." 
+            chris "...baños en buen estado, quitando el olor horrible que emanan..." 
             scene fondo invernadero with fade
-            chris "...un invernadero, que siendo sincero ¿Alguna vez plantaron algo, o tocaron pasto?"
+            chris "...un invernadero, que, siendo sinceros, ¿alguna vez plantaron algo o tocaron pasto?"
 
     scene fondo comedor_estudiantes_sentados with fade
     show Chris at parpadear("chris"), left
-    chris "Y una radio, que no me sorprendería que no funcione..."
+    chris "Y una radio... que no me sorprendería que no funcione."
     hide Chris
     show pov_radio at center
     david "Bueno, al menos tenemos una radio."
     hide pov_radio
     show sara at parpadear("sara"), right
-    sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila. Tal vez si la reparo, consigamos pedir ayuda."
+    sara "Me gustaría dedicarle tiempo a la radio... tengo algunas herramientas en mi mochila. Tal vez, si la reparo, consigamos pedir ayuda."
     show chris_sarcastico at parpadear("chris_sarcastico"), left
     chris "¿Ese aparato viejo? Suerte con eso..."
     hide chris_sarcastico
@@ -602,19 +604,19 @@ label ESCENA_16:
         show sara_miedo at parpadear("sara_miedo"), right
         sara "¿Eh? ¡Sí, sí, estoy bien!"
         david "¿Estás segura? Puedes confiar en mí."
-        sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver... algo por el pasillo."
+        sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver algo... por el pasillo."
         david "¿Algo? ¿A qué te refieres con algo?"
         # show sara at parpadear("sara"), right
-        sara "Me pareció ver una... sombra. Todos estábamos juntos, no pudo haber sido alguien de nosotros."
+        sara "Me pareció ver una... sombra. Todos estábamos juntos; no pudo haber sido alguien de nosotros."
         play sound "alumnos susurrando.mp3"
         david "¿Una sombra?"
-        sara "Sí... era como una silueta, no llegué a verlo del todo bien... tenía mucho miedo."
+        sara "Sí... era como una silueta. No llegué a verlo del todo bien... tenía mucho miedo."
         david "¿Dónde la viste?"
         sara "En el pasillo, después de la muerte del... piloto."
         hide sara_miedo
         stop sound fadeout 1.0
     else:
-        david "Chicos, tengo algo de qué hablar con ustedes... hace un rato Sara me contó que vio una sombra en uno de los pasillos."
+        david "Necesito que me escuchen... Hace un rato Sara me contó que vio una sombra en uno de los pasillos."
     
     scene fondo comedor_estudiantes_sentados_sin_otro_masculino
     show estudiante_masculino at right
@@ -631,43 +633,43 @@ label ESCENA_16:
 
     menu:
         'Hablar de Síndrome ártico.':
-            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados, lo vi en una película, algo como... \n{sc=4}{color=#ADD8E6}Síndrome ártico{/color}{/sc}... Cuanto más importancia le demos será peor."
+            david "Tranquilos, lo que Sara creyó haber visto es algo normal en lugares aislados; lo vi en una película, algo como... \n{sc=4}{color=#ADD8E6}Síndrome Ártico{/color}{/sc}... Cuanto más importancia le demos, será peor."
             david "Si ven o escuchan cosas, no lo oculten a los demás. Estamos juntos en esto."
         'No darle importancia.':
             david "(No puedo permitir que entren en pánico.)"
-            david "Seguramente fue alguno de nosotros, Sara. Éstas luces y sombras engañan fácilmente… No vale la pena preocuparse por eso."
+            david "Seguramente fue alguno de nosotros, Sara. Estas luces y sombras engañan fácilmente… No vale la pena preocuparse por eso."
             show chris at parpadear("chris"), center
-            chris "Nosotros cuando fuimos a explorar no vimos nada raro."
+            chris "Cuando fuimos a explorar, no vimos nada raro."
             hide chris
     pause
-    david "De todas formas, debemos estar atentos. Cualquier cosa rara que vean, me la cuentan de inmediato."
+    david "De todas formas, tenemos que estar atentos. Cualquier cosa rara que vean, me la cuentan de inmediato."
 
     hide sara_preocupada
 
     david "Sigamos con la asignación de grupos."
-    david "Chris... Tú sigue explorando con Noah y Erik."
+    david "Chris... tú sigue explorando con Noah y Erik."
 
     # En base a la moral obtenida por el jugador, chris puede aceptar ir acompañado o no y cerramos el acto 1 
     # mostrando que de cualquier manera chris es el más afectado por la situación.
     if moral >= 8:
         show chris at parpadear("chris"), center
-        chris "Yo puedo seguir explorando, pero voy sólo."
+        chris "Yo puedo seguir explorando, pero voy solo."
         david "No podemos permitir que vayas solo, Chris. Es demasiado peligroso."
         david "Noah y Erik te acompañarán."
         hide chris
         scene fondo comedor_estudiantes_sentados_sin_dos_masculinos
         show estudiante_masculino_3 at right
         show estudiante_masculino_2 at left
-        f"{estudiante_3} y {estudiante_6}" "Cuenta con nosotros..."
+        f"{estudiante_3} y {estudiante_6}" "Cuenten con nosotros..."
         hide estudiante_masculino_3
         hide estudiante_masculino_2
         show chris at parpadear("chris"), center
-        chris "Está bien, pero no seré su niñera."
+        chris "Está bien. Pero no seré su niñera."
         hide chris
     else:
         show chris_enojado at parpadear("chris_enojado"), center
         chris "Estoy cansado de que me des órdenes, héroe."
-        chris "Y no soporto ese maldito ruido del generador, ni siquiera sabemos dónde está."
+        chris "Y no soporto ese maldito ruido del generador; ni siquiera sabemos dónde está."
         chris "Iré solo."
         hide chris_enojado
 

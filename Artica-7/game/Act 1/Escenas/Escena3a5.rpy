@@ -12,7 +12,7 @@ label escena3a5:
     scene fondo interior_helicoptero at shake_fuerte, with fade
 
     piloto "¡Ventisca pesada, perdemos estabilidad!"
-    piloto "¡Prepararse para aterrizaje de emergencia! ¡Aseguren posiciones!"
+    piloto "¡Prepárense para un aterrizaje de emergencia! ¡Aseguren posiciones!"
     play sound "chicos gritando.mp3"  volume 0.5 loop
     show sara_agarra_mochila at shake_fuerte, right
     pause
@@ -37,11 +37,11 @@ label escena3a5:
     pause 1.0
     scene fondo interior_helicoptero_aterrizado_sin_tutor with fade
     show tutor
-    tutor "¡Chicos! ¡Reaccionen! ¿Están todos enteros? ¿Alguien se golpeó fuerte?"
+    tutor "¡Chicos, mírenme! ¿Están todos bien? ¿Alguien se golpeó?"
     menu:
         "Responder al tutor.":
             #Opcion A
-            david "Sí, estoy bien. ¿Y ustedes?"
+            david "Sí, estamos bien. ¿Y ustedes?"
             # show sara at right
             # show chris at left
             # show estudiante_femenino_2:
@@ -57,8 +57,8 @@ label escena3a5:
             # hide estudiante_masculino_2
             show tutor 
 
-            tutor "Menos mal..."
-            tutor "Mantengan la calma. Estamos vivos, eso es lo principal."
+            tutor "Menos mal... menos mal..."
+            tutor "Escúchenme bien. Mantengan la calma. Estamos vivos, eso es lo que importa ahora."
             tutor "Nadie se desabrocha el cinturón hasta que yo revise la salida."
         "Mirar por la ventana.":
             #Opcion B
@@ -70,8 +70,8 @@ label escena3a5:
     scene fondo interior_helicoptero_aterrizado_sin_tutor
     show tutor
     with fade
-    tutor "Tienes razón... Buen ojo, David. Aquí dentro nos vamos a congelar."
-    tutor "¡Muy bien, cambio de planes! ¡Todos afuera, ahora! ¡No se separen y síganme los pasos! ¡Vamos, muévanse!"
+    tutor "Espera... tienes razón, David. Buen ojo. Si nos quedamos acá dentro, nos vamos a congelar."
+    tutor "¡Todos afuera, ahora! ¡No se separen del grupo y síganme los pasos! ¡Vamos, muévanse!"
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.4
     scene fondo_tutor_deja_mochila with fade
@@ -91,7 +91,7 @@ label escena3a5:
     scene fondo camino
     show tutor at left
     with fade
-    tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero a nadie solo!"
+    tutor "¡Dos... cuatro... seis... ocho... nueve! ¡Están todos! ¡Manténganse juntos, no quiero perder a nadie!"
     hide tutor
     window hide
     show fondo camino at yshake
@@ -101,7 +101,7 @@ label escena3a5:
     scene fondo artica7_exterior 
     show tutor at right
     with fade
-    tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, muévanse!"
+    tutor "¡Ahí está! ¡Bien visto, David! ¡Es un refugio! ¡Vamos hacia la estructura! ¡Muévanse, rápido!"
     scene fondo artica7_exterior at yshake, with fade 
     play sound "pasos en la nieve.mp3"
     pause 3.0
@@ -139,14 +139,14 @@ label escena3a5:
     tutor "¡Llegamos! ¡La puerta está entreabierta!"
     hide tutor
     scene fondo artica7_entrada_tutor_abriendo
-    tutor "¡Mierda... el óxido la trabó!"
+    tutor "Está trabada... el óxido..."
     play sound "puerta_abre.mp3"
     pause 2.0
     scene fondo artica7_entrada_abierta
     show tutor at center
-    tutor "¡Ahí está!"
+    tutor "¡Ahí está! ¡Cedió!"
     show tutor at left
-    tutor "¡Adentro! ¡Rápido! ¡No se detengan en la entrada! ¡Pasen todos, vamos a estar seguros aquí! ¡Vamos, entren!"
+    tutor "¡Adentro! ¡Rápido! ¡No se queden en la entrada! ¡Pasen todos, vamos a estar seguros aquí! ¡Vamos, entren!"
     hide tutor
    
     stop sound fadeout 2.0
