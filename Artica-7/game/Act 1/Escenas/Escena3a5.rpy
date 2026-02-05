@@ -41,7 +41,7 @@ label escena3a5:
     menu:
         "Responder al tutor.":
             #Opcion A
-            david "Sí, estamos bien. ¿Y ustedes?"
+            david "Sí, estoy bien. ¿Y ustedes?"
             # show sara at right
             # show chris at left
             # show estudiante_femenino_2:
@@ -70,7 +70,7 @@ label escena3a5:
     scene fondo interior_helicoptero_aterrizado_sin_tutor
     show tutor
     with fade
-    tutor "Espera... tienes razón, David. Buen ojo. Si nos quedamos acá dentro, nos vamos a congelar."
+    tutor "Tienes razón... buen ojo, David. Si nos quedamos acá dentro, nos vamos a congelar."
     tutor "¡Todos afuera, ahora! ¡No se separen del grupo y síganme los pasos! ¡Vamos, muévanse!"
     stop sfx1 fadeout 1.0
     play sfx1 "ventisca.mp3" loop volume 0.4

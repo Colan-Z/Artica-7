@@ -10,14 +10,14 @@ label escena1a2:
     pause
     scene fondo interior_helicoptero_sin_tutor at shake_leve
     show tutor at shake_leve, center, with fade
-    tutor "¡Chicos, presten atención!"
+    tutor "¡Chicos, hagan silencio y presten atención!"
     
     stop sound fadeout 1.0
     tutor "Miren dónde están. No cualquiera llega a la Antártida. Ustedes están acá porque se lo ganaron, porque demostraron ser los mejores en el concurso académico."
     tutor "¡Son la élite!"
-    tutor "En veinte minutos tocamos suelo en Orcadas."
+    tutor "En veinte minutos tocaremos suelo en Orcadas."
     tutor "Esto no es un paseo turístico, es una misión científica real. Ecosistemas polares, cambio climático, adaptación de especies... Van a ver con sus propios ojos lo que solo conocen de los libros."
-    tutor "Ahora, necesito que presten atención. Los celulares a la bolsa. Allá afuera no hay tiempo para distraerse."
+    tutor "Ahora, necesito que pongan los celulares en la mochila. Allá afuera no hay tiempo para distraerse."
     tutor "Quiero sus ojos en el horizonte, no en una pantalla."
     hide tutor
     scene fondo interior_helicoptero at shake_leve

@@ -197,6 +197,60 @@
                 "settings": {
                     "foreground": "#fe0000"
                 }
+            },
+            {
+                "scope": "renpy.meta.color.#008000",
+                "settings": {
+                    "foreground": "#008000"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#add8e6",
+                "settings": {
+                    "foreground": "#add8e6"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#9c416e",
+                "settings": {
+                    "foreground": "#9c416e"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ee09",
+                "settings": {
+                    "foreground": "#ee09"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#ee0943",
+                "settings": {
+                    "foreground": "#ee0943"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#454545",
+                "settings": {
+                    "foreground": "#454545"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#7373",
+                "settings": {
+                    "foreground": "#7373"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#737373",
+                "settings": {
+                    "foreground": "#737373"
+                }
+            },
+            {
+                "scope": "renpy.meta.color.#949494",
+                "settings": {
+                    "foreground": "#949494"
+                }
             }
         ]
     },

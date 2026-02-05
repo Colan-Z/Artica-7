@@ -17,9 +17,14 @@ label escena6a9:
     menu:
         "Parece ser una base militar.":
             show estudiante_femenino at left
+            david "Parece ser una base militar abandonada..."
             estudiante_1 "¿Por qué una base militar estaría abandonada?"
             hide estudiante_femenino
         "No logro ver nada.":
+            david "No logro ver nada..."
+            show sara at parpadear("sara"), right
+            sara "Parece ser una base militar."
+            hide sara
             pass
 
     play sfx3 "generador_enciende.mp3" volume 0.5
@@ -421,7 +426,7 @@ label ESCENA_14:
         'Tranquilizar.':
             show borde_verde at borde_top_simple
             $ moral += 1
-            david "Chris, tranquilo hermano, vamos a tomarnos esto con más calma; no sabemos cuánto tiempo vamos a estar acá."
+            david "Chris, tranquilo hermano, vamos a tomarnos esto con calma; no sabemos cuánto tiempo vamos a estar acá."
             show chris at parpadear("chris"), center
             chris "Lo siento, no estoy en mi mejor momento..."
             chris "Vamos a entrar en habitaciones que tengan las puertas abiertas."
@@ -474,11 +479,14 @@ label ESCENA_14:
     with fade
     show estudiante_masculino_2 at right
     estudiante_3 "Quiero descansar un poco..."
-    show chris at parpadear("chris"), left
-    chris "\"Quiri disquinsir in piqui\". Cuando encuentres comida vas a poder descansar."
+    show chris_sarcastico at parpadear("chris_sarcastico"), left
+    chris "\"Quiri disquinsir in piqui...\""
+    hide chris_sarcastico
+    show chris_enojado at parpadear("chris_enojado"), left
+    chris "Cuando encuentres comida vas a poder descansar."
     estudiante_3 "Está bien..."
     hide estudiante_masculino_2
-    hide chris
+    hide chris_enojado
     scene fondo pasillo at yshake
     play sound "caminan.mp3"
     pause 2
@@ -530,7 +538,7 @@ label ESCENA_16:
     play sound "estudiantes hablando.mp3" volume 0.3 loop
     # Poner estudiantes en las sillas (chris y sara pueden 
     # estar parados a su lado aunque no se vean)
-    david "Chicos, hagan silencio y escuchen."
+    david "Oigan, hagan silencio y escuchen."
     stop sound fadeout 2.0
     menu:
         # "Dividirse en grupos de trabajo.":
@@ -573,8 +581,6 @@ label ESCENA_16:
     chris "¿Ese aparato viejo? Suerte con eso..."
     hide chris_sarcastico
     hide sara
-    pause
-    scene fondo comedor_estudiantes_sentados
     david "Me parece bien, Sara. Por mi parte, me aseguraré de que todo esté bajo control. Ahora, sobre los cuatro que quedan: Aurora y Liam, ustedes dos gestionarán los recursos."
     scene fondo comedor_estudiantes_sentados_sin_beige
     show estudiante_femenino at right
@@ -593,7 +599,7 @@ label ESCENA_16:
     hide estudiante_femenino_2
     scene fondo comedor_estudiantes_sentados
     show estudiante_femenino_3 at right
-    estudiante_5 "Nosotros nos encargaremos."
+    estudiante_5 "Nosotras nos encargaremos."
     hide estudiante_femenino_3
     
     if ir_con_chris:
@@ -604,8 +610,8 @@ label ESCENA_16:
         show sara_miedo at parpadear("sara_miedo"), right
         sara "¿Eh? ¡Sí, sí, estoy bien!"
         david "¿Estás segura? Puedes confiar en mí."
-        sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver algo... por el pasillo."
-        david "¿Algo? ¿A qué te refieres con algo?"
+        sara "Bueno... no quería alarmar a nadie, pero hace un momento me pareció ver {sc=4}{color=#949494}algo{/color}{/sc}... por el pasillo."
+        david "¿{sc=4}{color=#949494}Algo{/color}{/sc}? ¿A qué te refieres con {sc=4}{color=#949494}algo{/color}{/sc}?"
         # show sara at parpadear("sara"), right
         sara "Me pareció ver una... sombra. Todos estábamos juntos; no pudo haber sido alguien de nosotros."
         play sound "alumnos susurrando.mp3"
@@ -624,7 +630,7 @@ label ESCENA_16:
     hide estudiante_masculino
     scene fondo comedor_estudiantes_sentados_sin_violeta
     show estudiante_femenino_2 at left
-    estudiante_2 "Tengo miedo... ¿Y si entró algún tipo de {sc=4}{color=#FF0000}bestia{/color}{/sc}? La puerta estaba abierta..."
+    estudiante_2 "Tengo miedo... ¿Y si entró algún tipo de {sc=4}{color=#EE0943}bestia{/color}{/sc}? La puerta estaba abierta..."
     hide estudiante_femenino_2
     scene fondo comedor_estudiantes_sentados
     show chris_sarcastico at parpadear("chris_sarcastico"), center
@@ -641,7 +647,6 @@ label ESCENA_16:
             show chris at parpadear("chris"), center
             chris "Cuando fuimos a explorar, no vimos nada raro."
             hide chris
-    pause
     david "De todas formas, tenemos que estar atentos. Cualquier cosa rara que vean, me la cuentan de inmediato."
 
     hide sara_preocupada
