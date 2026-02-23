@@ -256,8 +256,9 @@ label ESCENA_13:
     show estudiante_femenino_3 at left
     estudiante_5 "¡Estamos atrapados con un cadáver!"
     hide estudiante_femenino_3
+    david "Lo sé, pero en este momento, lo principal es mantener la calma."
     show chris_furioso at parpadear("chris_furioso"), center
-    chris "¿Calmarnos? ¿Pensar? ¡Vamos a morir aquí!"
+    chris "¿Calmarnos? ¡Vamos a morir aquí!"
     hide chris_furioso
     
     david "Los entiendo, pero estando acá parados no vamos a solucionar nada. Deberíamos investigar la instalación; puede que encontremos algo que nos mantenga con vida mientras esperamos a que nos rescaten."
