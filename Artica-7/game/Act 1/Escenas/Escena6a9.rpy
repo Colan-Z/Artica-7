@@ -52,6 +52,7 @@ label escena6a9:
     show tutor at left
     with fade
     tutor "¡No! ¡La puerta se cerró!"
+    tutor "David, te encargo a tus compañeros mientras intento abrir la puerta"
     stop sound
     scene fondo artica7_interior_tutor_corriendo with fade
     play sound "Corren.mp3" volume 0.3
